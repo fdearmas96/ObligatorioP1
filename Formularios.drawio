@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-05-13T01:10:15.163Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="82Od5Cx4LozyMh06k2F0" version="14.6.12" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-05-12T20:13:23.151Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="oYmfb8rsPpeiO7FzJ4qk" version="14.6.12" type="github" pages="4">
   <diagram id="YV1dHheQMbIW_KVCzwkJ" name="Registro Docente">
-    <mxGraphModel dx="1163" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="868" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -25,11 +25,14 @@
         <mxCell id="ewFbGT-FpTYjorqZr8Pc-8" value="Crear Usuario" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" parent="1" vertex="1">
           <mxGeometry x="135" y="160" width="120" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="GwgRjjMl_PAkbDuFhPli-1" value="Listo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="m-CUgD-hjozo70Uh1sP4" name="Registro Alumno">
-    <mxGraphModel dx="1163" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="Od82P2nvVVEPtzWRUM7q-0" />
         <mxCell id="Od82P2nvVVEPtzWRUM7q-1" parent="Od82P2nvVVEPtzWRUM7q-0" />
