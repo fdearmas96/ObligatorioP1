@@ -1,1 +1,94 @@
-<mxfile host="app.diagrams.net" modified="2021-05-12T23:41:33.760Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="_opIljKagrX1ob4yXFHx" version="14.6.12" type="device" pages="4"><diagram id="YV1dHheQMbIW_KVCzwkJ" name="Registro Docente">7VfBctowEP0aH5PBFgZ6rE1ID20nM6TTaW+yJWy1steVRQz9+q5s2cYxTMgMQw4NcJCedtfa9/Yx4JAw290rWqRfgHHpeBO2c8jS8Tx36nmO+UzYvkHmcwskSjAb1ANr8ZdbcGLRrWC8HARqAKlFMQRjyHMe6wFGlYJqGLYBOXxqQRM+AtYxlWP0u2A6bdCFN+/xT1wkaftkd/ahOcloG2w7KVPKoDqAyJ1DQgWgm1W2C7k05LW8NHmrE6fdxRTP9TkJvFpF9483q+Lxxy9Qf36qxUN8Y6s8Ubm1DdvL6n3LwBNXWiAhn2nE5QOUQgvI8SgCrSFzSNAGfJQiMQcaCkRTnUncuLjEzgtTLNslZkhuI1qK+FbVcgUbIWUIEhQSsswh5yZBK/jd8V2XaAYDWySByFnTso8be3+8At+dJMbt6MY55ZBxrfYY0ia0CtkRJXZb9Xq7vsXSA63bNGpHLOkq9yrgwgrxClG8kShfIYsUH0mDPesh1dRqEGPvXB0RJxOMmfRAceSURnUpw2oBItd1J37g+EtTa6vB8u52otRS9UpdgP7pi+zPrkk+eXfEyBHzt3bEdCTKt3JLlYD/whJH6L+qJfx3S4ws4bpv7YnZSJUQcq1oyZ2QOIFLz/DG0QHuyO6h8z1UpULzdUFj88wKlTS+gi2qwayrLiDG7GUtpteUYjGWQnGqEDr1NdVT4p4g7UAlNAQTSE0riuORTf16Jhbiwcq8LzTyxB/SPDsy8t4RnsnrecZt/0u4Pjv4P0Hu/gE=</diagram><diagram id="m-CUgD-hjozo70Uh1sP4" name="Registro Alumno">7Zdfk5owFMU/DY/dkUTUPgpq+9BtnTq6s4+RREkNXDbGf/vpm0AAWdzqdqr70EUfyCG5kPO7hxkcHMT7L5Kk0T1QJhzUonsHDxyE3DZCjvm36CFXul0rLCWndlIlTPgzs2LLqhtO2bo2UQEIxdO6GEKSsFDVNCIl7OrTFiDqd03JkjWESUhEU33gVEW52kPdSv/K+DIq7ux2PudXYlJMtjtZR4TC7kjCQwcHEkDlZ/E+YMKYV/jyg/bQGCXb2Ww4Vs8PP6f33adPebHRW5aUW5AsUX9dejXoPfX78a+H6ZR59HHlJbOFXdLaErGxftm9qkNh4JZJxbWf38iciTGsueKQ6EtzUApiB/vFhL7gS3NBQarVSMVCD1x9qo1LTbF4vzQ9djcnax7eyYy2v+BCBCBAaj8HCSTMLFASViWurETeV9p37POE5j54emCfXz8C278AfsYtt0Soe59BzJQ86HVFlYK6bXtsh7uqh1zPatFR/xTLiG3bZVm5QqNPLJ03kHIbpL5DPJeswUsboer+Ewsm1IYweYJYzCk1y33JtNFknpUyVqfAE5XtxPMdb2BqbRRYGG5JKuNX4bsWk/ZZJJ1bEkEf2bksO933zg5ukJquN0Ry+H/Dc4LJTcPT/gjPZeFx3fdOj9dAFUCiJFkzJ8CO75ILUnSy1UsClXR52nYRV2ySktDcc6fxmgTCRiOiNn/XItQ5D6h9Sz6dJh/JiNTSa2+5yif3FSeP0OnoUK79Kkg5CC+y4wVBrfsj87tmOLy69+hUONAJ8/G1zO82zJ8wwcKQm35GrQFknfwHAq1/SmCUHbd8PbWv93rSw+rrKrt29I2Kh78B</diagram><diagram id="Cj4Yf2S5x4H9VyB0fq1e" name="Ingresar en la aplicación">7ZZdb5swFIZ/jS9TYRya9rKQZJPWSVWjadLuHOyANcNhxuRjv342GAglVZJJ6W6W5MJ+fXyM3+ecCESibP9J0SL9CoxL5Htsj8gc+T6e+j6yP48dGmU2c0KiBHNBvbASv7kTPadWgvFyEKgBpBbFUIwhz3msBxpVCnbDsA3I4akFTfhIWMVUjtXvgum0UR/8Wa9/5iJJ25Px/WOzktE22N2kTCmD3ZFEFohECkA3o2wfcWnNa31ZVKucvcZPuTfBP8qXpTd5EpMm2fKaLd0VFM/1X6eOn9VcAZuHX1635aMMSfDrwW3xtlRWzi93V31oDdxypYXx85muuXyBUmgBuVlag9aQIRK2AU9SJHZBQ2HUVGfSTLAZGuMKmyzbJ7bG7ta0FPGdqmmHGyFlBBKU8XOeQ87tBq3gZ4erTtHUlfGdhCJnjQ+BmbjnN4/A92+An3ELdwhN7XPIuFYHs6/N4jlrXNkTN931NYQDp6VH9dMWC3Vlm3SZezRm4OhcQQqPSH0rK6oEjIAZJ/QQAHVkYuMIVyeQZYIxuz1U3DhN13Uq63UBItf1VYIQBXObq9LgaOAOVQ2w53crKOQsk/uPROL/b57Lmmf2r5uHjEhFkGtFS44igkJML2iik5XeAeily5ttlwrNVwWN7Zk7Q9c2IFSGEHPtdytA07N8ph+JZzrGozhVRnrvP663Cb9j5BE50zhMGLtaUMgnm/rzBqDRw6X93rI1cDCwHvsnesM/YT653nwz7d9O6rWjdzyy+AM=</diagram><diagram id="rMn7dtW7TJwoexM8sdgQ" name="Page-4">lZFdD4IgFIZ/DZdtCi3z2spatS7c6rIxIWWhxyFN7denAzPWTW1cHJ7z8p4PEImKNla0yo/AuETYYy0iK4SxP8cYDcdjnSFBYEGmBLOiCSTiyS30LH0IxmtHqAGkFpULUyhLnmqHUaWgcWU3kG7Vimb8CyQpld/0IpjODV3iYOJbLrJ8rOwvQpMp6Ci2k9Q5ZdB8ILJGJFIA2kRFG3E5LG/cy/3chTfl73zvGpxCtW/jA5sZs80/T94jKF7qX637YGqtvzgfTNYv</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-05-13T00:06:12.795Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="BrC1uCHPCrg8WLwMeqiQ" version="14.6.12" type="github" pages="4">
+  <diagram id="YV1dHheQMbIW_KVCzwkJ" name="Registro Docente">
+    <mxGraphModel dx="1163" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ewFbGT-FpTYjorqZr8Pc-1" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="1" vertex="1">
+          <mxGeometry x="120" y="30" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ewFbGT-FpTYjorqZr8Pc-2" value="Nombre" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="40" y="30" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ewFbGT-FpTYjorqZr8Pc-3" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="1" vertex="1">
+          <mxGeometry x="120" y="70" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ewFbGT-FpTYjorqZr8Pc-4" value="Usuario" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="40" y="70" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ewFbGT-FpTYjorqZr8Pc-5" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="1" vertex="1">
+          <mxGeometry x="120" y="110" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ewFbGT-FpTYjorqZr8Pc-6" value="Contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="60" y="110" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ewFbGT-FpTYjorqZr8Pc-8" value="Crear Usuario" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" parent="1" vertex="1">
+          <mxGeometry x="135" y="160" width="120" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="m-CUgD-hjozo70Uh1sP4" name="Registro Alumno">
+    <mxGraphModel dx="1163" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="Od82P2nvVVEPtzWRUM7q-0" />
+        <mxCell id="Od82P2nvVVEPtzWRUM7q-1" parent="Od82P2nvVVEPtzWRUM7q-0" />
+        <mxCell id="kD8qAAmjWUUe5dYk5nVf-0" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
+          <mxGeometry x="120" y="30" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kD8qAAmjWUUe5dYk5nVf-1" value="Nombre" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
+          <mxGeometry x="40" y="30" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kD8qAAmjWUUe5dYk5nVf-2" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
+          <mxGeometry x="120" y="70" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kD8qAAmjWUUe5dYk5nVf-3" value="Usuario" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
+          <mxGeometry x="40" y="70" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kD8qAAmjWUUe5dYk5nVf-4" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
+          <mxGeometry x="120" y="110" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kD8qAAmjWUUe5dYk5nVf-5" value="Contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
+          <mxGeometry x="60" y="110" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kD8qAAmjWUUe5dYk5nVf-6" value="Crear Usuario" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
+          <mxGeometry x="150" y="210" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kD8qAAmjWUUe5dYk5nVf-7" value="Seleccione Docente" style="rounded=0;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#FFFFFF;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
+          <mxGeometry x="120" y="140" width="150" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Cj4Yf2S5x4H9VyB0fq1e" name="Ingresar en la aplicación">
+    <mxGraphModel dx="1163" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="EuSndRcAn0-1ZsPF0-Ai-0" />
+        <mxCell id="EuSndRcAn0-1ZsPF0-Ai-1" parent="EuSndRcAn0-1ZsPF0-Ai-0" />
+        <mxCell id="cLrDrodDBKRvs9lB35q8-0" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="EuSndRcAn0-1ZsPF0-Ai-1" vertex="1">
+          <mxGeometry x="100" y="30" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cLrDrodDBKRvs9lB35q8-1" value="Usuario" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="EuSndRcAn0-1ZsPF0-Ai-1" vertex="1">
+          <mxGeometry x="30" y="30" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cLrDrodDBKRvs9lB35q8-2" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="EuSndRcAn0-1ZsPF0-Ai-1" vertex="1">
+          <mxGeometry x="100" y="70" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cLrDrodDBKRvs9lB35q8-3" value="Contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="EuSndRcAn0-1ZsPF0-Ai-1" vertex="1">
+          <mxGeometry x="40" y="70" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cLrDrodDBKRvs9lB35q8-4" value="Crear Usuario" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" parent="EuSndRcAn0-1ZsPF0-Ai-1" vertex="1">
+          <mxGeometry x="115" y="120" width="120" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="rMn7dtW7TJwoexM8sdgQ" name="Page-4">
+    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="kVy9fr1I10_7O9rKxGLd-0" />
+        <mxCell id="kVy9fr1I10_7O9rKxGLd-1" parent="kVy9fr1I10_7O9rKxGLd-0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
