@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-05-13T22:37:30.419Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="7x2k80mNZdwh6DLLxPPN" version="14.6.12" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-05-13T22:43:16.029Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="IbetWdYke0XKjO2HLah7" version="14.6.12" type="github" pages="7">
   <diagram id="YV1dHheQMbIW_KVCzwkJ" name="Registro Docente">
     <mxGraphModel dx="526" dy="460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -150,7 +150,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="CwtMwUGzaxqfdNprVVx4" name="Plantear ejercicio">
+  <diagram id="CwtMwUGzaxqfdNprVVx4" name="Docente - Plantear ejercicio">
     <mxGraphModel dx="526" dy="460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="hvWGNn6JhtvXVJFDvp_F-0" />
@@ -193,7 +193,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="pK1WlDyspNclxBzhaRzA" name="Vista de ejercicio">
+  <diagram id="pK1WlDyspNclxBzhaRzA" name="Alumno - Vista de ejercicio">
     <mxGraphModel dx="526" dy="460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="sCRIkOSvbuA3ZqBWUPci-0" />
@@ -221,6 +221,23 @@
         </mxCell>
         <mxCell id="c5PxF1PEGADR1KN2rlIE-0" value="Realizar Entrega" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" vertex="1" parent="sCRIkOSvbuA3ZqBWUPci-1">
           <mxGeometry x="90" y="390" width="120" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="27MJMoymgUbrCDMd0FUF" name="Alumno - Realizar entrega">
+    <mxGraphModel dx="526" dy="460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="Dbs0Qyd-AIigb-Lp9BqA-0" />
+        <mxCell id="Dbs0Qyd-AIigb-Lp9BqA-1" parent="Dbs0Qyd-AIigb-Lp9BqA-0" />
+        <mxCell id="CVEqzF4-V2GD8bBz7gW_-0" value="Entrega de tarea" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="Dbs0Qyd-AIigb-Lp9BqA-1">
+          <mxGeometry x="40" y="10" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="6Ad4jbFgyRJo43peItSC-0" value="Realizar Entrega" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" vertex="1" parent="Dbs0Qyd-AIigb-Lp9BqA-1">
+          <mxGeometry x="60" y="100" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Ad4jbFgyRJo43peItSC-1" value="Seleccione audio" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" vertex="1" parent="Dbs0Qyd-AIigb-Lp9BqA-1">
+          <mxGeometry x="60" y="50" width="120" height="10" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
