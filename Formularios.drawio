@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-05-12T20:14:21.490Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="8h4r2HYHIGEVtsycHCMk" version="14.6.12" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-05-13T01:15:35.573Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="dzy_cGJlDUE5YZFPICAP" version="14.6.12" type="github" pages="4">
   <diagram id="YV1dHheQMbIW_KVCzwkJ" name="Registro Docente">
-    <mxGraphModel dx="868" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -25,11 +25,14 @@
         <mxCell id="ewFbGT-FpTYjorqZr8Pc-8" value="Crear Usuario" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" parent="1" vertex="1">
           <mxGeometry x="135" y="160" width="120" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="6tyiK4mrFxVEhaquVMpE-1" value="Listo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="m-CUgD-hjozo70Uh1sP4" name="Registro Alumno">
-    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="Od82P2nvVVEPtzWRUM7q-0" />
         <mxCell id="Od82P2nvVVEPtzWRUM7q-1" parent="Od82P2nvVVEPtzWRUM7q-0" />
@@ -54,22 +57,22 @@
         <mxCell id="kD8qAAmjWUUe5dYk5nVf-6" value="Crear Usuario" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
           <mxGeometry x="130" y="250" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="1U7D5sSQxu5XLb_-FUQH-0" value="Seleccione Docente" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="Od82P2nvVVEPtzWRUM7q-1">
+        <mxCell id="1U7D5sSQxu5XLb_-FUQH-0" value="Seleccione Docente" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
           <mxGeometry x="120" y="140" width="140" height="78" as="geometry">
             <mxRectangle x="120" y="140" width="140" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1U7D5sSQxu5XLb_-FUQH-1" value="Docente_1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1U7D5sSQxu5XLb_-FUQH-0">
+        <mxCell id="1U7D5sSQxu5XLb_-FUQH-1" value="Docente_1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="1U7D5sSQxu5XLb_-FUQH-0" vertex="1">
           <mxGeometry y="26" width="140" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="1U7D5sSQxu5XLb_-FUQH-2" value="Docente_2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1U7D5sSQxu5XLb_-FUQH-0">
+        <mxCell id="1U7D5sSQxu5XLb_-FUQH-2" value="Docente_2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="1U7D5sSQxu5XLb_-FUQH-0" vertex="1">
           <mxGeometry y="52" width="140" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="Cj4Yf2S5x4H9VyB0fq1e" name="Ingresar en la aplicación">
-    <mxGraphModel dx="1163" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="EuSndRcAn0-1ZsPF0-Ai-0" />
         <mxCell id="EuSndRcAn0-1ZsPF0-Ai-1" parent="EuSndRcAn0-1ZsPF0-Ai-0" />
