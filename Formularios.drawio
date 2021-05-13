@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-05-13T22:25:43.410Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="hFk3u2JIrK-mnEl_Qfr0" version="14.6.12" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-05-13T22:31:30.016Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="KVxn-0Z6P9fnYLd51lEr" version="14.6.12" type="github" pages="5">
   <diagram id="YV1dHheQMbIW_KVCzwkJ" name="Registro Docente">
     <mxGraphModel dx="526" dy="460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -186,11 +186,6 @@
         </mxCell>
         <mxCell id="FNImuId7D8zCKENQqeY0-4" value="Plantear Ejercicio" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" vertex="1" parent="hvWGNn6JhtvXVJFDvp_F-1">
           <mxGeometry x="95" y="240" width="120" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="FNImuId7D8zCKENQqeY0-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="hvWGNn6JhtvXVJFDvp_F-1" source="FNImuId7D8zCKENQqeY0-5">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="180" y="170" as="targetPoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="FNImuId7D8zCKENQqeY0-5" value="Seleccione Imagen" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" vertex="1" parent="hvWGNn6JhtvXVJFDvp_F-1">
           <mxGeometry x="90" y="180" width="120" height="10" as="geometry" />
