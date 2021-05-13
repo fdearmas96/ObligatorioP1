@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-05-13T22:45:20.776Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="jd8hlkFmgrWtnmCsAROH" version="14.6.12" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2021-05-13T23:38:25.124Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="kUpWZydDJU6ULM9OVu4s" version="14.6.12" type="github" pages="8">
   <diagram id="YV1dHheQMbIW_KVCzwkJ" name="Registro Docente">
     <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -101,7 +101,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="rMn7dtW7TJwoexM8sdgQ" name="Docente-Cambiar nivel">
-    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="kVy9fr1I10_7O9rKxGLd-0" />
         <mxCell id="kVy9fr1I10_7O9rKxGLd-1" parent="kVy9fr1I10_7O9rKxGLd-0" />
@@ -151,7 +151,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="CwtMwUGzaxqfdNprVVx4" name="Docente - Plantear ejercicio">
-    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="hvWGNn6JhtvXVJFDvp_F-0" />
         <mxCell id="hvWGNn6JhtvXVJFDvp_F-1" parent="hvWGNn6JhtvXVJFDvp_F-0" />
@@ -193,8 +193,37 @@
       </root>
     </mxGraphModel>
   </diagram>
+  <diagram id="VsoB4TMT3x7uEVGl5K6S" name="Docente - Devolución">
+    <mxGraphModel dx="1248" dy="634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="pka8-OGBTbCMjG7y0PYh-0" />
+        <mxCell id="pka8-OGBTbCMjG7y0PYh-1" parent="pka8-OGBTbCMjG7y0PYh-0" />
+        <mxCell id="8rRVyMddMR6ZJXZrTLGF-0" value="Devolución de tarea" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="pka8-OGBTbCMjG7y0PYh-1">
+          <mxGeometry x="30" y="10" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8rRVyMddMR6ZJXZrTLGF-1" value="Realizar Devolución" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" vertex="1" parent="pka8-OGBTbCMjG7y0PYh-1">
+          <mxGeometry x="60" y="180" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8rRVyMddMR6ZJXZrTLGF-2" value="Descargar audio" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" vertex="1" parent="pka8-OGBTbCMjG7y0PYh-1">
+          <mxGeometry x="60" y="70" width="120" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="4BExnN6tsbFS9lkxiqWq-0" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" vertex="1" parent="pka8-OGBTbCMjG7y0PYh-1">
+          <mxGeometry x="60" y="90" width="265" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ogC2IZm8WoL4ci-ENkAs-0" value="Descripción" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="pka8-OGBTbCMjG7y0PYh-1">
+          <mxGeometry x="80" y="100" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ogC2IZm8WoL4ci-ENkAs-1" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" vertex="1" parent="pka8-OGBTbCMjG7y0PYh-1">
+          <mxGeometry x="60" y="40" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ogC2IZm8WoL4ci-ENkAs-2" value="Alumno" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="pka8-OGBTbCMjG7y0PYh-1">
+          <mxGeometry x="70" y="40" width="40" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
   <diagram id="pK1WlDyspNclxBzhaRzA" name="Alumno - Vista de ejercicio">
-    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1248" dy="634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="sCRIkOSvbuA3ZqBWUPci-0" />
         <mxCell id="sCRIkOSvbuA3ZqBWUPci-1" parent="sCRIkOSvbuA3ZqBWUPci-0" />
@@ -226,7 +255,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="27MJMoymgUbrCDMd0FUF" name="Alumno - Realizar entrega">
-    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1248" dy="634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="Dbs0Qyd-AIigb-Lp9BqA-0" />
         <mxCell id="Dbs0Qyd-AIigb-Lp9BqA-1" parent="Dbs0Qyd-AIigb-Lp9BqA-0" />
