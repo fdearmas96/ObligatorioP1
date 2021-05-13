@@ -1,61 +1,64 @@
-<mxfile host="app.diagrams.net" modified="2021-05-13T01:15:53.736Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="9gm7J3bwQy2px-b6kUFg" version="14.6.12" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-05-13T22:22:59.439Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="ZXM73-JvF8zAUu-qbfi6" version="14.6.12" type="github" pages="5">
   <diagram id="YV1dHheQMbIW_KVCzwkJ" name="Registro Docente">
-    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="526" dy="460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="ewFbGT-FpTYjorqZr8Pc-1" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="1" vertex="1">
-          <mxGeometry x="120" y="30" width="150" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="ewFbGT-FpTYjorqZr8Pc-2" value="Nombre" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry x="40" y="30" width="60" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="ewFbGT-FpTYjorqZr8Pc-3" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="1" vertex="1">
           <mxGeometry x="120" y="70" width="150" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="ewFbGT-FpTYjorqZr8Pc-4" value="Usuario" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="1" vertex="1">
+        <mxCell id="ewFbGT-FpTYjorqZr8Pc-2" value="Nombre" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="1" vertex="1">
           <mxGeometry x="40" y="70" width="60" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="ewFbGT-FpTYjorqZr8Pc-5" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="1" vertex="1">
+        <mxCell id="ewFbGT-FpTYjorqZr8Pc-3" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="1" vertex="1">
           <mxGeometry x="120" y="110" width="150" height="20" as="geometry" />
         </mxCell>
+        <mxCell id="ewFbGT-FpTYjorqZr8Pc-4" value="Usuario" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="40" y="110" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ewFbGT-FpTYjorqZr8Pc-5" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="1" vertex="1">
+          <mxGeometry x="120" y="150" width="150" height="20" as="geometry" />
+        </mxCell>
         <mxCell id="ewFbGT-FpTYjorqZr8Pc-6" value="Contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="60" y="110" width="40" height="20" as="geometry" />
+          <mxGeometry x="60" y="150" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="ewFbGT-FpTYjorqZr8Pc-8" value="Crear Usuario" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" parent="1" vertex="1">
-          <mxGeometry x="135" y="160" width="120" height="30" as="geometry" />
+          <mxGeometry x="135" y="200" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9tH2D3IvDzq1De1yopXQ-1" value="Registro de Usuario" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="95" y="10" width="160" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="m-CUgD-hjozo70Uh1sP4" name="Registro Alumno">
-    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="526" dy="460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="Od82P2nvVVEPtzWRUM7q-0" />
         <mxCell id="Od82P2nvVVEPtzWRUM7q-1" parent="Od82P2nvVVEPtzWRUM7q-0" />
         <mxCell id="kD8qAAmjWUUe5dYk5nVf-0" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
-          <mxGeometry x="120" y="30" width="150" height="20" as="geometry" />
+          <mxGeometry x="120" y="40" width="150" height="20" as="geometry" />
         </mxCell>
         <mxCell id="kD8qAAmjWUUe5dYk5nVf-1" value="Nombre" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
-          <mxGeometry x="40" y="30" width="60" height="20" as="geometry" />
+          <mxGeometry x="40" y="40" width="60" height="20" as="geometry" />
         </mxCell>
         <mxCell id="kD8qAAmjWUUe5dYk5nVf-2" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
-          <mxGeometry x="120" y="70" width="150" height="20" as="geometry" />
+          <mxGeometry x="120" y="80" width="150" height="20" as="geometry" />
         </mxCell>
         <mxCell id="kD8qAAmjWUUe5dYk5nVf-3" value="Usuario" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
-          <mxGeometry x="40" y="70" width="60" height="20" as="geometry" />
+          <mxGeometry x="40" y="80" width="60" height="20" as="geometry" />
         </mxCell>
         <mxCell id="kD8qAAmjWUUe5dYk5nVf-4" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
-          <mxGeometry x="120" y="110" width="150" height="20" as="geometry" />
+          <mxGeometry x="120" y="120" width="150" height="20" as="geometry" />
         </mxCell>
         <mxCell id="kD8qAAmjWUUe5dYk5nVf-5" value="Contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
-          <mxGeometry x="60" y="110" width="40" height="20" as="geometry" />
+          <mxGeometry x="60" y="120" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="kD8qAAmjWUUe5dYk5nVf-6" value="Crear Usuario" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
-          <mxGeometry x="130" y="250" width="120" height="30" as="geometry" />
+          <mxGeometry x="130" y="260" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1U7D5sSQxu5XLb_-FUQH-0" value="Seleccione Docente" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="Od82P2nvVVEPtzWRUM7q-1" vertex="1">
-          <mxGeometry x="120" y="140" width="140" height="78" as="geometry">
+          <mxGeometry x="120" y="150" width="140" height="78" as="geometry">
             <mxRectangle x="120" y="140" width="140" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -65,37 +68,96 @@
         <mxCell id="1U7D5sSQxu5XLb_-FUQH-2" value="Docente_2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="1U7D5sSQxu5XLb_-FUQH-0" vertex="1">
           <mxGeometry y="52" width="140" height="26" as="geometry" />
         </mxCell>
+        <mxCell id="eyEHDWy3Nl8EK4-6sjcZ-0" value="Registro de Usuario" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="Od82P2nvVVEPtzWRUM7q-1">
+          <mxGeometry x="95" y="10" width="160" height="20" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="Cj4Yf2S5x4H9VyB0fq1e" name="Ingresar en la aplicación">
-    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="526" dy="460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="EuSndRcAn0-1ZsPF0-Ai-0" />
         <mxCell id="EuSndRcAn0-1ZsPF0-Ai-1" parent="EuSndRcAn0-1ZsPF0-Ai-0" />
         <mxCell id="cLrDrodDBKRvs9lB35q8-0" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="EuSndRcAn0-1ZsPF0-Ai-1" vertex="1">
-          <mxGeometry x="100" y="30" width="150" height="20" as="geometry" />
+          <mxGeometry x="100" y="50" width="150" height="20" as="geometry" />
         </mxCell>
         <mxCell id="cLrDrodDBKRvs9lB35q8-1" value="Usuario" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="EuSndRcAn0-1ZsPF0-Ai-1" vertex="1">
-          <mxGeometry x="30" y="30" width="60" height="20" as="geometry" />
+          <mxGeometry x="30" y="50" width="60" height="20" as="geometry" />
         </mxCell>
         <mxCell id="cLrDrodDBKRvs9lB35q8-2" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="EuSndRcAn0-1ZsPF0-Ai-1" vertex="1">
-          <mxGeometry x="100" y="70" width="150" height="20" as="geometry" />
+          <mxGeometry x="100" y="90" width="150" height="20" as="geometry" />
         </mxCell>
         <mxCell id="cLrDrodDBKRvs9lB35q8-3" value="Contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="EuSndRcAn0-1ZsPF0-Ai-1" vertex="1">
-          <mxGeometry x="40" y="70" width="40" height="20" as="geometry" />
+          <mxGeometry x="40" y="90" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="cLrDrodDBKRvs9lB35q8-4" value="Crear Usuario" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" parent="EuSndRcAn0-1ZsPF0-Ai-1" vertex="1">
-          <mxGeometry x="115" y="110" width="120" height="30" as="geometry" />
+          <mxGeometry x="115" y="130" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fsz1M_mNe-D2oPDwwXoG-0" value="Login" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="EuSndRcAn0-1ZsPF0-Ai-1">
+          <mxGeometry x="95" y="10" width="160" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="rMn7dtW7TJwoexM8sdgQ" name="Page-4">
-    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram id="rMn7dtW7TJwoexM8sdgQ" name="Docente-Cambiar nivel">
+    <mxGraphModel dx="526" dy="460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="kVy9fr1I10_7O9rKxGLd-0" />
         <mxCell id="kVy9fr1I10_7O9rKxGLd-1" parent="kVy9fr1I10_7O9rKxGLd-0" />
+        <mxCell id="C1Rp3mb0hRp-LGn97svT-6" value="Asignar nivel" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=#ffffff;fillColor=#BFBFBF;" vertex="1" parent="kVy9fr1I10_7O9rKxGLd-1">
+          <mxGeometry x="130" y="222" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="C1Rp3mb0hRp-LGn97svT-7" value="Seleccione Alumno" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" collapsed="1" parent="kVy9fr1I10_7O9rKxGLd-1">
+          <mxGeometry x="120" y="70" width="140" height="26" as="geometry">
+            <mxRectangle x="120" y="12" width="140" height="104" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C1Rp3mb0hRp-LGn97svT-8" value="Docente_1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="C1Rp3mb0hRp-LGn97svT-7">
+          <mxGeometry y="26" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="C1Rp3mb0hRp-LGn97svT-9" value="Docente_2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="C1Rp3mb0hRp-LGn97svT-7">
+          <mxGeometry y="52" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="C1Rp3mb0hRp-LGn97svT-13" value="Seleccione Docente" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" collapsed="1" parent="C1Rp3mb0hRp-LGn97svT-7">
+          <mxGeometry y="78" width="140" height="26" as="geometry">
+            <mxRectangle x="120" y="12" width="140" height="78" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C1Rp3mb0hRp-LGn97svT-14" value="Docente_1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="C1Rp3mb0hRp-LGn97svT-13">
+          <mxGeometry y="26" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="C1Rp3mb0hRp-LGn97svT-15" value="Docente_2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="C1Rp3mb0hRp-LGn97svT-13">
+          <mxGeometry y="52" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="C1Rp3mb0hRp-LGn97svT-10" value="Seleccione Nivel" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="kVy9fr1I10_7O9rKxGLd-1">
+          <mxGeometry x="120" y="118" width="140" height="104" as="geometry">
+            <mxRectangle x="120" y="60" width="140" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C1Rp3mb0hRp-LGn97svT-11" value="Inicial" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="C1Rp3mb0hRp-LGn97svT-10">
+          <mxGeometry y="26" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="C1Rp3mb0hRp-LGn97svT-17" value="Intermedio" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="C1Rp3mb0hRp-LGn97svT-10">
+          <mxGeometry y="52" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="C1Rp3mb0hRp-LGn97svT-12" value="Avanzado" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="C1Rp3mb0hRp-LGn97svT-10">
+          <mxGeometry y="78" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="OB08e2t2LJzxi1CSdvcI-0" value="Asignación de Nivel" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="kVy9fr1I10_7O9rKxGLd-1">
+          <mxGeometry x="100" y="16" width="160" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="CwtMwUGzaxqfdNprVVx4" name="Plantear ejercicio">
+    <mxGraphModel dx="526" dy="460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="hvWGNn6JhtvXVJFDvp_F-0" />
+        <mxCell id="hvWGNn6JhtvXVJFDvp_F-1" parent="hvWGNn6JhtvXVJFDvp_F-0" />
+        <mxCell id="pjn18SVBjNZqv63dJpv4-0" value="Planteo De Ejercicio" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="hvWGNn6JhtvXVJFDvp_F-1">
+          <mxGeometry x="95" y="10" width="160" height="20" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
