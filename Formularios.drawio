@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-05-13T23:38:25.124Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="kUpWZydDJU6ULM9OVu4s" version="14.6.12" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2021-05-14T00:37:07.999Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="BIqBCZcb5NICNC-xIBuo" version="14.6.12" type="github" pages="8">
   <diagram id="YV1dHheQMbIW_KVCzwkJ" name="Registro Docente">
-    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="433" dy="402" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -32,7 +32,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="m-CUgD-hjozo70Uh1sP4" name="Registro Alumno">
-    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="433" dy="402" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="Od82P2nvVVEPtzWRUM7q-0" />
         <mxCell id="Od82P2nvVVEPtzWRUM7q-1" parent="Od82P2nvVVEPtzWRUM7q-0" />
@@ -75,7 +75,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="Cj4Yf2S5x4H9VyB0fq1e" name="Ingresar en la aplicación">
-    <mxGraphModel dx="1422" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="433" dy="402" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="EuSndRcAn0-1ZsPF0-Ai-0" />
         <mxCell id="EuSndRcAn0-1ZsPF0-Ai-1" parent="EuSndRcAn0-1ZsPF0-Ai-0" />
@@ -101,7 +101,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="rMn7dtW7TJwoexM8sdgQ" name="Docente-Cambiar nivel">
-    <mxGraphModel dx="1422" dy="715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="433" dy="402" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="kVy9fr1I10_7O9rKxGLd-0" />
         <mxCell id="kVy9fr1I10_7O9rKxGLd-1" parent="kVy9fr1I10_7O9rKxGLd-0" />
@@ -151,7 +151,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="CwtMwUGzaxqfdNprVVx4" name="Docente - Plantear ejercicio">
-    <mxGraphModel dx="1422" dy="715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="433" dy="402" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="hvWGNn6JhtvXVJFDvp_F-0" />
         <mxCell id="hvWGNn6JhtvXVJFDvp_F-1" parent="hvWGNn6JhtvXVJFDvp_F-0" />
@@ -160,7 +160,7 @@
         </mxCell>
         <mxCell id="a5O2B0jfO8iwQIBGJIAG-0" value="Seleccione Nivel" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" collapsed="1" parent="hvWGNn6JhtvXVJFDvp_F-1">
           <mxGeometry x="80" y="40" width="140" height="26" as="geometry">
-            <mxRectangle x="60" y="40" width="140" height="104" as="alternateBounds" />
+            <mxRectangle x="80" y="40" width="140" height="104" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="a5O2B0jfO8iwQIBGJIAG-1" value="Inicial" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="a5O2B0jfO8iwQIBGJIAG-0">
@@ -194,7 +194,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="VsoB4TMT3x7uEVGl5K6S" name="Docente - Devolución">
-    <mxGraphModel dx="1248" dy="634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="433" dy="402" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="pka8-OGBTbCMjG7y0PYh-0" />
         <mxCell id="pka8-OGBTbCMjG7y0PYh-1" parent="pka8-OGBTbCMjG7y0PYh-0" />
@@ -223,7 +223,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="pK1WlDyspNclxBzhaRzA" name="Alumno - Vista de ejercicio">
-    <mxGraphModel dx="1248" dy="634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="433" dy="402" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="sCRIkOSvbuA3ZqBWUPci-0" />
         <mxCell id="sCRIkOSvbuA3ZqBWUPci-1" parent="sCRIkOSvbuA3ZqBWUPci-0" />
