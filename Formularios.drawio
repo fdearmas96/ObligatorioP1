@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-05-13T21:09:35.498Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="6Rpy-PfUBe3SI8Xy4bCq" version="14.6.12" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2021-05-13T21:09:56.356Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="lISL9SuHS4D5Rng4vOit" version="14.6.12" type="github" pages="8">
   <diagram id="YV1dHheQMbIW_KVCzwkJ" name="Registro Docente">
     <mxGraphModel dx="868" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -50,7 +50,7 @@
           <mxGeometry x="120" y="510" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="twCbElmQc-uRQRmKz7tR-12" value="¿Olvidaste tu contraseña?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="130" y="470" width="40" height="20" as="geometry" />
+          <mxGeometry x="130" y="470" width="110" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
