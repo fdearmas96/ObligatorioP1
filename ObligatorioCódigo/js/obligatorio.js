@@ -34,4 +34,6 @@ function comprobarPass(pass){
 }
 
 
-
+function agregarEjercicio(){
+    let html ='<h5 id="titEjercicio"></h5><label for="ejercicioDescripcion">Descripción</label><p id="ejercicioDescripcion"></p><img src="" alt="" id="ejercicioImagen"><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'    
+}
