@@ -1,27 +1,58 @@
+let usuario = [];
 window.addEventListener("load", inicio);
 function inicio(){
     document.querySelector("#btnRegistrar").addEventListener("click", registrarUsuario);
+    document.querySelector("#regEsAlumno").addEventListener("click", hacerVisibleDocentes);
     
 }
 
-function registrarUsuario(){
-    let usuarioReg = document.querySelector("#regPass").value;
-    let contraseñaReg = document.querySelector("#regPass").value;
-    let error = comprobarPass(contraseñaReg);
-    comprobarSiUsuarioExiste(usuarioReg);
-    if (error != ""){
-        document.querySelector("#errorRegistro").innerHTML = error;
-        document.querySelector("#errorRegistro").style.display = 'block';   
+function hacerVisibleDocentes(){
+    let estaTildado = document.querySelector('#regEsAlumno').checked;
+    if(estaTildado){
+        document.querySelector("#labelRegDocente").style.display = 'block';   
+        document.querySelector("#regDocente").style.display = 'block';
+           
     }else{
-        document.querySelector("#errorRegistro").innerHTML = "";        
-        document.querySelector("#errorRegistro").style.display = 'none';
+        document.querySelector("#labelRegDocente").style.display = 'none';   
+        document.querySelector("#regDocente").style.display = 'none'; 
     }
-    
+}
+function registrarUsuario(){
+    let usuarioReg = document.querySelector("#regUsuario").value.toUpperCase();
+    let contraseñaReg = document.querySelector("#regPass").value;
+    let nombreReg = document.querySelector("#regNombre").value;
+    let error = comprobarPass(contraseñaReg);
+    if(comprobarSiUsuarioExiste(usuarioReg)){
+        alert("El usuario ya existe");
+    }else{
+        if (error != ""){
+            document.querySelector("#errorRegistro").innerHTML = error;
+            document.querySelector("#errorRegistro").style.display = 'block';   
+        }else{
+            document.querySelector("#errorRegistro").innerHTML = "";        
+            document.querySelector("#errorRegistro").style.display = 'none';
+            usuario.push(new altaDeUsuario(usuarioReg, nombreReg, contraseñaReg, 'A','1'));
+        }
+    }   
 }
 
 function comprobarSiUsuarioExiste(user){
     /*Acá hay que recorrer los vectores o objetos para ver si el usuario ya existe*/
+    let yaExiste = false;
+    for (elemento of usuario){
+        if(elemento.id===user){
+            yaExiste = true;
+        }
+    }
+    return yaExiste;
+}
 
+function altaDeUsuario(user, nombre,  pass, tipo, nivel){
+    this.id = user;
+    this.nombre = nombre
+    this.pass = pass;
+    this.tipo = tipo; //D:Docente - A:Alumno
+    this.nivel = nivel;
 }
 function comprobarPass(pass){
     /*Se comprueba que la contraseña cumpla con los parámetros:
