@@ -135,7 +135,6 @@ function comprobarPass(pass){
 
 
 
-
 function agregarEjercicio(){
     /*Esta funcion recibe un ejercicio y lo agrega al div vistaEjercicio para verlo en la pantalla, 
     Debe recibir:
@@ -147,5 +146,12 @@ function agregarEjercicio(){
     let htmlEjercicio ='<h5 id="titEjercicio"></h5><label for="ejercicioDescripcion">Descripción</label><p id="ejercicioDescripcion"></p><img src="" alt="" id="ejercicioImagen"><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'        
     document.querySelector("#vistaEjercicio").innerHTML += htmlEjercicio;
 }
+
+
+
+
+
+
+
 
 
