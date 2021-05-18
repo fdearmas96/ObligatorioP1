@@ -1,11 +1,16 @@
+window.addEventListener("load", inicio);
+function inicio(){    
+    agregarEjercicio();
+    agregarEjercicio();
+}
 
-/*Se comprueba que la contraseña cumpla con los parámetros:
--Minimo 4 caracteres
--Una minúscula
--Una mayúscula
--Un Número
-*/
 function comprobarPass(pass){
+    /*Se comprueba que la contraseña cumpla con los parámetros:
+    -Minimo 4 caracteres
+    -Una minúscula
+    -Una mayúscula
+    -Un Número
+    */
     let resultado = ""; //Correcta
     let codigo = 0;
     let tieneMin = "";
@@ -35,5 +40,14 @@ function comprobarPass(pass){
 
 
 function agregarEjercicio(){
-    let html ='<h5 id="titEjercicio"></h5><label for="ejercicioDescripcion">Descripción</label><p id="ejercicioDescripcion"></p><img src="" alt="" id="ejercicioImagen"><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'    
+    /*Esta funcion recibe un ejercicio y lo agrega al div vistaEjercicio, 
+    Debe recibir:
+    -Titulo
+    -Descripción
+    -Ruta de imagen
+    -id del ejercicio?    
+    */
+    let htmlEjercicio ='<h5 id="titEjercicio"></h5><label for="ejercicioDescripcion">Descripción</label><p id="ejercicioDescripcion"></p><img src="" alt="" id="ejercicioImagen"><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'    
+    let anterior = document.querySelector("#vistaEjercicio").value;
+    document.querySelector("#vistaEjercicio").innerHTML += htmlEjercicio;
 }
