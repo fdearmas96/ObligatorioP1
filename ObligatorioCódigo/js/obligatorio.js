@@ -1,11 +1,15 @@
-let usuario = [];
+let usuarios = [];
 window.addEventListener("load", inicio);
 function inicio(){
     document.querySelector("#btnRegistrar").addEventListener("click", registrarUsuario);
     document.querySelector("#regEsAlumno").addEventListener("click", hacerVisibleDocentes);
     
 }
-
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//--------------------------------------------------REGISTRO DE USUARIOS--------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
 function hacerVisibleDocentes(){
     let estaTildado = document.querySelector('#regEsAlumno').checked;
     let docentes = "";
@@ -13,7 +17,7 @@ function hacerVisibleDocentes(){
         document.querySelector("#labelRegDocente").style.display = 'block';   
         document.querySelector("#regDocente").style.display = 'block';
         /*Agrego docentes a la lista de selección*/        
-        for (elemento of usuario){
+        for (elemento of usuarios){
             if(elemento.tipo==="D"){
                 docentes += '<option value="' + elemento.id +'">' + elemento.nombre +'(' + elemento.id + ')</option>';                
             }
@@ -51,7 +55,7 @@ function registrarUsuario(){
                 console.log(docente);
             }
 
-            usuario.push(new altaDeUsuario(usuarioReg, nombreReg, contraseñaReg, tipo,nivel,docente));
+            usuarios.push(new altaDeUsuario(usuarioReg, nombreReg, contraseñaReg, tipo,nivel,docente));
         }
     }   
 }
@@ -61,7 +65,7 @@ function registrarUsuario(){
 function comprobarSiUsuarioExiste(user){
     /*Acá hay que recorrer los vectores o objetos para ver si el usuario ya existe*/
     let yaExiste = false;
-    for (elemento of usuario){
+    for (elemento of usuarios){
         if(elemento.id===user){
             yaExiste = true;
         }
@@ -125,6 +129,11 @@ function comprobarPass(pass){
     }
     return resultado;
 }
+
+
+
+
+
 
 
 function agregarEjercicio(){
