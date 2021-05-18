@@ -8,9 +8,18 @@ function inicio(){
 
 function hacerVisibleDocentes(){
     let estaTildado = document.querySelector('#regEsAlumno').checked;
+    let docentes = "";
     if(estaTildado){
         document.querySelector("#labelRegDocente").style.display = 'block';   
         document.querySelector("#regDocente").style.display = 'block';
+        /*Agrego docentes a la lista de selección*/        
+        for (elemento of usuario){
+            if(elemento.tipo==="D"){
+                docentes += '<option value="' + elemento.id +'">' + elemento.nombre +'(' + elemento.id + ')</option>';                
+            }
+            
+        }
+        document.querySelector("#regDocente").innerHTML = docentes;
            
     }else{
         document.querySelector("#labelRegDocente").style.display = 'none';   
@@ -21,6 +30,9 @@ function registrarUsuario(){
     let usuarioReg = document.querySelector("#regUsuario").value.toUpperCase();
     let contraseñaReg = document.querySelector("#regPass").value;
     let nombreReg = document.querySelector("#regNombre").value;
+    let tipo = 'D';
+    let nivel = "";
+    let docente = "";
     let error = comprobarPass(contraseñaReg);
     if(comprobarSiUsuarioExiste(usuarioReg)){
         alert("El usuario ya existe");
@@ -31,10 +43,20 @@ function registrarUsuario(){
         }else{
             document.querySelector("#errorRegistro").innerHTML = "";        
             document.querySelector("#errorRegistro").style.display = 'none';
-            usuario.push(new altaDeUsuario(usuarioReg, nombreReg, contraseñaReg, 'A','1'));
+            
+            if(document.querySelector('#regEsAlumno').checked){
+                tipo = "A";
+                nivel = "1";
+                docente = document.querySelector("#regDocente").value;
+                console.log(docente);
+            }
+
+            usuario.push(new altaDeUsuario(usuarioReg, nombreReg, contraseñaReg, tipo,nivel,docente));
         }
     }   
 }
+
+
 
 function comprobarSiUsuarioExiste(user){
     /*Acá hay que recorrer los vectores o objetos para ver si el usuario ya existe*/
@@ -47,13 +69,15 @@ function comprobarSiUsuarioExiste(user){
     return yaExiste;
 }
 
-function altaDeUsuario(user, nombre,  pass, tipo, nivel){
+function altaDeUsuario(user, nombre,  pass, tipo, nivel, docente){
     this.id = user;
     this.nombre = nombre
     this.pass = pass;
     this.tipo = tipo; //D:Docente - A:Alumno
     this.nivel = nivel;
+    this.docente = docente;
 }
+
 function comprobarPass(pass){
     /*Se comprueba que la contraseña cumpla con los parámetros:
     -Minimo 4 caracteres
@@ -104,7 +128,7 @@ function comprobarPass(pass){
 
 
 function agregarEjercicio(){
-    /*Esta funcion recibe un ejercicio y lo agrega al div vistaEjercicio, 
+    /*Esta funcion recibe un ejercicio y lo agrega al div vistaEjercicio para verlo en la pantalla, 
     Debe recibir:
     -Titulo
     -Descripción
