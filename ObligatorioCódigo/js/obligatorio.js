@@ -1,9 +1,28 @@
 window.addEventListener("load", inicio);
-function inicio(){    
-    agregarEjercicio();
-    agregarEjercicio();
+function inicio(){
+    document.querySelector("#btnRegistrar").addEventListener("click", registrarUsuario);
+    
 }
 
+function registrarUsuario(){
+    let usuarioReg = document.querySelector("#regPass").value;
+    let contraseñaReg = document.querySelector("#regPass").value;
+    let error = comprobarPass(contraseñaReg);
+    comprobarSiUsuarioExiste(usuarioReg);
+    if (error != ""){
+        document.querySelector("#errorRegistro").innerHTML = error;
+        document.querySelector("#errorRegistro").style.display = 'block';   
+    }else{
+        document.querySelector("#errorRegistro").innerHTML = "";        
+        document.querySelector("#errorRegistro").style.display = 'none';
+    }
+    
+}
+
+function comprobarSiUsuarioExiste(user){
+    /*Acá hay que recorrer los vectores o objetos para ver si el usuario ya existe*/
+
+}
 function comprobarPass(pass){
     /*Se comprueba que la contraseña cumpla con los parámetros:
     -Minimo 4 caracteres
@@ -13,29 +32,43 @@ function comprobarPass(pass){
     */
     let resultado = ""; //Correcta
     let codigo = 0;
-    let tieneMin = "";
-    let tieneMay = "";
-    let tieneNum = "";
+    let tieneMin = "N";
+    let tieneMay = "N";
+    let tieneNum = "N";
+    let tiene4Letras= "";
     if(pass.length<4){
-        resultado = 1//No cumple largo de 4
-    }else{
-        //Primero ver si tiene una minúscula      
-        //después ver si tiene una mayúscula
-        //Por último ver si tiene un número
-        for (let i = 0; i< pass.length; i++){
-            codigo = pass.charCodeAt(i)
-            if(codigo >=97 && codigo <= 118){
-                tieneMin = 'S';
-            }
-            if(codigo >=65 && codigo <= 90){
-                tieneMay = 'S';
-            }
-            if(codigo >=48 && codigo <= 57){
-                tieneNum = 'S';
-            }            
-        }
-
+        tiene4Letras = "N"//No cumple largo de 4
     }
+    //Primero ver si tiene una minúscula      
+    //después ver si tiene una mayúscula
+    //Por último ver si tiene un número
+    for (let i = 0; i< pass.length; i++){
+        codigo = pass.charCodeAt(i)
+        if(codigo >=97 && codigo <= 118){
+            tieneMin = 'S';
+        }
+        if(codigo >=65 && codigo <= 90){
+            tieneMay = 'S';
+        }
+        if(codigo >=48 && codigo <= 57){
+            tieneNum = 'S';
+        }            
+    }
+
+    
+    if (tiene4Letras==="N"){
+        resultado = "La contraseña debe tener mínimo 4 caracteres</br>";
+    }
+    if (tieneMin==="N"){
+        resultado += "La contraseña debe tener al menos una minúscula</br>";
+    }
+    if (tieneMay==="N"){
+        resultado += "La contraseña debe tener al menos una mayúscula</br>";
+    }
+    if (tieneNum==="N"){
+        resultado += "La contraseña debe tener al menos un número";
+    }
+    return resultado;
 }
 
 
@@ -45,9 +78,10 @@ function agregarEjercicio(){
     -Titulo
     -Descripción
     -Ruta de imagen
-    -id del ejercicio?    
+    -id del ejercicio para luego hacer la entrega? por el título es tedioso    
     */
-    let htmlEjercicio ='<h5 id="titEjercicio"></h5><label for="ejercicioDescripcion">Descripción</label><p id="ejercicioDescripcion"></p><img src="" alt="" id="ejercicioImagen"><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'    
-    let anterior = document.querySelector("#vistaEjercicio").value;
+    let htmlEjercicio ='<h5 id="titEjercicio"></h5><label for="ejercicioDescripcion">Descripción</label><p id="ejercicioDescripcion"></p><img src="" alt="" id="ejercicioImagen"><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'        
     document.querySelector("#vistaEjercicio").innerHTML += htmlEjercicio;
 }
+
+

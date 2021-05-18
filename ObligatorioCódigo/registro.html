@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css.css">
+    <script src="js/obligatorio.js"></script>
     <title>Registro</title>
 </head>
 <body>
@@ -15,7 +16,8 @@
         <label for="regUsuario">Usuario</label>
         <input type="text" id="regUsuario" name="regUsuario"><br>
         <label for="regPass">Contraseña</label>
-        <input type="text" id="regPass" name="regPass"><br>
+        <input type="password" id="regPass" name="regPass"><br>
+        <p id="errorRegistro" style="display: none;"></p>
         <label for="regDocente">Docente</label>
         <select name="regDocente" id="regDocente"></select><br>
         <input type="button" value="Registrar" id="btnRegistrar">
