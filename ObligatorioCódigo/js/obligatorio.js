@@ -207,7 +207,6 @@ function altaEjercicios(titulo, descripcion, imagen, docente, nivel){
 
 
 
-
 function agregarEjercicioAPantalla(titulo,imagen,descripcion){
     /*Esta funcion recibe un ejercicio y lo agrega al div vistaEjercicio para verlo en la pantalla, 
     Debe recibir:
