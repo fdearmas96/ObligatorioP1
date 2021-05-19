@@ -1,5 +1,7 @@
 let usuarios = [];       //Este es un array de usuarios, son los registrados en la aplicación.
 let usuarioIngreso = ""; //Este es el usuario que ingresa
+let ejercicios = [];     //Estos son los ejercicios planteados.
+let idEjercicio = 0;     //Este es un id que es uníco para cada ejercicio que se plantea.
 window.addEventListener("load", inicio);
 function inicio(){
     datosPreCargados();
@@ -187,11 +189,26 @@ function verVentanaRegistrar(){
 
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
-//--------------------------------------------------VISTA DE EJERCICIOS---------------------------------------------------------//
+//----------------------------------------------VISTA-PLANTEO DE EJERCICIOS-----------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 
-function agregarEjercicio(titulo,imagen,descripcion){
+
+//Constructor de ejercicio:
+function altaEjercicios(titulo, descripcion, imagen, docente, nivel){
+    idEjercicio ++;
+    this.id = idEjercicio;
+    this.titulo = titulo;
+    this.descripcion = descripcion;
+    this.imagen = imagen;
+    this.docente = docente;
+    this.nivel = nivel;
+}
+
+
+
+
+function agregarEjercicioAPantalla(titulo,imagen,descripcion){
     /*Esta funcion recibe un ejercicio y lo agrega al div vistaEjercicio para verlo en la pantalla, 
     Debe recibir:
     -Titulo
@@ -199,11 +216,8 @@ function agregarEjercicio(titulo,imagen,descripcion){
     -Ruta de imagen
     -id del ejercicio para luego hacer la entrega? por el título es tedioso    
     */
-    let titulo = "";
-    let imagen = "";
-    let descripcion = "";
-    let htmlEjercicio ='<h5 id="titEjercicio">'+titulo+'</h5><label for="ejercicioDescripcion">Descripción</label><p id="ejercicioDescripcion">'+descripcion+'</p><img src="'+imagen+'" alt="" id="ejercicioImagen"><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'        
-    document.querySelector("#vistaEjercicio").innerHTML += htmlEjercicio;
+    let htmlEjercicio ='<h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="'+imagen+'" alt="" id="ejercicioImagen"><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'        
+    document.querySelector("#divEjercicios").innerHTML += htmlEjercicio;
 }
 
 
@@ -228,7 +242,10 @@ usuarios.push(new altaDeUsuario("alum1", "Alumno 1", "1234aB", "A","1","doc1"));
 usuarios.push(new altaDeUsuario("alum2", "Alumno 2", "1234aB", "A","2","doc2"));
 usuarios.push(new altaDeUsuario("alum3", "Alumno 3", "1234aB", "A","3","doc3"));
 //Cargo ejercicios
+ejercicios = new altaEjercicios("Este es el titulo del Ejercicio", "esta es la descripción del ejercicio", "img/ej1.png", "doc1", "1")
 
+
+agregarEjercicioAPantalla("Este es el titulo del Ejercicio","img/ej1.png", "esta es la descripción del ejercicio");
 
 //Cargo entregas
 
