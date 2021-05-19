@@ -90,8 +90,8 @@ function registrarUsuario(){
 function comprobarSiUsuarioExiste(user){
     /*Acá hay que recorrer los vectores o objetos para ver si el usuario ya existe*/
     let yaExiste = false;
-    for (elemento of usuarios){
-        if(elemento.id===user){
+    for (let i = 0; i <  usuarios.length && !yaExiste; i++){
+        if(usuarios[i].id===user){
             yaExiste = true;
         }
     }
