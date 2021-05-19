@@ -1,13 +1,19 @@
 let usuarios = [];
+let usuarioIngreso = "";;
 window.addEventListener("load", inicio);
 function inicio(){
-    ocultar("#divRegistro");
+    ocultarTodo();
     document.querySelector("#btnRegistrar").addEventListener("click", registrarUsuario);
     document.querySelector("#regEsAlumno").addEventListener("click", hacerVisibleDocentes);
 
     document.querySelector("#btnIngresar").addEventListener("click", ingresoDeUsuario);
     document.querySelector("#btnVentanaRegistrar").addEventListener("click", verVentanaRegistrar);    
     
+}
+
+function ocultarTodo(){
+    ocultar("#divRegistro")
+    ocultar("#contenedor")
 }
 
 function ocultar(id){    
@@ -162,12 +168,12 @@ function ingresoDeUsuario(){
         if (elemento.id === loginUsuario && elemento.pass === loginPass){
             usuarioRegistrado = true;
             tipo = elemento.tipo;
+            usuarioIngreso = new altaDeUsuario(elemento.id, elemento.nombre, elemento.pass, elemento.tipo, elemento.nivel,elemento.docente);
+            ocultar("#divIngreso");
         }
     }    
-    if(usuarioRegistrado){
-        ocultar("#divIngreso");        
-    }else{
-        alert('Usuario no registrado');
+    if(!usuarioRegistrado){
+        alert('Usuario no registrado');  
     }
 }
 
