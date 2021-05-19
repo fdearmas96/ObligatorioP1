@@ -191,7 +191,7 @@ function verVentanaRegistrar(){
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 
-function agregarEjercicio(){
+function agregarEjercicio(titulo,imagen,descripcion){
     /*Esta funcion recibe un ejercicio y lo agrega al div vistaEjercicio para verlo en la pantalla, 
     Debe recibir:
     -Titulo
@@ -199,7 +199,10 @@ function agregarEjercicio(){
     -Ruta de imagen
     -id del ejercicio para luego hacer la entrega? por el título es tedioso    
     */
-    let htmlEjercicio ='<h5 id="titEjercicio"></h5><label for="ejercicioDescripcion">Descripción</label><p id="ejercicioDescripcion"></p><img src="" alt="" id="ejercicioImagen"><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'        
+    let titulo = "";
+    let imagen = "";
+    let descripcion = "";
+    let htmlEjercicio ='<h5 id="titEjercicio">'+titulo+'</h5><label for="ejercicioDescripcion">Descripción</label><p id="ejercicioDescripcion">'+descripcion+'</p><img src="'+imagen+'" alt="" id="ejercicioImagen"><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'        
     document.querySelector("#vistaEjercicio").innerHTML += htmlEjercicio;
 }
 
