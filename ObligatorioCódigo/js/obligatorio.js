@@ -1,8 +1,9 @@
-let usuarios = [];
-let usuarioIngreso = "";;
+let usuarios = [];       //Este es un array de usuarios, son los registrados en la aplicación.
+let usuarioIngreso = ""; //Este es el usuario que ingresa
 window.addEventListener("load", inicio);
 function inicio(){
-    ocultarTodo();
+    datosPreCargados();
+    ocultarTodo();//Primer se oculta todo y se deja visible el login.
     document.querySelector("#btnRegistrar").addEventListener("click", registrarUsuario);
     document.querySelector("#regEsAlumno").addEventListener("click", hacerVisibleDocentes);
 
@@ -12,8 +13,8 @@ function inicio(){
 }
 
 function ocultarTodo(){
-    ocultar("#divRegistro")
-    ocultar("#contenedor")
+    ocultar("#divRegistro");
+    ocultar("#contenedor");
 }
 
 function ocultar(id){    
@@ -29,6 +30,7 @@ function mostrar(id){
 //--------------------------------------------------REGISTRO DE USUARIOS--------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
+
 function hacerVisibleDocentes(){
     let estaTildado = document.querySelector('#regEsAlumno').checked;
     let docentes = "";
@@ -95,7 +97,7 @@ function comprobarSiUsuarioExiste(user){
 }
 
 function altaDeUsuario(user, nombre,  pass, tipo, nivel, docente){
-    this.id = user;
+    this.id = user.toUpperCase();
     this.nombre = nombre
     this.pass = pass;
     this.tipo = tipo; //D:Docente - A:Alumno
@@ -104,12 +106,7 @@ function altaDeUsuario(user, nombre,  pass, tipo, nivel, docente){
 }
 
 function comprobarPass(pass){
-    /*Se comprueba que la contraseña cumpla con los parámetros:
-    -Minimo 4 caracteres
-    -Una minúscula
-    -Una mayúscula
-    -Un Número
-    */
+    //Se comprueba que la contraseña cumpla con los parámetros:
     let resultado = ""; //Correcta
     let codigo = 0;
     let tieneMin = "N";
@@ -170,6 +167,7 @@ function ingresoDeUsuario(){
             tipo = elemento.tipo;
             usuarioIngreso = new altaDeUsuario(elemento.id, elemento.nombre, elemento.pass, elemento.tipo, elemento.nivel,elemento.docente);
             ocultar("#divIngreso");
+            mostrar("#contenedor");
         }
     }    
     if(!usuarioRegistrado){
@@ -211,5 +209,26 @@ function agregarEjercicio(){
 
 
 
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//--------------------------------------------------DATOS PRE-CARGADOS----------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+
+function datosPreCargados(){
+//Cargo 2 docentes:
+usuarios.push(new altaDeUsuario("doc1", "Docente 1", "1234aB", "D","",""));
+usuarios.push(new altaDeUsuario("doc2", "Docente 2", "1234aB", "D","",""));
+usuarios.push(new altaDeUsuario("doc3", "Docente 3", "1234aB", "D","",""));
+//Cargo 2 alumnos:
+usuarios.push(new altaDeUsuario("alum1", "Alumno 1", "1234aB", "A","1","doc1"));
+usuarios.push(new altaDeUsuario("alum2", "Alumno 2", "1234aB", "A","2","doc2"));
+usuarios.push(new altaDeUsuario("alum3", "Alumno 3", "1234aB", "A","3","doc3"));
+//Cargo ejercicios
 
 
+//Cargo entregas
+
+
+
+}
