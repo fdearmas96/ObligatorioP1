@@ -1,10 +1,23 @@
 let usuarios = [];
 window.addEventListener("load", inicio);
 function inicio(){
+    ocultar("#divRegistro");
     document.querySelector("#btnRegistrar").addEventListener("click", registrarUsuario);
     document.querySelector("#regEsAlumno").addEventListener("click", hacerVisibleDocentes);
+
+    document.querySelector("#btnIngresar").addEventListener("click", ingresoDeUsuario);
+    document.querySelector("#btnVentanaRegistrar").addEventListener("click", verVentanaRegistrar);    
     
 }
+
+function ocultar(id){    
+    document.querySelector(id).style.display = "none";
+}
+
+function mostrar(id){
+    document.querySelector(id).style.display = "block";
+}
+
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 //--------------------------------------------------REGISTRO DE USUARIOS--------------------------------------------------------//
@@ -36,11 +49,11 @@ function registrarUsuario(){
     let nombreReg = document.querySelector("#regNombre").value;
     let tipo = 'D';
     let nivel = "";
-    let docente = "";
-    let error = comprobarPass(contraseñaReg);
+    let docente = "";    
     if(comprobarSiUsuarioExiste(usuarioReg)){
         alert("El usuario ya existe");
     }else{
+        let error = comprobarPass(contraseñaReg);
         if (error != ""){
             document.querySelector("#errorRegistro").innerHTML = error;
             document.querySelector("#errorRegistro").style.display = 'block';   
@@ -56,6 +69,8 @@ function registrarUsuario(){
             }
 
             usuarios.push(new altaDeUsuario(usuarioReg, nombreReg, contraseñaReg, tipo,nivel,docente));
+            mostrar("#divIngreso");
+            ocultar("#divRegistro");
         }
     }   
 }
@@ -116,8 +131,9 @@ function comprobarPass(pass){
 
     
     if (tiene4Letras==="N"){
-        resultado = "La contraseña debe tener mínimo 4 caracteres</br>";
+        resultado = "La contraseña debe tener mínimo 4 caracteres<br>";
     }
+
     if (tieneMin==="N"){
         resultado += "La contraseña debe tener al menos una minúscula</br>";
     }
@@ -130,10 +146,46 @@ function comprobarPass(pass){
     return resultado;
 }
 
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//--------------------------------------------------INGRESO DE USUARIOS--------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+
+function ingresoDeUsuario(){
+    let loginUsuario = document.querySelector("#loginUsuario").value.toUpperCase();
+    let loginPass = document.querySelector("#loginPass").value;
+    let usuarioRegistrado = false;
+    let tipo = "";
+
+    for(elemento of usuarios){
+        if (elemento.id === loginUsuario && elemento.pass === loginPass){
+            usuarioRegistrado = true;
+            tipo = elemento.tipo;
+        }
+    }    
+    if(usuarioRegistrado){
+        ocultar("#divIngreso");        
+    }else{
+        alert('Usuario no registrado');
+    }
+}
+
+function verVentanaRegistrar(){
+    document.querySelector("#loginUsuario").value = "";
+    document.querySelector("#loginPass").value = "";
+    mostrar("#divRegistro");
+    ocultar("#divIngreso");
+}
 
 
 
 
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//--------------------------------------------------VISTA DE EJERCICIOS---------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
 
 function agregarEjercicio(){
     /*Esta funcion recibe un ejercicio y lo agrega al div vistaEjercicio para verlo en la pantalla, 
