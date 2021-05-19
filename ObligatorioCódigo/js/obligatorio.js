@@ -140,10 +140,10 @@ function comprobarPass(pass){
     }
 
     if (tieneMin==="N"){
-        resultado += "La contraseña debe tener al menos una minúscula</br>";
+        resultado += "La contraseña debe tener al menos una minúscula<br>";
     }
     if (tieneMay==="N"){
-        resultado += "La contraseña debe tener al menos una mayúscula</br>";
+        resultado += "La contraseña debe tener al menos una mayúscula<br>";
     }
     if (tieneNum==="N"){
         resultado += "La contraseña debe tener al menos un número";
