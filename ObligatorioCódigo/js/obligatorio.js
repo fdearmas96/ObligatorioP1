@@ -59,30 +59,42 @@ function registrarUsuario(){
     let nombreReg = document.querySelector("#regNombre").value;
     let tipo = 'D';
     let nivel = "";
-    let docente = "";    
+    let docente = "";
+    let error = "";
+    let hayError = false;
     if(comprobarSiUsuarioExiste(usuarioReg)){
-        alert("El usuario ya existe");
-    }else{
-        let error = comprobarPass(contraseñaReg);
-        if (error != ""){
-            document.querySelector("#errorRegistro").innerHTML = error;
-            document.querySelector("#errorRegistro").style.display = 'block';   
-        }else{
-            document.querySelector("#errorRegistro").innerHTML = "";        
-            document.querySelector("#errorRegistro").style.display = 'none';
-            
-            if(document.querySelector('#regEsAlumno').checked){
-                tipo = "A";
-                nivel = "1";
-                docente = document.querySelector("#regDocente").value;
-                console.log(docente);
-            }
+        error = "El usuario ya existe<br>";
+        hayError = "S";
+    }     
+        
+    if (usuarioReg.length===0){
+        error += "Debe ingresar un usuario<br>";
+        hayError = true;
+    }
+    error += comprobarPass(contraseñaReg);
 
-            usuarios.push(new altaDeUsuario(usuarioReg, nombreReg, contraseñaReg, tipo,nivel,docente));
-            mostrar("#divIngreso");
-            ocultar("#divRegistro");
+    if (error != ""){
+        hayError = true;              
+    }
+
+    if(hayError){
+        document.querySelector("#errorRegistro").innerHTML = error;
+        document.querySelector("#errorRegistro").style.display = 'block';
+    }else{
+        document.querySelector("#errorRegistro").innerHTML = "";        
+        document.querySelector("#errorRegistro").style.display = 'none';
+
+        if(document.querySelector('#regEsAlumno').checked){
+            tipo = "A";
+            nivel = "1";
+            docente = document.querySelector("#regDocente").value;
+            console.log(docente);
         }
-    }   
+        usuarios.push(new altaDeUsuario(usuarioReg, nombreReg, contraseñaReg, tipo,nivel,docente));
+        mostrar("#divIngreso");
+        ocultar("#divRegistro");
+    }
+       
 }
 
 
