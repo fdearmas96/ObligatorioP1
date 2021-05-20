@@ -232,21 +232,21 @@ function agregarEjercicioAPantalla(titulo,imagen,descripcion){
 //------------------------------------------------------------------------------------------------------------------------------//
 
 function datosPreCargados(){
-//Cargo 2 docentes:
-usuarios.push(new altaDeUsuario("doc1", "Docente 1", "1234aB", "D","",""));
-usuarios.push(new altaDeUsuario("doc2", "Docente 2", "1234aB", "D","",""));
-usuarios.push(new altaDeUsuario("doc3", "Docente 3", "1234aB", "D","",""));
-//Cargo 2 alumnos:
-usuarios.push(new altaDeUsuario("alum1", "Alumno 1", "1234aB", "A","1","doc1"));
-usuarios.push(new altaDeUsuario("alum2", "Alumno 2", "1234aB", "A","2","doc2"));
-usuarios.push(new altaDeUsuario("alum3", "Alumno 3", "1234aB", "A","3","doc3"));
-//Cargo ejercicios
-ejercicios = new altaEjercicios("Este es el titulo del Ejercicio", "esta es la descripción del ejercicio", "img/ej1.png", "doc1", "1")
+    //Cargo 2 docentes:
+    usuarios.push(new altaDeUsuario("doc1", "Docente 1", "1234aB", "D","",""));
+    usuarios.push(new altaDeUsuario("doc2", "Docente 2", "1234aB", "D","",""));
+    usuarios.push(new altaDeUsuario("doc3", "Docente 3", "1234aB", "D","",""));
+    //Cargo 2 alumnos:
+    usuarios.push(new altaDeUsuario("alum1", "Alumno 1", "1234aB", "A","1","doc1"));
+    usuarios.push(new altaDeUsuario("alum2", "Alumno 2", "1234aB", "A","2","doc2"));
+    usuarios.push(new altaDeUsuario("alum3", "Alumno 3", "1234aB", "A","3","doc3"));
+    //Cargo ejercicios
+    ejercicios = new altaEjercicios("Este es el titulo del Ejercicio", "esta es la descripción del ejercicio", "img/ej1.png", "doc1", "1")
 
 
-agregarEjercicioAPantalla("Este es el titulo del Ejercicio","img/ej1.png", "esta es la descripción del ejercicio");
+    agregarEjercicioAPantalla("Este es el titulo del Ejercicio","img/ej1.png", "esta es la descripción del ejercicio");
 
-//Cargo entregas
+    //Cargo entregas
 
 
 
