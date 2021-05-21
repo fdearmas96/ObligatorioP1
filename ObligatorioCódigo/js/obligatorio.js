@@ -147,7 +147,7 @@ function setDocente(docente){
 }
 
 
-      function setNivel(nivel){
+function setNivel(nivel){
     this.nivel=nivel
 }
 
@@ -261,11 +261,11 @@ function verVentanaAsignarNivel(){
 
 function asignarNivel(){
     let id_alumno_seleccionado = document.getElementById("regAlumnos").value;
-    let nivel_nuevo=document.getElementById("regNiveles").value;
+    let nivel_nuevo=document.getElementById("regNiveles").value;    
     for(elemento of usuarios){
-        if(id_alumno_seleccionado===elemento.id){
-            elemento.setNivel(nivel_nuevo);
-      
+        if(id_alumno_seleccionado===elemento.id){            
+            elemento.nivel = nivel_nuevo;
+            elemento.setNivel(nivel_nuevo);      
             alert("Se ha cambiado el nivel del alumno: "+id_alumno_seleccionado);
         }
     }
