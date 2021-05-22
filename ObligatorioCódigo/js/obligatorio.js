@@ -69,7 +69,7 @@ function registrarUsuario(){
     let hayError = false;
     if(comprobarSiUsuarioExiste(usuarioReg)){
         error = "El usuario ya existe<br>";
-        hayError = "S";
+        hayError = true;
     }     
         
     if (usuarioReg.length===0){
@@ -122,10 +122,7 @@ function comprobarSiUsuarioExiste(user){
     this.pass = pass;
     this.tipo = tipo; //D:Docente - A:Alumno
     this.nivel = nivel;
-    this.docente = docente.toUpperCase();
-   
-
-
+    this.docente = docente.toUpperCase(); 
 }
 
 
@@ -192,8 +189,7 @@ function ingresoDeUsuario(){
             usuarioRegistrado = true;
             tipo = elemento.tipo;
             usuarioIngreso = new altaDeUsuario(elemento.id, elemento.nombre, elemento.pass, elemento.tipo, elemento.nivel,elemento.docente);
-            ocultar("#divIngreso");
-           
+            ocultar("#divIngreso");          
 
             if(elemento.tipo==="D"){
                 mostrar("#divMenuDocente");
@@ -227,13 +223,9 @@ function verVentanaAsignarNivel(){
     let alumnos="";
     for (elemento of usuarios){
         if(elemento.tipo==="A" && elemento.docente ===usuarioIngreso.id){
-            alumnos += '<option value="' + elemento.id +'">' + elemento.nombre +'(' + elemento.id + ')</option>';    
-                       
+            alumnos += '<option value="' + elemento.id +'">' + elemento.nombre +'(' + elemento.id + ')</option>';                
         }
-    }
-
-
-   
+    }   
     document.querySelector("#regAlumnos").innerHTML = alumnos;
 }
 
@@ -241,18 +233,15 @@ function asignarNivel(){
     let id_alumno_seleccionado = document.getElementById("regAlumnos").value;
     let nivel_nuevo=document.getElementById("regNiveles").value;    
     for(elemento of usuarios){
-        if(id_alumno_seleccionado===elemento.id){     
-            
+        if(id_alumno_seleccionado===elemento.id){                 
             if(elemento.nivel>nivel_nuevo){
-                alert("No se puede cambiar el nivel a uno inferior")
+                alert("No se puede cambiar el nivel a uno inferior.")
             }else{ 
-            elemento.nivel = nivel_nuevo;
-              
+            elemento.nivel = nivel_nuevo;              
             alert("Se ha cambiado el nivel del alumno: "+id_alumno_seleccionado);
             }
         }
-    }
-    
+    }    
 }
 
 
@@ -310,13 +299,8 @@ function datosPreCargados(){
     usuarios.push(new altaDeUsuario("alum2", "Alumno 2", "1234aB", "A","2","doc2"));
     usuarios.push(new altaDeUsuario("alum3", "Alumno 3", "1234aB", "A","3","doc3"));
     //Cargo ejercicios
-    ejercicios = new altaEjercicios("Este es el titulo del Ejercicio", "esta es la descripción del ejercicio", "img/ej1.png", "doc1", "1")
-
-
+    ejercicios = new altaEjercicios("Este es el titulo del Ejercicio", "esta es la descripción del ejercicio", "img/ej1.png", "doc1", "1");
     agregarEjercicioAPantalla("Este es el titulo del Ejercicio","img/ej1.png", "esta es la descripción del ejercicio");
-
-    //Cargo entregas
-
-    
+    //Cargo entregas    
 
 }
