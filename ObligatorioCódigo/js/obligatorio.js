@@ -28,9 +28,9 @@ function ocultarTodo(){
 }
 
 function vaciarCampos(){
-    document.querySelector("#loginUsuario").innerHTML="";
-    document.querySelector("#loginPass").innerHTML="";
-    
+
+    document.querySelector("#loginUsuario").value="";
+    document.querySelector("#loginPass").value="";
 
 }    
 
