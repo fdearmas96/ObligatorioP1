@@ -198,6 +198,7 @@ function ingresoDeUsuario(){
             }else{
                 mostrar("#divMenuAlumno");
             }
+            cargarMenu(tipo)
             mostrar("#contenedor");
         }
     }    
