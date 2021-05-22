@@ -122,7 +122,7 @@ function comprobarSiUsuarioExiste(user){
     this.pass = pass;
     this.tipo = tipo; //D:Docente - A:Alumno
     this.nivel = nivel;
-    this.docente = docente;
+    this.docente = docente.toUpperCase();
    
 
 
@@ -248,7 +248,7 @@ function verVentanaAsignarNivel(){
     mostrar("#divAsignacionNivel");
     let alumnos="";
     for (elemento of usuarios){
-        if(elemento.tipo==="A"){
+        if(elemento.tipo==="A" && elemento.docente ===usuarioIngreso.id){
             alumnos += '<option value="' + elemento.id +'">' + elemento.nombre +'(' + elemento.id + ')</option>';    
                        
         }
