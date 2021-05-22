@@ -232,6 +232,40 @@ function verVentanaAsignarNivel(){
     document.querySelector("#regAlumnos").innerHTML = alumnos;
 }
 
+function mostrarNiveles(){
+    mostrar("#divNivelesAsignar")
+    let id_alumno_seleccionado = document.getElementById("regAlumnos").value;
+
+    let niveles_a_mostrar=""; 
+
+    for(elemento of usuarios){
+        if(id_alumno_seleccionado===elemento.id){
+            let nivel_alumno=elemento.nivel;
+
+            switch (nivel_alumno) {
+                case '1':
+                    niveles_a_mostrar += '<option value=2> Intermedio </option>'
+                    niveles_a_mostrar += '<option value=3> Avanzado </option>'
+                    break;
+
+                 case '2':
+                     niveles_a_mostrar = '<option value=3> Avanzado </option>'
+                     break;
+
+                 case '3':
+                     ocultar("#divNivelesAsignar")
+                     alert("El nivel del alumno es Avanzado, no se permite reducir el nivel del mismo");
+                        break;
+                 
+                default:
+                    break;
+            }
+            document.querySelector("#regNiveles").innerHTML=niveles_a_mostrar;
+
+        }
+    }
+}
+
 function asignarNivel(){
     let id_alumno_seleccionado = document.getElementById("regAlumnos").value;
     let nivel_nuevo=document.getElementById("regNiveles").value;    
