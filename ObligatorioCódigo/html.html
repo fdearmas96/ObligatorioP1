@@ -100,7 +100,7 @@
            <br>
            <input type="button" value="Información estadística" id="btnVerInformacionEstadistica">
            <br>
-           <input type="button" value="Salir" id="btnSalirMenuDocente" onclick="ocultar('#divMenuDocente')" onclick="mostrar('#divIngreso')">
+           <input type="button" value="Salir" id="btnSalirMenuDocente"  onclick="ocultar('#divMenuDocente') + mostrar('#divIngreso')"  >
    
        </form>
      </div>   
@@ -137,6 +137,8 @@
         </select>
         <br>
         <input type="button" id="btnMostrarNiveles" name="btnMostrarNiveles" value="Mostrar Niveles"> 
+        <br>
+        <input type="button" value="Volver" onclick="ocultar('#divAsignacionNivel') + mostrar('#divMenuDocente') + ocultar('#divMostrarNiveles')" >
        </form>
      </div>  
 
@@ -146,7 +148,7 @@
        
       </select>
       <br>
-      <input type="button" name="btnAsignarNivel" id="btnAsignarNivel" value="Asignar Nivel"> 
+      <input type="button" name="btnAsignarNivel" id="btnAsignarNivel" value="Asignar Nivel" > 
   </div>
 </body>
 </html>
