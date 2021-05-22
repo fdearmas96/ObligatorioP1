@@ -128,28 +128,6 @@ function comprobarSiUsuarioExiste(user){
 
 }
 
-  //Setter Usuario
-  function setUser(user){
-    this.user=user
-}
- function setNombre(nombre){
-     this.nombre=nombre
-}
-function setPass(pass){
-    this.pass=pass
-}
-function setTipo(tipo){
-    this.tipo=tipo
-}
-
-function setDocente(docente){
-    this.docente=docente;
-}
-
-
-function setNivel(nivel){
-    this.nivel=nivel
-}
 
 
 
@@ -263,10 +241,15 @@ function asignarNivel(){
     let id_alumno_seleccionado = document.getElementById("regAlumnos").value;
     let nivel_nuevo=document.getElementById("regNiveles").value;    
     for(elemento of usuarios){
-        if(id_alumno_seleccionado===elemento.id){            
+        if(id_alumno_seleccionado===elemento.id){     
+            
+            if(elemento.nivel>nivel_nuevo){
+                alert("No se puede cambiar el nivel a uno inferior")
+            }else{ 
             elemento.nivel = nivel_nuevo;
-            elemento.setNivel(nivel_nuevo);      
+              
             alert("Se ha cambiado el nivel del alumno: "+id_alumno_seleccionado);
+            }
         }
     }
     
