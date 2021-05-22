@@ -72,6 +72,7 @@
           </select><br>
           <p id="errorRegistro" style="display: none;"></p>
           <input type="button" value="Registrar" id="btnRegistrar">
+          <input type="button" value="Salir" onclick="ocultar('#divRegistro') + mostrar('#divIngreso') ">
   
       </form>
     </div>
@@ -85,6 +86,8 @@
           <input type="password" id="loginPass" name="loginPass"><br>
           <input type="button" value="Ingresar" id="btnIngresar">
           <input type="button" value="Registrar" id="btnVentanaRegistrar">
+
+     
   
       </form>
     </div>    
@@ -116,10 +119,10 @@
            <br>
            <input type="button" value="Información estadística" id="btnInformacionEstadistica">
            <br>
-           <input type="button" value="Salir" id="btnSalir">
            <br>
-           <br>
-           
+           <input type="button" value="Salir" onclick="ocultar('#divMenuAlumno') + mostrar('#divIngreso') + vaciarCampos()">
+
+      
    
        </form>
      </div> 
