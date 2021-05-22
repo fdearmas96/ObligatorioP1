@@ -27,6 +27,13 @@ function ocultarTodo(){
     ocultar("#contenedor");
 }
 
+function vaciarCampos(){
+    document.querySelector("#loginUsuario").innerHTML="";
+    document.querySelector("#loginPass").innerHTML="";
+    
+
+}    
+
 function ocultar(id){    
     document.querySelector(id).style.display = "none";
 }
