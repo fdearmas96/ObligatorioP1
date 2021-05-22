@@ -237,8 +237,8 @@ function asignarNivel(){
             if(elemento.nivel>nivel_nuevo){
                 alert("No se puede cambiar el nivel a uno inferior.")
             }else{ 
-            elemento.nivel = nivel_nuevo;              
-            alert("Se ha cambiado el nivel del alumno: "+id_alumno_seleccionado);
+                elemento.nivel = nivel_nuevo;              
+                alert("Se ha cambiado el nivel del alumno: "+id_alumno_seleccionado);
             }
         }
     }    
@@ -260,7 +260,7 @@ function altaEjercicios(titulo, descripcion, imagen, docente, nivel){
     this.titulo = titulo;
     this.descripcion = descripcion;
     this.imagen = imagen;
-    this.docente = docente;
+    this.docente = docente.toUpperCase();
     this.nivel = nivel;
 }
 
@@ -299,8 +299,14 @@ function datosPreCargados(){
     usuarios.push(new altaDeUsuario("alum2", "Alumno 2", "1234aB", "A","2","doc2"));
     usuarios.push(new altaDeUsuario("alum3", "Alumno 3", "1234aB", "A","3","doc3"));
     //Cargo ejercicios
-    ejercicios = new altaEjercicios("Este es el titulo del Ejercicio", "esta es la descripción del ejercicio", "img/ej1.png", "doc1", "1");
-    agregarEjercicioAPantalla("Este es el titulo del Ejercicio","img/ej1.png", "esta es la descripción del ejercicio");
+    ejercicios.push(new altaEjercicios("Este es el titulo del Ejercicio 1", "esta es la descripción del ejercicio", "img/ej1.png", "doc1", "1"));
+    ejercicios.push(new altaEjercicios("Este es el titulo del Ejercicio 2", "esta es la descripción del ejercicio", "img/ej2.png", "doc1", "1"));
+    ejercicios.push(new altaEjercicios("Este es el titulo del Ejercicio 3", "esta es la descripción del ejercicio", "img/ej3.png", "doc1", "1"));
+    ejercicios.push(new altaEjercicios("Este es el titulo del Ejercicio 4", "esta es la descripción del ejercicio", "img/ej4.png", "doc1", "1"));
+    ejercicios.push(new altaEjercicios("Este es el titulo del Ejercicio 5", "esta es la descripción del ejercicio", "img/ej5.png", "doc1", "1"));
+    ejercicios.push(new altaEjercicios("Este es el titulo del Ejercicio 6", "esta es la descripción del ejercicio", "img/ej6.png", "doc1", "1"));
+    
+
     //Cargo entregas    
 
 }
