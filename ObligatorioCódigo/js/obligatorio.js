@@ -13,6 +13,7 @@ function inicio(){
     document.querySelector("#btnVentanaRegistrar").addEventListener("click", verVentanaRegistrar);    
     document.querySelector("#btnVerAsignarNivel").addEventListener("click", verVentanaAsignarNivel);   
     document.querySelector("#btnAsignarNivel").addEventListener("click", asignarNivel);
+    document.querySelector("#btnMostrarNiveles").addEventListener("click", mostrarNiveles);
 
     document.querySelector("#btnVerEjerciciosPlanteados").addEventListener("click", cargarEjercicios);
     
@@ -233,7 +234,7 @@ function verVentanaAsignarNivel(){
 }
 
 function mostrarNiveles(){
-    mostrar("#divNivelesAsignar")
+    mostrar("#divMostrarNiveles")
     let id_alumno_seleccionado = document.getElementById("regAlumnos").value;
 
     let niveles_a_mostrar=""; 
@@ -253,7 +254,7 @@ function mostrarNiveles(){
                      break;
 
                  case '3':
-                     ocultar("#divNivelesAsignar")
+                     ocultar("#divMostrarNiveles")
                      alert("El nivel del alumno es Avanzado, no se permite reducir el nivel del mismo");
                         break;
                  

@@ -120,6 +120,11 @@
    
        </form>
      </div> 
+
+     
+
+
+
      
      <div id="divAsignacionNivel">
       <h5>Asignacion de nivel</h5>
@@ -127,15 +132,18 @@
         <label for="regAlumnos">Seleccione el alumno</label>
         <select name="regAlumnos" id="regAlumnos" style="display: block;">
         </select>
-      
-        <label for="regNiveles">Seleccione el nivel</label>
-        <select name="regNiveles" id="regNiveles" style="display: block;">
-         
-        </select>
         <br>
-        <input type="button" name="btnAsignarNivel" id="btnAsignarNivel" value="Asignar Nivel"> 
-   
+        <input type="button" id="btnMostrarNiveles" name="btnMostrarNiveles" value="Mostrar Niveles"> 
        </form>
      </div>  
+
+     <div id="divMostrarNiveles" style="display: none;">
+      <label for="regNiveles">Seleccione el nivel</label>
+      <select name="regNiveles" id="regNiveles" style="display: block;">
+       
+      </select>
+      <br>
+      <input type="button" name="btnAsignarNivel" id="btnAsignarNivel" value="Asignar Nivel"> 
+  </div>
 </body>
 </html>
