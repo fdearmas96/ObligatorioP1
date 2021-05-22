@@ -217,10 +217,11 @@ function verVentanaRegistrar(){
 function cargarMenu(tipoUsuario){
 let menuAmostrar = "";
 
-    if(elemento.tipo==="A"){
+    if(tipoUsuario==="A"){
         menuAmostrar = '<li> <a>'+"Ver ejercicios planteados y entregar"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Ver ejercicios resueltos"+'</a> </li>';
-        menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';         
+        menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
+        cargarEjercicios();
     }else{
         menuAmostrar = '<li> <a>'+"Asignar nivel alumno"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Plantear ejercicios"+'</a> </li>';
@@ -322,12 +323,9 @@ function altaEjercicios(titulo, descripcion, imagen, docente, nivel){
 
 
 function cargarEjercicios(){
-    console.log("Cargar ejercicios")
+    document.querySelector("#divEjercicios").innerHTML = "";
     for(elemento of ejercicios){
-        console.log(elemento.docente)
-        console.log(usuarioIngreso.docente)
-        if(elemento.docente===usuarioIngreso.docente && elemento.nivel === usuarioIngreso.nivel){
-            console.log("agregoAPantalla");
+        if(elemento.docente===usuarioIngreso.docente && elemento.nivel === usuarioIngreso.nivel){    
             agregarEjercicioAPantalla(elemento.titulo, elemento.imagen, elemento.descripcion);
         }
     }
