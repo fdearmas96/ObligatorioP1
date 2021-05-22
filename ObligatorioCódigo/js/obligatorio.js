@@ -13,6 +13,8 @@ function inicio(){
     document.querySelector("#btnVentanaRegistrar").addEventListener("click", verVentanaRegistrar);    
     document.querySelector("#btnVerAsignarNivel").addEventListener("click", verVentanaAsignarNivel);   
     document.querySelector("#btnAsignarNivel").addEventListener("click", asignarNivel);
+
+    document.querySelector("#btnVerEjerciciosPlanteados").addEventListener("click", cargarEjercicios);
     
 }
 
@@ -192,11 +194,11 @@ function ingresoDeUsuario(){
             ocultar("#divIngreso");          
 
             if(elemento.tipo==="D"){
-                mostrar("#divMenuDocente");
-               
+                mostrar("#divMenuDocente");              
             }else{
                 mostrar("#divMenuAlumno");
             }
+            mostrar("#contenedor");
         }
     }    
     if(!usuarioRegistrado){
@@ -265,6 +267,19 @@ function altaEjercicios(titulo, descripcion, imagen, docente, nivel){
 }
 
 
+
+function cargarEjercicios(){
+    console.log("Cargar ejercicios")
+    for(elemento of ejercicios){
+        console.log(elemento.docente)
+        console.log(usuarioIngreso.docente)
+        if(elemento.docente===usuarioIngreso.docente && elemento.nivel === usuarioIngreso.nivel){
+            console.log("agregoAPantalla");
+            agregarEjercicioAPantalla(elemento.titulo, elemento.imagen, elemento.descripcion);
+        }
+    }
+}
+
 function agregarEjercicioAPantalla(titulo,imagen,descripcion){
     /*Esta funcion recibe un ejercicio y lo agrega al div vistaEjercicio para verlo en la pantalla, 
     Debe recibir:
@@ -303,7 +318,7 @@ function datosPreCargados(){
     ejercicios.push(new altaEjercicios("Este es el titulo del Ejercicio 2", "esta es la descripción del ejercicio", "img/ej2.png", "doc1", "1"));
     ejercicios.push(new altaEjercicios("Este es el titulo del Ejercicio 3", "esta es la descripción del ejercicio", "img/ej3.png", "doc1", "1"));
     ejercicios.push(new altaEjercicios("Este es el titulo del Ejercicio 4", "esta es la descripción del ejercicio", "img/ej4.png", "doc1", "1"));
-    ejercicios.push(new altaEjercicios("Este es el titulo del Ejercicio 5", "esta es la descripción del ejercicio", "img/ej5.png", "doc1", "1"));
+    ejercicios.push(new altaEjercicios("Este es el titulo del Ejercicio 5", "esta es la descripción del ejercicio", "img/ej5.png", "doc1", "2"));
     ejercicios.push(new altaEjercicios("Este es el titulo del Ejercicio 6", "esta es la descripción del ejercicio", "img/ej6.png", "doc1", "1"));
     
 
