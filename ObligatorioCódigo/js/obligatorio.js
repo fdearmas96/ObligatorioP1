@@ -69,7 +69,7 @@ function registrarUsuario(){
     let hayError = false;
     if(comprobarSiUsuarioExiste(usuarioReg)){
         error = "El usuario ya existe<br>";
-        hayError = "S";
+        hayError = true;
     }     
         
     if (usuarioReg.length===0){
@@ -327,13 +327,8 @@ function datosPreCargados(){
     usuarios.push(new altaDeUsuario("alum2", "Alumno 2", "1234aB", "A","2","doc2"));
     usuarios.push(new altaDeUsuario("alum3", "Alumno 3", "1234aB", "A","3","doc3"));
     //Cargo ejercicios
-    ejercicios = new altaEjercicios("Este es el titulo del Ejercicio", "esta es la descripción del ejercicio", "img/ej1.png", "doc1", "1")
-
-
+    ejercicios = new altaEjercicios("Este es el titulo del Ejercicio", "esta es la descripción del ejercicio", "img/ej1.png", "doc1", "1");
     agregarEjercicioAPantalla("Este es el titulo del Ejercicio","img/ej1.png", "esta es la descripción del ejercicio");
-
-    //Cargo entregas
-
-    
+    //Cargo entregas    
 
 }
