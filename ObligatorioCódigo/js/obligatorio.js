@@ -5,7 +5,7 @@ let idEjercicio = 0;     //Este es un id que es uníco para cada ejercicio que s
 window.addEventListener("load", inicio);
 function inicio(){
     datosPreCargados();
-    ocultarTodo();//Primer se oculta todo y se deja visible el login.
+   
     document.querySelector("#btnRegistrar").addEventListener("click", registrarUsuario);
     document.querySelector("#regEsAlumno").addEventListener("click", hacerVisibleDocentes);
 
@@ -19,13 +19,7 @@ function inicio(){
     
 }
 
-function ocultarTodo(){
-    ocultar("#divRegistro");
-    ocultar("#divMenuDocente");
-    ocultar("#divMenuAlumno");
-    ocultar("#divAsignacionNivel");
-    ocultar("#contenedor");
-}
+
 
 function vaciarCampos(){
 
