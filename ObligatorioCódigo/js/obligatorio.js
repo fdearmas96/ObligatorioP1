@@ -227,14 +227,14 @@ let menuAmostrar = "";
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
         cargarEjercicios();
     }else{
-        menuAmostrar = '<li> <a>'+"Asignar nivel alumno"+'</a> </li>';
+        menuAmostrar = '<li> <a id="btnAsignarNivel">'+"Asignar nivel alumno"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Plantear ejercicios"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Realizar devoluciones"+'</a> </li>'; 
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
       
     }
     menuAmostrar+= '<li> <a>'+"Salir"+'</a> </li>';
-    document.querySelector("#navPrincipal").innerHTML= menuAmostrar;
+    document.querySelector("#navPrincipal").innerHTML=menuAmostrar;
 }
 
 //------------------------------------------------------------------------------------------------------------------------------//
