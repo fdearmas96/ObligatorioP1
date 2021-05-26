@@ -16,7 +16,7 @@ function inicio(){
     document.querySelector("#btnMostrarNiveles").addEventListener("click", mostrarNiveles);
 
     document.querySelector("#btnVerEjerciciosPlanteados").addEventListener("click", cargarEjercicios);
-    
+                                                                        
 }
 
 
