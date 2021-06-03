@@ -326,7 +326,7 @@ function agregarEjercicioAPantalla(titulo,imagen,descripcion){
     -Ruta de imagen
     -id del ejercicio para luego hacer la entrega? por el título es tedioso    
     */
-    let htmlEjercicio ='<h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="/img/'+imagen+'" alt="" id="ejercicioImagen"><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'        
+    let htmlEjercicio ='<h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="img/'+imagen+'" alt="" id="ejercicioImagen"><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'        
     document.querySelector("#divEjercicios").innerHTML += htmlEjercicio;
 }
 
