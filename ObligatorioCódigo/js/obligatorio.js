@@ -326,7 +326,7 @@ function agregarEjercicioAPantalla(titulo,imagen,descripcion){
     -Ruta de imagen
     -id del ejercicio para luego hacer la entrega? por el título es tedioso    
     */
-    let htmlEjercicio ='<h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="'+imagen+'" alt="" id="ejercicioImagen"><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'        
+    let htmlEjercicio ='<h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="/img/'+imagen+'" alt="" id="ejercicioImagen"><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'        
     document.querySelector("#divEjercicios").innerHTML += htmlEjercicio;
 }
 
@@ -347,7 +347,10 @@ function subirEjercicio(){
     let descripcion=document.querySelector("#planteoDescripcion").value;
     let imagen = document.querySelector("#planteoImagen").value;
 
-   ejercicios.push(new ejercicio(titulo,descripcion,imagen,usuarioIngreso.id,nivel));
+    imagen=imagen.replace('C:\\fakepath\\','')
+    let id_del_usuario= usuarioIngreso.id;
+
+   ejercicios.push(new ejercicio(titulo,descripcion,imagen,id_del_usuario,nivel));
    alert("SUBIO")
 }
 
@@ -370,12 +373,12 @@ function datosPreCargados(){
     usuarios.push(new usuario("alum2", "Alumno 2", "1234aB", "A","2","doc2"));
     usuarios.push(new usuario("alum3", "Alumno 3", "1234aB", "A","3","doc3"));
     //Cargo ejercicios
-    ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 1", "esta es la descripción del ejercicio", "img/ej1.png", "doc1", "1"));
-    ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 2", "esta es la descripción del ejercicio", "img/ej2.png", "doc1", "1"));
-    ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 3", "esta es la descripción del ejercicio", "img/ej3.png", "doc1", "1"));
-    ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 4", "esta es la descripción del ejercicio", "img/ej4.png", "doc1", "1"));
-    ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 5", "esta es la descripción del ejercicio", "img/ej5.png", "doc1", "2"));
-    ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 6", "esta es la descripción del ejercicio", "img/ej6.png", "doc1", "1"));
+    ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 1", "esta es la descripción del ejercicio", "ej1.png", "doc1", "1"));
+    ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 2", "esta es la descripción del ejercicio", "ej2.png", "doc1", "1"));
+    ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 3", "esta es la descripción del ejercicio", "ej3.png", "doc1", "1"));
+    ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 4", "esta es la descripción del ejercicio", "ej4.png", "doc1", "1"));
+    ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 5", "esta es la descripción del ejercicio", "ej5.png", "doc1", "2"));
+    ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 6", "esta es la descripción del ejercicio", "ej6.png", "doc1", "1"));
     
 
     //Cargo entregas    
