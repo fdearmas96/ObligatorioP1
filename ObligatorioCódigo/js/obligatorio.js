@@ -14,7 +14,6 @@ function inicio(){
     document.querySelector("#btnVerAsignarNivel").addEventListener("click", verVentanaAsignarNivel);   
     document.querySelector("#btnAsignarNivel").addEventListener("click", asignarNivel);
     document.querySelector("#btnMostrarNiveles").addEventListener("click", mostrarNiveles);
-
     document.querySelector("#btnVerEjerciciosPlanteados").addEventListener("click", cargarEjercicios);
                                                                         
 }
@@ -119,16 +118,6 @@ function comprobarSiUsuarioExiste(user){
         }
     }
     return yaExiste;
-}
-
-//Constructor Usuarios
- function altaDeUsuario(user, nombre,  pass, tipo, nivel, docente){
-    this.id = user.toUpperCase();
-    this.nombre = nombre
-    this.pass = pass;
-    this.tipo = tipo; //D:Docente - A:Alumno
-    this.nivel = nivel;
-    this.docente = docente.toUpperCase(); 
 }
 
 
