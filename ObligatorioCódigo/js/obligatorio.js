@@ -15,7 +15,7 @@ function inicio(){
     document.querySelector("#btnAsignarNivel").addEventListener("click", asignarNivel);
     document.querySelector("#btnMostrarNiveles").addEventListener("click", mostrarNiveles);
     document.querySelector("#btnVerEjerciciosPlanteados").addEventListener("click", cargarEjercicios);
-                                                                        
+    document.querySelector("#btnPlantearEjercicio").addEventListener("click", subirEjercicio)                                                                        
 }
 
 
@@ -183,7 +183,7 @@ function ingresoDeUsuario(){
         if (elemento.id === loginUsuario && elemento.pass === loginPass){
             usuarioRegistrado = true;
             tipo = elemento.tipo;
-            usuarioIngreso = new altaDeUsuario(elemento.id, elemento.nombre, elemento.pass, elemento.tipo, elemento.nivel,elemento.docente);
+            usuarioIngreso = new usuario(elemento.id, elemento.nombre, elemento.pass, elemento.tipo, elemento.nivel,elemento.docente);
             ocultar("#divIngreso");          
 
             if(elemento.tipo==="D"){
@@ -207,17 +207,19 @@ function verVentanaRegistrar(){
     ocultar("#divIngreso");
 }
 
+
+
 function cargarMenu(tipoUsuario){
 let menuAmostrar = "";
 
     if(tipoUsuario==="A"){
-        menuAmostrar = '<li> <a>'+"Ver ejercicios planteados y entregar"+'</a> </li>';
+        menuAmostrar = '<li onclick="cargarEjercicios()" > <a>'+"Ver ejercicios planteados y entregar"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Ver ejercicios resueltos"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
         cargarEjercicios();
     }else{
-        menuAmostrar = '<li> <a id="btnAsignarNivel">'+"Asignar nivel alumno"+'</a> </li>';
-        menuAmostrar+= '<li> <a>'+"Plantear ejercicios"+'</a> </li>';
+        menuAmostrar = '<li onclick="verVentanaAsignarNivel()"> <a id="btnAsignarNivel">'+"Asignar nivel alumno"+'</a> </li>';
+        menuAmostrar+= '<li onclick="verVentanaPlanteoEjercicio()"> <a>'+"Plantear ejercicios"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Realizar devoluciones"+'</a> </li>'; 
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
       
@@ -282,16 +284,17 @@ function asignarNivel(){
     let id_alumno_seleccionado = document.getElementById("regAlumnos").value;
     let nivel_nuevo=document.getElementById("regNiveles").value;    
     for(elemento of usuarios){
-        if(id_alumno_seleccionado===elemento.id){                 
-            if(elemento.nivel>nivel_nuevo){
-                alert("No se puede cambiar el nivel a uno inferior.")
-            }else{ 
+        if(id_alumno_seleccionado===elemento.id){        
+            if(elemento.nivel==="1" && nivel_nuevo==="3"){
+                alert("Solo se puede subir un nivel");
+            }         else{ 
                 elemento.nivel = nivel_nuevo;              
                 alert("Se ha cambiado el nivel del alumno: "+id_alumno_seleccionado);
             }
+            }
         }
     }    
-}
+
 
 
 
@@ -328,7 +331,25 @@ function agregarEjercicioAPantalla(titulo,imagen,descripcion){
 }
 
 
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------PLANTEO DE EJERCICIOS - DOCENTE-----------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
 
+function verVentanaPlanteoEjercicio(){
+    mostrar("#divPlanteoEjercicio");
+}
+
+function subirEjercicio(){
+    let nivel=document.querySelector("#planteoNivel").value;
+    let titulo=document.querySelector("#planteoTitulo").value;
+    let descripcion=document.querySelector("#planteoDescripcion").value;
+    let imagen = document.querySelector("#planteoImagen").value;
+
+   ejercicios.push(new ejercicio(titulo,descripcion,imagen,usuarioIngreso.id,nivel));
+   alert("SUBIO")
+}
 
 
 
