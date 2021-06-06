@@ -207,6 +207,26 @@ function verVentanaRegistrar(){
     ocultar("#divIngreso");
 }
 
+//Función para cerrar el menu alumno y su contenedor
+function salirMenuAlumno(){
+ocultar("#divMenuAlumno");
+ocultar("#contenedor");
+ocultar("#divVentanaPlanteoEjercicio()")
+mostrar("#divIngreso");
+
+vaciarCampos();
+}
+
+//Función para cerrar el menu docente y su contenedor
+function salirMenuDocente(){
+    ocultar("#divMenuDocente");
+    ocultar("#contenedor");
+    mostrar("#divIngreso");
+    vaciarCampos();
+    }
+    
+
+
 
 
 function cargarMenu(tipoUsuario){
@@ -216,15 +236,17 @@ let menuAmostrar = "";
         menuAmostrar = '<li onclick="cargarEjercicios()" > <a>'+"Ver ejercicios planteados y entregar"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Ver ejercicios resueltos"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
+        menuAmostrar+= '<li onclick="salirMenuAlumno()" > <a>'+"Salir"+'</a> </li>';
         cargarEjercicios();
     }else{
         menuAmostrar = '<li onclick="verVentanaAsignarNivel()"> <a id="btnAsignarNivel">'+"Asignar nivel alumno"+'</a> </li>';
         menuAmostrar+= '<li onclick="verVentanaPlanteoEjercicio()"> <a>'+"Plantear ejercicios"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Realizar devoluciones"+'</a> </li>'; 
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
+        menuAmostrar+= '<li onclick="salirMenuDocente()"> <a>'+"Salir"+'</a> </li>';
       
     }
-    menuAmostrar+= '<li> <a>'+"Salir"+'</a> </li>';
+ 
     document.querySelector("#navPrincipal").innerHTML=menuAmostrar;
 }
 
