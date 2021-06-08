@@ -345,11 +345,23 @@ function cargarEjercicios(){
 }
 
 
-function mostrarSubirEntrega(id,titulo){
-    mostrar("#divEntregaTarea")
-    let id_ejercicio=id;
-    document.querySelector("#tituloEjercicio").innerHTML="El id del ejercicio es"+id+titulo;
+function mostrarSubirEntrega(id){
+    mostrar("#divEntregaTarea");    
+    
+    let encontre = false;
+    for (let i = 0; i < ejercicios.length && !encontre; i++){
+        if(ejercicios[i].id = id){
+            encontre = true
+            titulo = ejercicios[i].titulo;
+            docente = ejercicios[i].docente;
+        }
+    }
 
+    document.querySelector("#tituloEjercicio").innerHTML= titulo;
+    
+
+    entregarEjercicio(id, audio, docente, usuarioIngreso.id)
+    
   }
 
 function agregarEjercicioAPantalla(id,titulo,imagen,descripcion){
@@ -362,7 +374,7 @@ function agregarEjercicioAPantalla(id,titulo,imagen,descripcion){
     */
   
    
-    let htmlEjercicio ='<div id=ejercicio'+id+' > <h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="img/'+imagen+'" alt="" id="ejercicioImagen"><br><input type="button" value="Realizar entrega" id="btnRealizarEntrega" onclick= mostrarSubirEntrega('+id+',"'+titulo+')></div>'        
+    let htmlEjercicio ='<div id=ejercicio'+id+' > <h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="img/'+imagen+'" alt="" id="ejercicioImagen"><br><input type="button" value="Realizar entrega" id="btnRealizarEntrega" onclick="mostrarSubirEntrega('+id+')"></div>'        
     document.querySelector("#divEjercicios").innerHTML += htmlEjercicio;
 
    
