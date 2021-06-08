@@ -212,6 +212,10 @@ function verVentanaRegistrar(){
 function salirMenuAlumno(){
 ocultar("#divMenuAlumno");
 ocultar("#contenedor");
+<<<<<<< HEAD
+=======
+ocultar("#divEjercicios")
+>>>>>>> 8848017e2137b86971c68d81ece9214a8664a220
 mostrar("#divIngreso");
 
 vaciarCampos();
