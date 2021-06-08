@@ -13,7 +13,7 @@ class usuario{
 class ejercicio{
     
     constructor(titulo, descripcion, imagen, docente, nivel){
-        idEjercicio ++;
+        idEjercicio++;
         this.id = idEjercicio;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -21,6 +21,16 @@ class ejercicio{
         this.docente = docente.toUpperCase();
         this.nivel = nivel;
     }
-    
+}
 
+class EjerciciosEntregados{
+
+    constructor(idEjercicio, audio,docente,usuario,puntaje,corregido){
+        this.idEjercicio=idEjercicio;
+        this.audio=audio;
+        this.docente=docente;
+        this.usuario=usuario;
+        this.puntaje=puntaje;
+        this.corregido=corregido;
+    }
 }

@@ -15,7 +15,8 @@ function inicio(){
     document.querySelector("#btnAsignarNivel").addEventListener("click", asignarNivel);
     document.querySelector("#btnMostrarNiveles").addEventListener("click", mostrarNiveles);
     document.querySelector("#btnVerEjerciciosPlanteados").addEventListener("click", cargarEjercicios);
-    document.querySelector("#btnPlantearEjercicio").addEventListener("click", subirEjercicio)                                                                        
+    document.querySelector("#btnPlantearEjercicio").addEventListener("click", subirEjercicio);
+    document.querySelector("#btnEntregarAudio")  .addEventListener("click", entregarEjercicio);                                                               
 }
 
 
@@ -212,10 +213,9 @@ function verVentanaRegistrar(){
 function salirMenuAlumno(){
 ocultar("#divMenuAlumno");
 ocultar("#contenedor");
-<<<<<<< HEAD
-=======
+
 ocultar("#divEjercicios")
->>>>>>> 8848017e2137b86971c68d81ece9214a8664a220
+
 mostrar("#divIngreso");
 
 vaciarCampos();
@@ -339,12 +339,20 @@ function cargarEjercicios(){
     document.querySelector("#divEjercicios").innerHTML = "";
     for(elemento of ejercicios){
         if(elemento.docente===usuarioIngreso.docente && elemento.nivel === usuarioIngreso.nivel){    
-            agregarEjercicioAPantalla(elemento.titulo, elemento.imagen, elemento.descripcion);
+            agregarEjercicioAPantalla(elemento.id,elemento.titulo, elemento.imagen, elemento.descripcion);
         }
     }
 }
 
-function agregarEjercicioAPantalla(titulo,imagen,descripcion){
+
+function mostrarSubirEntrega(id,titulo){
+    mostrar("#divEntregaTarea")
+    let id_ejercicio=id;
+    document.querySelector("#tituloEjercicio").innerHTML="El id del ejercicio es"+id+titulo;
+
+  }
+
+function agregarEjercicioAPantalla(id,titulo,imagen,descripcion){
     /*Esta funcion recibe un ejercicio y lo agrega al div vistaEjercicio para verlo en la pantalla, 
     Debe recibir:
     -Titulo
@@ -352,8 +360,12 @@ function agregarEjercicioAPantalla(titulo,imagen,descripcion){
     -Ruta de imagen
     -id del ejercicio para luego hacer la entrega? por el título es tedioso    
     */
-    let htmlEjercicio ='<h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="img/'+imagen+'" alt="" id="ejercicioImagen"><br><input type="button" value="Realizar entrega" id="btnRealizarEntrega">'        
+  
+   
+    let htmlEjercicio ='<div id=ejercicio'+id+' > <h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="img/'+imagen+'" alt="" id="ejercicioImagen"><br><input type="button" value="Realizar entrega" id="btnRealizarEntrega" onclick= mostrarSubirEntrega('+id+',"'+titulo+')></div>'        
     document.querySelector("#divEjercicios").innerHTML += htmlEjercicio;
+
+   
 }
 
 
@@ -363,7 +375,7 @@ function agregarEjercicioAPantalla(titulo,imagen,descripcion){
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 
-function verVentanaPlanteoEjercicio(){
+function verVentanaPlanteoEjercicio(id){
     mostrar("#divPlanteoEjercicio");
 }
 
@@ -381,6 +393,15 @@ function subirEjercicio(){
    alert("SUBIO")
 }
 
+ //------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------PLANTEO DE EJERCICIOS - DOCENTE-----------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+
+function entregarEjercicio(){
+    let idEjercicio
+}
 
 
 
