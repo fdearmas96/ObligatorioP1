@@ -14,12 +14,17 @@ function inicio(){
     document.querySelector("#btnVerAsignarNivel").addEventListener("click", verVentanaAsignarNivel);   
     document.querySelector("#btnAsignarNivel").addEventListener("click", asignarNivel);
     document.querySelector("#btnMostrarNiveles").addEventListener("click", mostrarNiveles);
-    document.querySelector("#btnVerEjerciciosPlanteados").addEventListener("click", cargarEjercicios);
+    //document.querySelector("#btnVerEjerciciosPlanteados").addEventListener("click", cargarEjercicios);
     document.querySelector("#btnPlantearEjercicio").addEventListener("click", subirEjercicio);
     document.querySelector("#btnEntregarAudio")  .addEventListener("click", entregarEjercicio);                                                               
 }
 
-
+function ocultarTodo(){
+    ocultar("#divEjercicios");
+    ocultar("#divPlanteoEjercicio");
+    ocultar("#divAsignacionNivel");
+    ocultar("#divEntregaTarea");
+}
 
 function vaciarCampos(){
 
@@ -51,7 +56,7 @@ function hacerVisibleDocentes(){
         document.querySelector("#labelRegDocente").style.display = 'block';   
         document.querySelector("#regDocente").style.display = 'block';
         /*Agrego docentes a la lista de selección*/        
-        for (elemento of usuarios){
+        for (let elemento of usuarios){
             if(elemento.tipo==="D"){
                 docentes += '<option value="' + elemento.id +'">' + elemento.nombre +'(' + elemento.id + ')</option>';                
             }
@@ -181,7 +186,7 @@ function ingresoDeUsuario(){
     let usuarioRegistrado = false;
     let tipo = "";
 
-    for(elemento of usuarios){
+    for(let elemento of usuarios){
         if (elemento.id === loginUsuario && elemento.pass === loginPass){
             usuarioRegistrado = true;
             tipo = elemento.tipo;
@@ -191,7 +196,7 @@ function ingresoDeUsuario(){
             if(elemento.tipo==="D"){
                 mostrar("#divMenuDocente");              
             }else{
-                mostrar("#divMenuAlumno");
+                //mostrar("#divMenuAlumno");
             }
             cargarMenu(tipo)
             mostrar("#contenedor");
@@ -211,30 +216,35 @@ function verVentanaRegistrar(){
 
 //Función para cerrar el menu alumno y su contenedor
 function salirMenuAlumno(){
-ocultar("#divMenuAlumno");
-ocultar("#contenedor");
+    //ocultar("#divMenuAlumno");
+    //ocultar("#contenedor");
 
-ocultar("#divEjercicios")
+    //ocultar("#divEjercicios")
 
-mostrar("#divIngreso");
+    ocultarTodo();
+    mostrar("#divIngreso");
 
-vaciarCampos();
+    vaciarCampos();
 }
 
 //Función para cerrar el menu docente y su contenedor
 function salirMenuDocente(){
-    ocultar("#divMenuDocente");
-    ocultar("#contenedor");
+    // ocultar("#divMenuDocente");
+    // ocultar("#contenedor");
+    // mostrar("#divIngreso");
+    // vaciarCampos();
+    ocultarTodo();
     mostrar("#divIngreso");
-    vaciarCampos();
-    }
+
+    vaciarCampos();    
+}
     
 
 
 
 
 function cargarMenu(tipoUsuario){
-let menuAmostrar = "";
+    let menuAmostrar = "";
 
     if(tipoUsuario==="A"){
         menuAmostrar = '<li onclick="cargarEjercicios()" > <a>'+"Ver ejercicios planteados y entregar"+'</a> </li>';
@@ -247,8 +257,7 @@ let menuAmostrar = "";
         menuAmostrar+= '<li onclick="verVentanaPlanteoEjercicio()"> <a>'+"Plantear ejercicios"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Realizar devoluciones"+'</a> </li>'; 
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
-        menuAmostrar+= '<li onclick="salirMenuDocente()"> <a>'+"Salir"+'</a> </li>';
-      
+        menuAmostrar+= '<li onclick="salirMenuDocente()"> <a>'+"Salir"+'</a> </li>';      
     }
  
     document.querySelector("#navPrincipal").innerHTML=menuAmostrar;
@@ -264,7 +273,7 @@ function verVentanaAsignarNivel(){
     ocultar("#divMenuDocente");
     mostrar("#divAsignacionNivel");
     let alumnos="";
-    for (elemento of usuarios){
+    for ( let elemento of usuarios){
         if(elemento.tipo==="A" && elemento.docente ===usuarioIngreso.id){
             alumnos += '<option value="' + elemento.id +'">' + elemento.nombre +'(' + elemento.id + ')</option>';                
         }
@@ -278,7 +287,7 @@ function mostrarNiveles(){
 
     let niveles_a_mostrar=""; 
 
-    for(elemento of usuarios){
+    for(let elemento of usuarios){
         if(id_alumno_seleccionado===elemento.id){
             let nivel_alumno=elemento.nivel;
 
@@ -309,7 +318,7 @@ function mostrarNiveles(){
 function asignarNivel(){
     let id_alumno_seleccionado = document.getElementById("regAlumnos").value;
     let nivel_nuevo=document.getElementById("regNiveles").value;    
-    for(elemento of usuarios){
+    for(let elemento of usuarios){
         if(id_alumno_seleccionado===elemento.id){        
             if(elemento.nivel==="1" && nivel_nuevo==="3"){
                 alert("Solo se puede subir un nivel");
@@ -337,7 +346,9 @@ function asignarNivel(){
 
 function cargarEjercicios(){
     document.querySelector("#divEjercicios").innerHTML = "";
-    for(elemento of ejercicios){
+    ocultarTodo()
+    mostrar("#divEjercicios")
+    for(let elemento of ejercicios){
         if(elemento.docente===usuarioIngreso.docente && elemento.nivel === usuarioIngreso.nivel){    
             agregarEjercicioAPantalla(elemento.id,elemento.titulo, elemento.imagen, elemento.descripcion);
         }
@@ -346,18 +357,19 @@ function cargarEjercicios(){
 
 
 function mostrarSubirEntrega(id){
+    ocultarTodo();
     mostrar("#divEntregaTarea");    
     
     let encontre = false;
     for (let i = 0; i < ejercicios.length && !encontre; i++){
-        if(ejercicios[i].id = id){
+        if(ejercicios[i].id == id){
             encontre = true
             titulo = ejercicios[i].titulo;
             docente = ejercicios[i].docente;
         }
     }
 
-    document.querySelector("#tituloEjercicio").innerHTML= titulo;
+    document.querySelector("#tituloEjercicio").innerHTML= titulo; 
     
 
     entregarEjercicio(id, audio, docente, usuarioIngreso.id)

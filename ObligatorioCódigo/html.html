@@ -10,11 +10,11 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="contenedor" style="display: none;">
+  <div id="contenedor" >
     <div id="cabezal" class="clearfix">
       <img id="logo" src="https://develotion.com/assets/img/logo.jpg" alt="logo">
       <ul id="navPrincipal">
-        <li>
+       <!-- <li>
           <a>Sección 1</a>
         </li>
         <li>
@@ -27,19 +27,30 @@
           <a>Sección 4</a>
         </li>
   
-      </ul>
+      </ul>-->
       <div id="aux">
         <a>Menú alt. 1</a> | <a>Menú alt. 2</a>
       </div><!-- FIN AUX -->
     </div><!-- FIN CABEZAL -->
     <div id="contenido">
-      <h3>Contenido</h3>
+      <!--<h3>Contenido</h3>
       <label for="txtPrueba">Campo:</label>
       <input type="text" id="txtPrueba"><br>
       <label for="txtComentarios">Campo:</label>
       <textarea></textarea><br>
-      <input type="button" value="Algo"><br>
-  
+      <input type="button" value="Algo"><br>-->
+      <div id="divIngreso">
+        <h5>Ingreso</h5>
+         <form action="#">
+             <label for="loginUsuario">Usuario</label>
+             <input type="text" id="loginUsuario" name="loginUsuario"><br>
+             <label for="loginPass">Contraseña</label>
+             <input type="password" id="loginPass" name="loginPass"><br>
+             <input type="button" value="Ingresar" id="btnIngresar">
+             <input type="button" value="Registrar" id="btnVentanaRegistrar">   
+         </form>
+       </div>   
+
       <hr>
       <div class="ejercicios" id="divEjercicios">
         <!-- <div>
@@ -52,6 +63,36 @@
         -->
       </div>
         <!--FIN EJERCICIOS-->
+
+        <div id="divEntregaTarea" style="display: none;">
+          <h1 id="tituloEjercicio"></h1>
+           <label for="audio">Ingrese un audio</label>
+          <input type="file" name="audio" id="audio">
+          <br>
+          <input type="button" id="btnEntregarAudio" value="Entregar">
+  
+         </div>
+       
+
+         <div id="divPlanteoEjercicio" style="display: none;">
+          <h5>Planteo de ejercicio</h5>
+       
+            <label for="planteoNivel">Para nivel</label>
+            <select name="planteoNivel" id="planteoNivel">
+                <option value="1">Inicial</option>
+                <option value="2">Intermedio</option>
+                <option value="3">Avanzado</option>
+            </select><br>
+            <label for="planteoTitulo">Título</label>
+            <input type="text" id="planteoTitulo" name="planteoTitulo"><br>
+            <label for="planteoDescripcion">Descripción</label>
+            <input type="text" id="planteoDescripcion" name="planteoDescripcion"><br>
+            <label for="planteoImagen">Cargar Imagen</label>
+            <input type="file" name="planteoImagen" id="planteoImagen"><br>
+    
+            <input type="button" value="Plantear ejercicio" id="btnPlantearEjercicio">
+      
+         </div>
       </div><!-- FIN CONTENIDO -->
       <div id="pie">
         <a href="https://www.ort.edu.uy">Footer</a>
@@ -78,20 +119,7 @@
       </form>
     </div>
 
-    <div id="divIngreso">
-     <h5>Ingreso</h5>
-      <form action="#">
-          <label for="loginUsuario">Usuario</label>
-          <input type="text" id="loginUsuario" name="loginUsuario"><br>
-          <label for="loginPass">Contraseña</label>
-          <input type="password" id="loginPass" name="loginPass"><br>
-          <input type="button" value="Ingresar" id="btnIngresar">
-          <input type="button" value="Registrar" id="btnVentanaRegistrar">
-
-     
-  
-      </form>
-    </div>    
+ 
 
     <div id="divMenuDocente" style="display: none;">
       <h5>Menu Docente</h5>
@@ -110,7 +138,7 @@
      </div>   
      
   
-
+     <!--
      <div id="divMenuAlumno" style="display: none;">
       <h5>Menu Alumno</h5>
        <form action="#">
@@ -127,36 +155,11 @@
    
        </form>
      </div> 
+     -->
 
-      <div id="divPlanteoEjercicio" style="display: none;">
-        <h5>Planteo de ejercicio</h5>
-     
-          <label for="planteoNivel">Para nivel</label>
-          <select name="planteoNivel" id="planteoNivel">
-              <option value="1">Inicial</option>
-              <option value="2">Intermedio</option>
-              <option value="3">Avanzado</option>
-          </select><br>
-          <label for="planteoTitulo">Título</label>
-          <input type="text" id="planteoTitulo" name="planteoTitulo"><br>
-          <label for="planteoDescripcion">Descripción</label>
-          <input type="text" id="planteoDescripcion" name="planteoDescripcion"><br>
-          <label for="planteoImagen">Cargar Imagen</label>
-          <input type="file" name="planteoImagen" id="planteoImagen"><br>
   
-          <input type="button" value="Plantear ejercicio" id="btnPlantearEjercicio">
-    
-       </div>
 
-       <div id="divEntregaTarea" style="display: none;">
-        <h1 id="tituloEjercicio"></h1>
-         <label for="audio">Ingrese un audio</label>
-        <input type="file" name="audio" id="audio">
-        <br>
-        <input type="button" id="btnEntregarAudio" value="Entregar">
 
-       </div>
-     
      <div id="divAsignacionNivel" style="display: none;" >
       <h5>Asignacion de nivel</h5>
        <form action="#">
@@ -174,8 +177,7 @@
       <label for="regNiveles">Seleccione el nivel</label>
       <select name="regNiveles" id="regNiveles" style="display: block;">
        
-      </select>
-      <br>
+      </select><br>
       <input type="button" name="btnAsignarNivel" id="btnAsignarNivel" value="Asignar Nivel" > 
   </div>
 </body>
