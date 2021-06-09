@@ -24,6 +24,7 @@ function ocultarTodo(){
     ocultar("#divPlanteoEjercicio");
     ocultar("#divAsignacionNivel");
     ocultar("#divEntregaTarea");
+    ocultar("#navPrincipal");    
 }
 
 function vaciarCampos(){
@@ -214,32 +215,36 @@ function verVentanaRegistrar(){
     ocultar("#divIngreso");
 }
 
-//Función para cerrar el menu alumno y su contenedor
-function salirMenuAlumno(){
-    //ocultar("#divMenuAlumno");
-    //ocultar("#contenedor");
+                                            //Función para cerrar el menu alumno y su contenedor
+                                            function salirMenuAlumno(){
+                                                //ocultar("#divMenuAlumno");
+                                                //ocultar("#contenedor");
 
-    //ocultar("#divEjercicios")
+                                                //ocultar("#divEjercicios")
 
-    ocultarTodo();
-    mostrar("#divIngreso");
+                                                ocultarTodo();
+                                                mostrar("#divIngreso");
 
-    vaciarCampos();
-}
+                                                vaciarCampos();
+                                            }
 
-//Función para cerrar el menu docente y su contenedor
-function salirMenuDocente(){
-    // ocultar("#divMenuDocente");
-    // ocultar("#contenedor");
-    // mostrar("#divIngreso");
-    // vaciarCampos();
-    ocultarTodo();
-    mostrar("#divIngreso");
+                                            //Función para cerrar el menu docente y su contenedor
+                                            function salirMenuDocente(){
+                                                // ocultar("#divMenuDocente");
+                                                // ocultar("#contenedor");
+                                                // mostrar("#divIngreso");
+                                                // vaciarCampos();
+                                                ocultarTodo();
+                                                mostrar("#divIngreso");
 
-    vaciarCampos();    
-}
+                                                vaciarCampos();    
+                                            }
     
-
+function salir(){    
+    ocultarTodo();
+    mostrar("#divIngreso");
+    vaciarCampos();  
+}
 
 
 
@@ -250,16 +255,16 @@ function cargarMenu(tipoUsuario){
         menuAmostrar = '<li onclick="cargarEjercicios()" > <a>'+"Ver ejercicios planteados y entregar"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Ver ejercicios resueltos"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
-        menuAmostrar+= '<li onclick="salirMenuAlumno()" > <a>'+"Salir"+'</a> </li>';
+        //menuAmostrar+= '<li onclick="salirMenuAlumno()" > <a>'+"Salir"+'</a> </li>';
         cargarEjercicios();
     }else{
         menuAmostrar = '<li onclick="verVentanaAsignarNivel()"> <a id="btnAsignarNivel">'+"Asignar nivel alumno"+'</a> </li>';
         menuAmostrar+= '<li onclick="verVentanaPlanteoEjercicio()"> <a>'+"Plantear ejercicios"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Realizar devoluciones"+'</a> </li>'; 
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
-        menuAmostrar+= '<li onclick="salirMenuDocente()"> <a>'+"Salir"+'</a> </li>';      
+        //menuAmostrar+= '<li onclick="salirMenuDocente()"> <a>'+"Salir"+'</a> </li>';      
     }
- 
+    menuAmostrar+= '<li onclick="salir()" > <a>'+"Salir."+'</a> </li>';
     document.querySelector("#navPrincipal").innerHTML=menuAmostrar;
 }
 
@@ -348,6 +353,7 @@ function cargarEjercicios(){
     document.querySelector("#divEjercicios").innerHTML = "";
     ocultarTodo()
     mostrar("#divEjercicios")
+    mostrar("#navPrincipal");
     for(let elemento of ejercicios){
         if(elemento.docente===usuarioIngreso.docente && elemento.nivel === usuarioIngreso.nivel){    
             agregarEjercicioAPantalla(elemento.id,elemento.titulo, elemento.imagen, elemento.descripcion);
@@ -358,7 +364,8 @@ function cargarEjercicios(){
 
 function mostrarSubirEntrega(id){
     ocultarTodo();
-    mostrar("#divEntregaTarea");    
+    mostrar("#divEntregaTarea");   
+    mostrar("#navPrincipal"); 
     
     let encontre = false;
     for (let i = 0; i < ejercicios.length && !encontre; i++){
@@ -436,22 +443,7 @@ function entregarEjercicio(){
 //------------------------------------------------------------------------------------------------------------------------------//
 
 function datosPreCargados(){
-    // //Cargo 2 docentes:
-    // usuarios.push(new usuario("doc1", "Docente 1", "1234aB", "D","",""));
-    // usuarios.push(new usuario("doc2", "Docente 2", "1234aB", "D","",""));
-    // usuarios.push(new usuario("doc3", "Docente 3", "1234aB", "D","",""));
-    // //Cargo 2 alumnos:
-    // usuarios.push(new usuario("alum1", "Alumno 1", "1234aB", "A","1","doc1"));
-    // usuarios.push(new usuario("alum2", "Alumno 2", "1234aB", "A","2","doc2"));
-    // usuarios.push(new usuario("alum3", "Alumno 3", "1234aB", "A","3","doc3"));
-    // //Cargo ejercicios
-    // ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 1", "esta es la descripción del ejercicio", "ej1.png", "doc1", "1"));
-    // ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 2", "esta es la descripción del ejercicio", "ej2.png", "doc1", "1"));
-    // ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 3", "esta es la descripción del ejercicio", "ej3.png", "doc1", "1"));
-    // ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 4", "esta es la descripción del ejercicio", "ej4.png", "doc1", "1"));
-    // ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 5", "esta es la descripción del ejercicio", "ej5.png", "doc1", "2"));
-    // ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 6", "esta es la descripción del ejercicio", "ej6.png", "doc1", "1"));
-    
+
     //Cargo 2 docentes:
     crearUsuario("doc1", "Docente 1", "1234aB", "D","","");
     crearUsuario("doc2", "Docente 2", "1234aB", "D","","");
