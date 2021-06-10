@@ -2,6 +2,8 @@ let usuarios = [];       //Este es un array de usuarios, son los registrados en 
 let usuarioIngreso = ""; //Este es el usuario que ingresa
 let ejercicios = [];     //Estos son los ejercicios planteados.
 let idEjercicio = 0;     //Este es un id que es uníco para cada ejercicio que se plantea.
+let ejercicioEntregado = ""; //este es el ejercicio que se está entregando
+let ejerciciosEntregados = []; //estos son todos los ejercicios entregados
 window.addEventListener("load", inicio);
 function inicio(){
     datosPreCargados();
@@ -215,30 +217,6 @@ function verVentanaRegistrar(){
     ocultar("#divIngreso");
 }
 
-                                            //Función para cerrar el menu alumno y su contenedor
-                                            function salirMenuAlumno(){
-                                                //ocultar("#divMenuAlumno");
-                                                //ocultar("#contenedor");
-
-                                                //ocultar("#divEjercicios")
-
-                                                ocultarTodo();
-                                                mostrar("#divIngreso");
-
-                                                vaciarCampos();
-                                            }
-
-                                            //Función para cerrar el menu docente y su contenedor
-                                            function salirMenuDocente(){
-                                                // ocultar("#divMenuDocente");
-                                                // ocultar("#contenedor");
-                                                // mostrar("#divIngreso");
-                                                // vaciarCampos();
-                                                ocultarTodo();
-                                                mostrar("#divIngreso");
-
-                                                vaciarCampos();    
-                                            }
     
 function salir(){    
     ocultarTodo();
@@ -370,17 +348,14 @@ function mostrarSubirEntrega(id){
     let encontre = false;
     for (let i = 0; i < ejercicios.length && !encontre; i++){
         if(ejercicios[i].id == id){
+            ejercicioEntregado = ejercicios[i];
             encontre = true
-            titulo = ejercicios[i].titulo;
-            docente = ejercicios[i].docente;
+            titulo = ejercicioEntregado.titulo;
+            docente = ejercicioEntregado.docente;
         }
     }
 
-    document.querySelector("#tituloEjercicio").innerHTML= titulo; 
-    
-
-    entregarEjercicio(id, audio, docente, usuarioIngreso.id)
-    
+    document.querySelector("#tituloEjercicio").innerHTML= titulo;      
   }
 
 function agregarEjercicioAPantalla(id,titulo,imagen,descripcion){
@@ -431,10 +406,16 @@ function subirEjercicio(){
 //------------------------------------------------------------------------------------------------------------------------------//
 
 function entregarEjercicio(){
-    let idEjercicio
+    let audio = nombreDeArchivo(document.querySelector("#audio").value);
+    audio = nombreDeArchivo(audio)
+    crearEntregaDeEgercicio(ejercicioEntregado, audio, "", "N")
 }
 
 
+function nombreDeArchivo(ruta){
+    let ultimaBarra = ruta.lastIndexOf("\\");
+    return ruta.substring(ultimaBarra+1);
+}
 
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
@@ -470,4 +451,8 @@ function crearUsuario(user, nombre, pass, tipo, nivel, docente){
 
 function crearEjercicio(titulo, descripcion, imagen, docente, nivel){
     ejercicios.push(new ejercicio(titulo, descripcion, imagen, docente, nivel));
+}
+
+function crearEntregaDeEgercicio(ejercicio, audio, puntaje, corregido){    
+    ejerciciosEntregados.push(new EjerciciosEntregados(ejercicio, audio, puntaje, corregido));
 }
