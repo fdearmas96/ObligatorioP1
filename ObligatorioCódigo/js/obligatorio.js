@@ -2,6 +2,8 @@ let usuarios = [];       //Este es un array de usuarios, son los registrados en 
 let usuarioIngreso = ""; //Este es el usuario que ingresa
 let ejercicios = [];     //Estos son los ejercicios planteados.
 let idEjercicio = 0;     //Este es un id que es uníco para cada ejercicio que se plantea.
+let ejercicioEntregado = ""; //este es el ejercicio que se está entregando
+let ejerciciosEntregados = []; //estos son todos los ejercicios entregados
 window.addEventListener("load", inicio);
 function inicio(){
     datosPreCargados();
@@ -14,12 +16,18 @@ function inicio(){
     document.querySelector("#btnVerAsignarNivel").addEventListener("click", verVentanaAsignarNivel);   
     document.querySelector("#btnAsignarNivel").addEventListener("click", asignarNivel);
     document.querySelector("#btnMostrarNiveles").addEventListener("click", mostrarNiveles);
-    document.querySelector("#btnVerEjerciciosPlanteados").addEventListener("click", cargarEjercicios);
+    //document.querySelector("#btnVerEjerciciosPlanteados").addEventListener("click", cargarEjercicios);
     document.querySelector("#btnPlantearEjercicio").addEventListener("click", subirEjercicio);
     document.querySelector("#btnEntregarAudio")  .addEventListener("click", entregarEjercicio);                                                               
 }
 
-
+function ocultarTodo(){
+    ocultar("#divEjercicios");
+    ocultar("#divPlanteoEjercicio");
+    ocultar("#divAsignacionNivel");
+    ocultar("#divEntregaTarea");
+    ocultar("#navPrincipal");    
+}
 
 function vaciarCampos(){
 
@@ -51,7 +59,7 @@ function hacerVisibleDocentes(){
         document.querySelector("#labelRegDocente").style.display = 'block';   
         document.querySelector("#regDocente").style.display = 'block';
         /*Agrego docentes a la lista de selección*/        
-        for (elemento of usuarios){
+        for (let elemento of usuarios){
             if(elemento.tipo==="D"){
                 docentes += '<option value="' + elemento.id +'">' + elemento.nombre +'(' + elemento.id + ')</option>';                
             }
@@ -181,7 +189,7 @@ function ingresoDeUsuario(){
     let usuarioRegistrado = false;
     let tipo = "";
 
-    for(elemento of usuarios){
+    for(let elemento of usuarios){
         if (elemento.id === loginUsuario && elemento.pass === loginPass){
             usuarioRegistrado = true;
             tipo = elemento.tipo;
@@ -191,7 +199,7 @@ function ingresoDeUsuario(){
             if(elemento.tipo==="D"){
                 mostrar("#divMenuDocente");              
             }else{
-                mostrar("#divMenuAlumno");
+                //mostrar("#divMenuAlumno");
             }
             cargarMenu(tipo)
             mostrar("#contenedor");
@@ -209,48 +217,32 @@ function verVentanaRegistrar(){
     ocultar("#divIngreso");
 }
 
-//Función para cerrar el menu alumno y su contenedor
-function salirMenuAlumno(){
-ocultar("#divMenuAlumno");
-ocultar("#contenedor");
-
-ocultar("#divEjercicios")
-
-mostrar("#divIngreso");
-
-vaciarCampos();
-}
-
-//Función para cerrar el menu docente y su contenedor
-function salirMenuDocente(){
-    ocultar("#divMenuDocente");
-    ocultar("#contenedor");
-    mostrar("#divIngreso");
-    vaciarCampos();
-    }
     
-
+function salir(){    
+    ocultarTodo();
+    mostrar("#divIngreso");
+    vaciarCampos();  
+}
 
 
 
 function cargarMenu(tipoUsuario){
-let menuAmostrar = "";
+    let menuAmostrar = "";
 
     if(tipoUsuario==="A"){
         menuAmostrar = '<li onclick="cargarEjercicios()" > <a>'+"Ver ejercicios planteados y entregar"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Ver ejercicios resueltos"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
-        menuAmostrar+= '<li onclick="salirMenuAlumno()" > <a>'+"Salir"+'</a> </li>';
+        //menuAmostrar+= '<li onclick="salirMenuAlumno()" > <a>'+"Salir"+'</a> </li>';
         cargarEjercicios();
     }else{
         menuAmostrar = '<li onclick="verVentanaAsignarNivel()"> <a id="btnAsignarNivel">'+"Asignar nivel alumno"+'</a> </li>';
         menuAmostrar+= '<li onclick="verVentanaPlanteoEjercicio()"> <a>'+"Plantear ejercicios"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Realizar devoluciones"+'</a> </li>'; 
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
-        menuAmostrar+= '<li onclick="salirMenuDocente()"> <a>'+"Salir"+'</a> </li>';
-      
+        //menuAmostrar+= '<li onclick="salirMenuDocente()"> <a>'+"Salir"+'</a> </li>';      
     }
- 
+    menuAmostrar+= '<li onclick="salir()" > <a>'+"Salir."+'</a> </li>';
     document.querySelector("#navPrincipal").innerHTML=menuAmostrar;
 }
 
@@ -264,7 +256,7 @@ function verVentanaAsignarNivel(){
     ocultar("#divMenuDocente");
     mostrar("#divAsignacionNivel");
     let alumnos="";
-    for (elemento of usuarios){
+    for ( let elemento of usuarios){
         if(elemento.tipo==="A" && elemento.docente ===usuarioIngreso.id){
             alumnos += '<option value="' + elemento.id +'">' + elemento.nombre +'(' + elemento.id + ')</option>';                
         }
@@ -278,7 +270,7 @@ function mostrarNiveles(){
 
     let niveles_a_mostrar=""; 
 
-    for(elemento of usuarios){
+    for(let elemento of usuarios){
         if(id_alumno_seleccionado===elemento.id){
             let nivel_alumno=elemento.nivel;
 
@@ -309,7 +301,7 @@ function mostrarNiveles(){
 function asignarNivel(){
     let id_alumno_seleccionado = document.getElementById("regAlumnos").value;
     let nivel_nuevo=document.getElementById("regNiveles").value;    
-    for(elemento of usuarios){
+    for(let elemento of usuarios){
         if(id_alumno_seleccionado===elemento.id){        
             if(elemento.nivel==="1" && nivel_nuevo==="3"){
                 alert("Solo se puede subir un nivel");
@@ -337,7 +329,10 @@ function asignarNivel(){
 
 function cargarEjercicios(){
     document.querySelector("#divEjercicios").innerHTML = "";
-    for(elemento of ejercicios){
+    ocultarTodo()
+    mostrar("#divEjercicios")
+    mostrar("#navPrincipal");
+    for(let elemento of ejercicios){
         if(elemento.docente===usuarioIngreso.docente && elemento.nivel === usuarioIngreso.nivel){    
             agregarEjercicioAPantalla(elemento.id,elemento.titulo, elemento.imagen, elemento.descripcion);
         }
@@ -345,11 +340,22 @@ function cargarEjercicios(){
 }
 
 
-function mostrarSubirEntrega(id,titulo){
-    mostrar("#divEntregaTarea")
-    let id_ejercicio=id;
-    document.querySelector("#tituloEjercicio").innerHTML="El id del ejercicio es"+id+titulo;
+function mostrarSubirEntrega(id){
+    ocultarTodo();
+    mostrar("#divEntregaTarea");   
+    mostrar("#navPrincipal"); 
+    
+    let encontre = false;
+    for (let i = 0; i < ejercicios.length && !encontre; i++){
+        if(ejercicios[i].id == id){
+            ejercicioEntregado = ejercicios[i];
+            encontre = true
+            titulo = ejercicioEntregado.titulo;
+            docente = ejercicioEntregado.docente;
+        }
+    }
 
+    document.querySelector("#tituloEjercicio").innerHTML= titulo;      
   }
 
 function agregarEjercicioAPantalla(id,titulo,imagen,descripcion){
@@ -362,7 +368,11 @@ function agregarEjercicioAPantalla(id,titulo,imagen,descripcion){
     */
   
    
+<<<<<<< HEAD
     let htmlEjercicio ='<div id=ejercicio'+id+' > <h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="img/'+imagen+'" alt="" id="ejercicioImagen"><br><input type="button" value="Realizar entrega" id="btnRealizarEntrega" onclick=mostrarSubirEntrega('+id+',"'+titulo+')></div>'        
+=======
+    let htmlEjercicio ='<div id=ejercicio'+id+' > <h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="img/'+imagen+'" alt="" id="ejercicioImagen"><br><input type="button" value="Realizar entrega" id="btnRealizarEntrega" onclick="mostrarSubirEntrega('+id+')"></div>'        
+>>>>>>> c61f67b9ed38e66d3ac2701fe96f108ca2a98d2a
     document.querySelector("#divEjercicios").innerHTML += htmlEjercicio;
 
    
@@ -400,10 +410,16 @@ function subirEjercicio(){
 //------------------------------------------------------------------------------------------------------------------------------//
 
 function entregarEjercicio(){
-    let idEjercicio
+    let audio = nombreDeArchivo(document.querySelector("#audio").value);
+    audio = nombreDeArchivo(audio)
+    crearEntregaDeEgercicio(ejercicioEntregado, audio, "", "N")
 }
 
 
+function nombreDeArchivo(ruta){
+    let ultimaBarra = ruta.lastIndexOf("\\");
+    return ruta.substring(ultimaBarra+1);
+}
 
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
@@ -412,22 +428,7 @@ function entregarEjercicio(){
 //------------------------------------------------------------------------------------------------------------------------------//
 
 function datosPreCargados(){
-    // //Cargo 2 docentes:
-    // usuarios.push(new usuario("doc1", "Docente 1", "1234aB", "D","",""));
-    // usuarios.push(new usuario("doc2", "Docente 2", "1234aB", "D","",""));
-    // usuarios.push(new usuario("doc3", "Docente 3", "1234aB", "D","",""));
-    // //Cargo 2 alumnos:
-    // usuarios.push(new usuario("alum1", "Alumno 1", "1234aB", "A","1","doc1"));
-    // usuarios.push(new usuario("alum2", "Alumno 2", "1234aB", "A","2","doc2"));
-    // usuarios.push(new usuario("alum3", "Alumno 3", "1234aB", "A","3","doc3"));
-    // //Cargo ejercicios
-    // ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 1", "esta es la descripción del ejercicio", "ej1.png", "doc1", "1"));
-    // ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 2", "esta es la descripción del ejercicio", "ej2.png", "doc1", "1"));
-    // ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 3", "esta es la descripción del ejercicio", "ej3.png", "doc1", "1"));
-    // ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 4", "esta es la descripción del ejercicio", "ej4.png", "doc1", "1"));
-    // ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 5", "esta es la descripción del ejercicio", "ej5.png", "doc1", "2"));
-    // ejercicios.push(new ejercicio("Este es el titulo del Ejercicio 6", "esta es la descripción del ejercicio", "ej6.png", "doc1", "1"));
-    
+
     //Cargo 2 docentes:
     crearUsuario("doc1", "Docente 1", "1234aB", "D","","");
     crearUsuario("doc2", "Docente 2", "1234aB", "D","","");
@@ -454,4 +455,8 @@ function crearUsuario(user, nombre, pass, tipo, nivel, docente){
 
 function crearEjercicio(titulo, descripcion, imagen, docente, nivel){
     ejercicios.push(new ejercicio(titulo, descripcion, imagen, docente, nivel));
+}
+
+function crearEntregaDeEgercicio(ejercicio, audio, puntaje, corregido){    
+    ejerciciosEntregados.push(new EjerciciosEntregados(ejercicio, audio, puntaje, corregido));
 }

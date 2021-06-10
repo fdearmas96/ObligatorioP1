@@ -25,10 +25,10 @@ class ejercicio{
 
 class EjerciciosEntregados{
 
-    constructor(idEjercicio, audio,docente,usuario,puntaje,corregido){
-        this.idEjercicio=idEjercicio;
+    constructor(ejercicio, audio,usuario,puntaje,corregido){
+        this.ejercicio=ejercicio;
         this.audio=audio;
-        this.docente=docente;
+        //this.docente=docente; se guarda el ejercicio en si por lo tanto ya se puede tener el docente
         this.usuario=usuario;
         this.puntaje=puntaje;
         this.corregido=corregido;
