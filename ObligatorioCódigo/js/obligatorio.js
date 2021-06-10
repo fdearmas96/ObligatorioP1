@@ -221,7 +221,7 @@ function cargarMenu(tipoUsuario){
         menuAmostrar = '<li onclick="cargarEjercicios()" > <a>'+"Ver ejercicios planteados y entregar"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Ver ejercicios resueltos"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
-        //menuAmostrar+= '<li onclick="salirMenuAlumno()" > <a>'+"Salir"+'</a> </li>';
+      
         cargarEjercicios();
         mostrar("#divEjercicios")
     }else{
@@ -229,7 +229,7 @@ function cargarMenu(tipoUsuario){
         menuAmostrar+= '<li onclick="verVentanaPlanteoEjercicio()"> <a>'+"Plantear ejercicios"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Realizar devoluciones"+'</a> </li>'; 
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
-        //menuAmostrar+= '<li onclick="salirMenuDocente()"> <a>'+"Salir"+'</a> </li>';      
+  
     }
     menuAmostrar+= '<li onclick="salir()" > <a>'+"Salir."+'</a> </li>';    
     
@@ -313,10 +313,6 @@ function asignarNivel(){
 //----------------------------------------------VISTA-PLANTEO DE EJERCICIOS-----------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
-
-
-
-
 
 
 function cargarEjercicios(){
