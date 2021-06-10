@@ -45,7 +45,6 @@ function mostrar(id){
 }
 
 
-
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 //--------------------------------------------------REGISTRO DE USUARIOS--------------------------------------------------------//
@@ -118,7 +117,6 @@ function registrarUsuario(){
 }
 
 
-
 function comprobarSiUsuarioExiste(user){
     /*Acá hay que recorrer los vectores o objetos para ver si el usuario ya existe*/
     let yaExiste = false;
@@ -129,8 +127,6 @@ function comprobarSiUsuarioExiste(user){
     }
     return yaExiste;
 }
-
-
 
 
 function comprobarPass(pass){
@@ -197,7 +193,7 @@ function ingresoDeUsuario(){
             ocultar("#divIngreso");          
 
             if(elemento.tipo==="D"){
-                mostrar("#divMenuDocente");              
+                mostrar("#divMenuDocente");
             }else{
                 //mostrar("#divMenuAlumno");
             }
@@ -216,7 +212,6 @@ function verVentanaRegistrar(){
     mostrar("#divRegistro");
     ocultar("#divIngreso");
 }
-
     
 function salir(){    
     ocultarTodo();
@@ -228,13 +223,14 @@ function salir(){
 
 function cargarMenu(tipoUsuario){
     let menuAmostrar = "";
-
+    ocultarTodo()
     if(tipoUsuario==="A"){
         menuAmostrar = '<li onclick="cargarEjercicios()" > <a>'+"Ver ejercicios planteados y entregar"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Ver ejercicios resueltos"+'</a> </li>';
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
         //menuAmostrar+= '<li onclick="salirMenuAlumno()" > <a>'+"Salir"+'</a> </li>';
         cargarEjercicios();
+        mostrar("#divEjercicios")
     }else{
         menuAmostrar = '<li onclick="verVentanaAsignarNivel()"> <a id="btnAsignarNivel">'+"Asignar nivel alumno"+'</a> </li>';
         menuAmostrar+= '<li onclick="verVentanaPlanteoEjercicio()"> <a>'+"Plantear ejercicios"+'</a> </li>';
@@ -242,7 +238,10 @@ function cargarMenu(tipoUsuario){
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
         //menuAmostrar+= '<li onclick="salirMenuDocente()"> <a>'+"Salir"+'</a> </li>';      
     }
-    menuAmostrar+= '<li onclick="salir()" > <a>'+"Salir."+'</a> </li>';
+    menuAmostrar+= '<li onclick="salir()" > <a>'+"Salir."+'</a> </li>';    
+    
+    
+    mostrar("#navPrincipal");
     document.querySelector("#navPrincipal").innerHTML=menuAmostrar;
 }
 
@@ -329,9 +328,6 @@ function asignarNivel(){
 
 function cargarEjercicios(){
     document.querySelector("#divEjercicios").innerHTML = "";
-    ocultarTodo()
-    mostrar("#divEjercicios")
-    mostrar("#navPrincipal");
     for(let elemento of ejercicios){
         if(elemento.docente===usuarioIngreso.docente && elemento.nivel === usuarioIngreso.nivel){    
             agregarEjercicioAPantalla(elemento.id,elemento.titulo, elemento.imagen, elemento.descripcion);
@@ -391,7 +387,7 @@ function subirEjercicio(){
     let descripcion=document.querySelector("#planteoDescripcion").value;
     let imagen = document.querySelector("#planteoImagen").value;
 
-    imagen=imagen.replace('C:\\fakepath\\','')
+    imagen=nombreDeArchivo(imagen)//imagen.replace('C:\\fakepath\\','')
     let id_del_usuario= usuarioIngreso.id;
 
    //ejercicios.push(new ejercicio(titulo,descripcion,imagen,id_del_usuario,nivel));
@@ -409,8 +405,11 @@ function entregarEjercicio(){
     let audio = nombreDeArchivo(document.querySelector("#audio").value);
     audio = nombreDeArchivo(audio)
     crearEntregaDeEgercicio(ejercicioEntregado, audio, "", "N")
+    alert("Entrega agregada")
+    ocultarTodo()
+    mostrar("#divEjercicios")
+    mostrar("#navPrincipal");
 }
-
 
 function nombreDeArchivo(ruta){
     let ultimaBarra = ruta.lastIndexOf("\\");
