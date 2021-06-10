@@ -12,8 +12,7 @@ function inicio(){
     document.querySelector("#regEsAlumno").addEventListener("click", hacerVisibleDocentes);
 
     document.querySelector("#btnIngresar").addEventListener("click", ingresoDeUsuario);
-    document.querySelector("#btnVentanaRegistrar").addEventListener("click", verVentanaRegistrar);    
-    document.querySelector("#btnVerAsignarNivel").addEventListener("click", verVentanaAsignarNivel);   
+    document.querySelector("#btnVentanaRegistrar").addEventListener("click", verVentanaRegistrar);       
     document.querySelector("#btnAsignarNivel").addEventListener("click", asignarNivel);
     document.querySelector("#btnMostrarNiveles").addEventListener("click", mostrarNiveles);
     //document.querySelector("#btnVerEjerciciosPlanteados").addEventListener("click", cargarEjercicios);
@@ -191,12 +190,6 @@ function ingresoDeUsuario(){
             tipo = elemento.tipo;
             usuarioIngreso = new usuario(elemento.id, elemento.nombre, elemento.pass, elemento.tipo, elemento.nivel,elemento.docente);
             ocultar("#divIngreso");          
-
-            if(elemento.tipo==="D"){
-                mostrar("#divMenuDocente");
-            }else{
-                //mostrar("#divMenuAlumno");
-            }
             cargarMenu(tipo)
             mostrar("#contenedor");
         }
@@ -377,7 +370,7 @@ function agregarEjercicioAPantalla(id,titulo,imagen,descripcion){
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 
-function verVentanaPlanteoEjercicio(id){
+function verVentanaPlanteoEjercicio(){
     ocultarTodo()
     mostrar("#divPlanteoEjercicio");
     mostrar("#navPrincipal")
@@ -406,7 +399,7 @@ function subirEjercicio(){
 function entregarEjercicio(){
     let audio = nombreDeArchivo(document.querySelector("#audio").value);
     audio = nombreDeArchivo(audio)
-    crearEntregaDeEgercicio(ejercicioEntregado, audio, "", "N")
+    crearEntregaDeEgercicio(ejercicioEntregado, audio, usuarioIngreso, "", "N")
     alert("Entrega agregada")
     ocultarTodo()
     mostrar("#divEjercicios")
@@ -454,6 +447,6 @@ function crearEjercicio(titulo, descripcion, imagen, docente, nivel){
     ejercicios.push(new ejercicio(titulo, descripcion, imagen, docente, nivel));
 }
 
-function crearEntregaDeEgercicio(ejercicio, audio, puntaje, corregido){    
-    ejerciciosEntregados.push(new EjerciciosEntregados(ejercicio, audio, puntaje, corregido));
+function crearEntregaDeEgercicio(ejercicio, audio, usuario, puntaje, corregido){    
+    ejerciciosEntregados.push(new EjerciciosEntregados(ejercicio, audio, usuario, puntaje, corregido));
 }
