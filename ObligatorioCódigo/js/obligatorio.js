@@ -364,7 +364,11 @@ function agregarEjercicioAPantalla(id,titulo,imagen,descripcion){
     */
   
    
+<<<<<<< HEAD
+    let htmlEjercicio ='<div id=ejercicio'+id+' > <h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="img/'+imagen+'" alt="" id="ejercicioImagen"><br><input type="button" value="Realizar entrega" id="btnRealizarEntrega" onclick=mostrarSubirEntrega('+id+',"'+titulo+')></div>'        
+=======
     let htmlEjercicio ='<div id=ejercicio'+id+' > <h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="img/'+imagen+'" alt="" id="ejercicioImagen"><br><input type="button" value="Realizar entrega" id="btnRealizarEntrega" onclick="mostrarSubirEntrega('+id+')"></div>'        
+>>>>>>> c61f67b9ed38e66d3ac2701fe96f108ca2a98d2a
     document.querySelector("#divEjercicios").innerHTML += htmlEjercicio;
 
    
