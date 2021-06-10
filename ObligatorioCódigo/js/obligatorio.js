@@ -361,14 +361,10 @@ function agregarEjercicioAPantalla(id,titulo,imagen,descripcion){
     -Descripción
     -Ruta de imagen
     -id del ejercicio para luego hacer la entrega? por el título es tedioso    
-    */
-  
+    */ 
    
-<<<<<<< HEAD
-    let htmlEjercicio ='<div id=ejercicio'+id+' > <h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="img/'+imagen+'" alt="" id="ejercicioImagen"><br><input type="button" value="Realizar entrega" id="btnRealizarEntrega" onclick=mostrarSubirEntrega('+id+',"'+titulo+')></div>'        
-=======
     let htmlEjercicio ='<div id=ejercicio'+id+' > <h5 id="titEjercicio">'+titulo+'</h5><p id="ejercicioDescripcion">'+descripcion+'</p><img src="img/'+imagen+'" alt="" id="ejercicioImagen"><br><input type="button" value="Realizar entrega" id="btnRealizarEntrega" onclick="mostrarSubirEntrega('+id+')"></div>'        
->>>>>>> c61f67b9ed38e66d3ac2701fe96f108ca2a98d2a
+
     document.querySelector("#divEjercicios").innerHTML += htmlEjercicio;
 
    
@@ -382,7 +378,9 @@ function agregarEjercicioAPantalla(id,titulo,imagen,descripcion){
 //------------------------------------------------------------------------------------------------------------------------------//
 
 function verVentanaPlanteoEjercicio(id){
+    ocultarTodo()
     mostrar("#divPlanteoEjercicio");
+    mostrar("#navPrincipal")
 }
 
 function subirEjercicio(){
