@@ -223,7 +223,7 @@ function cargarMenu(tipoUsuario){
         menuAmostrar+= '<li> <a>'+"Informacion estadistica"+'</a> </li>';
       
         cargarEjercicios();
-        mostrar("#divEjercicios")
+        
     }else{
         menuAmostrar = '<li onclick="verVentanaAsignarNivel()"> <a id="btnAsignarNivel">'+"Asignar nivel alumno"+'</a> </li>';
         menuAmostrar+= '<li onclick="verVentanaPlanteoEjercicio()"> <a>'+"Plantear ejercicios"+'</a> </li>';
@@ -317,6 +317,9 @@ function asignarNivel(){
 
 function cargarEjercicios(){
     document.querySelector("#divEjercicios").innerHTML = "";
+    ocultarTodo()
+    mostrar("#divEjercicios");
+    mostrar("#navPrincipal");
     for(let elemento of ejercicios){
         if(elemento.docente===usuarioIngreso.docente && elemento.nivel === usuarioIngreso.nivel){    
             agregarEjercicioAPantalla(elemento.id,elemento.titulo, elemento.imagen, elemento.descripcion);
@@ -329,18 +332,30 @@ function mostrarSubirEntrega(id){
     ocultarTodo();
     mostrar("#divEntregaTarea");   
     mostrar("#navPrincipal"); 
-    
+
+   
     let encontre = false;
+    let titulo = "";
+    let docente = "";
+    let descripcion = "";
+    let imagen = "";
     for (let i = 0; i < ejercicios.length && !encontre; i++){
         if(ejercicios[i].id == id){
             ejercicioEntregado = ejercicios[i];
             encontre = true
             titulo = ejercicioEntregado.titulo;
             docente = ejercicioEntregado.docente;
+            descripcion = ejercicioEntregado.descripcion;
+            imagen = ejercicioEntregado.imagen;
         }
     }
 
-    document.querySelector("#tituloEjercicio").innerHTML= titulo;      
+    document.querySelector("#tituloEjercicio").innerHTML= titulo; 
+    document.querySelector("#descripcionEjercicio").innerHTML= descripcion;
+    let divImagen = '<img src="img/'
+    divImagen += imagen
+    divImagen += '" alt="imagen"></img>'    
+    document.querySelector("#imagenEjercicio").innerHTML=divImagen;
   }
 
 function agregarEjercicioAPantalla(id,titulo,imagen,descripcion){
