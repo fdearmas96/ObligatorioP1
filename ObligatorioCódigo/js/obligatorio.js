@@ -373,6 +373,17 @@ function agregarEjercicioAPantalla(id,titulo,imagen,descripcion){
 
    
 }
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------VER EJERCICIOS PLANTEADOS - DOCENTE---------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+function verVentanaEjerciciosPlanteados(){
+ocultarTodo()
+mostrar("#verEjerciciosResueltos");
+}
+
+
 
 
 //------------------------------------------------------------------------------------------------------------------------------//
@@ -409,7 +420,7 @@ function subirEjercicio(){
 
 function entregarEjercicio(){
     let audio = nombreDeArchivo(document.querySelector("#audio").value);
-    audio = nombreDeArchivo(audio)
+    audio = nombreDeArchivo(audio);
     crearEntregaDeEgercicio(ejercicioEntregado, audio, usuarioIngreso, "", "N")
     alert("Entrega agregada")
     ocultarTodo()
