@@ -223,8 +223,7 @@ function salir() {
 
 function cargarMenu(tipoUsuario) {
   let menuAmostrar = "";
-  ocultarTodo();
-  alert("tipo usuario " + tipoUsuario)
+  ocultarTodo();  
   if (tipoUsuario === "A") {
     menuAmostrar ='<li onclick="cargarEjercicios()" > <a>' +"Ver ejercicios planteados y entregar" +"</a> </li>";
     menuAmostrar +='<li onclick="verVentanaEjerciciosPlanteados()"> <a>' +"Ver ejercicios resueltos" +"</a> </li>";
