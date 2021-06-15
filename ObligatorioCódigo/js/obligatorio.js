@@ -224,35 +224,18 @@ function salir() {
 function cargarMenu(tipoUsuario) {
   let menuAmostrar = "";
   ocultarTodo();
+  alert("tipo usuario " + tipoUsuario)
   if (tipoUsuario === "A") {
-    menuAmostrar =
-      '<li onclick="cargarEjercicios()" > <a>' +
-      "Ver ejercicios planteados y entregar" +
-      "</a> </li>";
-    menuAmostrar +=
-      '<li onclick="verVentanaEjerciciosPlanteados()"> <a>' +
-      "Ver ejercicios resueltos" +
-      "</a> </li>";
-    menuAmostrar +=
-      '<li onclick="infromacionEstedisticaAlumno()"> <a>' +
-      "Informacion estadistica" +
-      "</a> </li>";
+    menuAmostrar ='<li onclick="cargarEjercicios()" > <a>' +"Ver ejercicios planteados y entregar" +"</a> </li>";
+    menuAmostrar +='<li onclick="verVentanaEjerciciosPlanteados()"> <a>' +"Ver ejercicios resueltos" +"</a> </li>";
+    menuAmostrar +='<li onclick="infromacionEstedisticaAlumno()"> <a>' +"Informacion estadistica" +"</a> </li>";
 
     cargarEjercicios();
   } else {
-    menuAmostrar =
-      '<li onclick="verVentanaAsignarNivel()"> <a id="btnAsignarNivel">' +
-      "Asignar nivel alumno" +
-      "</a> </li>";
-    menuAmostrar +=
-      '<li onclick="verVentanaPlanteoEjercicio()"> <a>' +
-      "Plantear ejercicios" +
-      "</a> </li>";
+    menuAmostrar ='<li onclick="verVentanaAsignarNivel()"> <a id="btnAsignarNivel">' +"Asignar nivel alumno" +"</a> </li>";
+    menuAmostrar +='<li onclick="verVentanaPlanteoEjercicio()"> <a>' +"Plantear ejercicios" +"</a> </li>";
     menuAmostrar += "<li> <a>" + "Realizar devoluciones" + "</a> </li>";
-    menuAmostrar +=
-      '<li onclick="informacionEstadisticaDocente()"> <a>' +
-      "Informacion estadistica" +
-      "</a> </li>";
+    menuAmostrar +='<li onclick="informacionEstadisticaDocente()"> <a>' +"Informacion estadistica" +"</a> </li>";
   }
   menuAmostrar += '<li onclick="salir()" > <a>' + "Salir." + "</a> </li>";
 
@@ -431,7 +414,8 @@ function agregarEjercicioAPantalla(id, titulo, imagen, descripcion) {
     -Ruta de imagen
     -id del ejercicio para luego hacer la entrega */
 
- "<div id=ejercicio" + id;
+
+  let htmlEjercicio = "<div id=ejercicio" + id;
   htmlEjercicio += ' > <h5 id="titEjercicio">' +titulo;
   htmlEjercicio += '</h5><p id="ejercicioDescripcion">' +descripcion;
   htmlEjercicio += '</p><img src="img/' + imagen;
@@ -642,18 +626,19 @@ function informacionEstadisticaDocente() {
     document.querySelector("#regAlumnosInformacion").innerHTML = alumnos;
   }
 
-  function MostrarTotalEjercicio() {
-    let id_alumno_seleccionado = document.querySelector("regAlumnosInformacion").value;
-    let nivel_alumno_seleccionado = "";
-    //Obtengo el nivel del alumno seleccionado
-    for (elemento of usuario) {
-      if (id_alumno_seleccionado === elemento[i].id) {
-        nivel_alumno_seleccionado = elemento[i].nivel;
-      }
-    }
 
-    for (elemento of ejercicios) {
-    }
+}
+function MostrarTotalEjercicio() {
+  let id_alumno_seleccionado = document.querySelector("#regAlumnosInformacion").value;
+  let nivel_alumno_seleccionado = "";
+  //Obtengo el nivel del alumno seleccionado
+  // for (elemento of usuarios) {
+  //   if (id_alumno_seleccionado === elemento[i].id) {
+  //     nivel_alumno_seleccionado = elemento[i].nivel;
+  //   }
+  // }
+
+  for (elemento of ejercicios) {
   }
 }
 
