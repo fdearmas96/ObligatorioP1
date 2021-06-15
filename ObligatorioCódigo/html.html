@@ -38,6 +38,26 @@
              <input type="button" value="Registrar" id="btnVentanaRegistrar">   
          </form>
        </div>   
+       <div id="divRegistro" style="display: none;">
+        <h5>Registro</h5>
+        <form action="#">
+            <label for="regNombre">Nombre</label>
+            <input type="text" id="regNombre" name="regNombre"><br>
+            <label for="regUsuario">Usuario</label>
+            <input type="text" id="regUsuario" name="regUsuario"><br>
+            <label for="regPass">Contraseña</label>
+            <input type="password" id="regPass" name="regPass"><br>          
+            <label for="regEsAlumno">Es alumno?</label>
+            <input type="checkbox" name="regEsAlumno" id="regEsAlumno"><br>
+            <label for="regDocente" style="display: none;" id="labelRegDocente">Docente</label>
+            <select name="regDocente" id="regDocente" style="display: none;">
+            </select><br>
+            <p id="errorRegistro" style="display: none;"></p>
+            <input type="button" value="Registrar" id="btnRegistrar">
+            <input type="button" value="Salir" onclick="ocultar('#divRegistro') + mostrar('#divIngreso') ">
+    
+        </form>
+      </div>
 
       <hr>
      
@@ -153,25 +173,6 @@
         <a href="https://www.ort.edu.uy">Footer</a>
       </div><!-- FIN PIE -->
     </div><!-- FIN CONTENEDOR -->  
-    <div id="divRegistro" style="display: none;">
-      <h5>Registro</h5>
-      <form action="#">
-          <label for="regNombre">Nombre</label>
-          <input type="text" id="regNombre" name="regNombre"><br>
-          <label for="regUsuario">Usuario</label>
-          <input type="text" id="regUsuario" name="regUsuario"><br>
-          <label for="regPass">Contraseña</label>
-          <input type="password" id="regPass" name="regPass"><br>          
-          <label for="regEsAlumno">Es alumno?</label>
-          <input type="checkbox" name="regEsAlumno" id="regEsAlumno"><br>
-          <label for="regDocente" style="display: none;" id="labelRegDocente">Docente</label>
-          <select name="regDocente" id="regDocente" style="display: none;">
-          </select><br>
-          <p id="errorRegistro" style="display: none;"></p>
-          <input type="button" value="Registrar" id="btnRegistrar">
-          <input type="button" value="Salir" onclick="ocultar('#divRegistro') + mostrar('#divIngreso') ">
-  
-      </form>
-    </div>
+
 </body>
 </html>
