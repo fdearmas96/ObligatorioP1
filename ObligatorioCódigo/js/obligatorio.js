@@ -429,21 +429,18 @@ function agregarEjercicioAPantalla(id, titulo, imagen, descripcion) {
     -Titulo
     -Descripción
     -Ruta de imagen
-    -id del ejercicio para luego hacer la entrega? por el título es tedioso    
-    */
+    -id del ejercicio para luego hacer la entrega */
 
-  // let htmlEjercicio ="<div id=ejercicio" + id +' > <h5 id="titEjercicio">' +titulo +'</h5><p id="ejercicioDescripcion">' +descripcion +'</p><img src="img/' + imagen +
-  //   '" alt="" id="ejercicioImagen"><br><input type="button" value="Realizar entrega" id="btnRealizarEntrega" onclick="mostrarSubirEntrega(' +
-  //   id +
-  //   ')"></div>';
-  let htmlEjercicio = "<div id=ejercicio" + id 
-  htmlEjercicio += ' > <h5 id="titEjercicio">' +titulo
-  htmlEjercicio += '</h5><p id="ejercicioDescripcion">' +descripcion
-  htmlEjercicio += '</p><img src="img/' + imagen
-  htmlEjercicio += '" alt="" id="ejercicioImagen"><br><input type="button" value="Realizar entrega" id="btnRealizarEntrega" onclick="mostrarSubirEntrega(' +id
+ "<div id=ejercicio" + id;
+  htmlEjercicio += ' > <h5 id="titEjercicio">' +titulo;
+  htmlEjercicio += '</h5><p id="ejercicioDescripcion">' +descripcion;
+  htmlEjercicio += '</p><img src="img/' + imagen;
+  htmlEjercicio += '" alt="" id="ejercicioImagen"><br><input type="button" value="Realizar entrega" id="btnRealizarEntrega" onclick="mostrarSubirEntrega(' +id;
   htmlEjercicio +=  ')"></div>';
   document.querySelector("#divEjercicios").innerHTML += htmlEjercicio;
 }
+
+
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------VER EJERCICIOS PLANTEADOS - ALUMNO---------------------------------------------//
@@ -482,36 +479,14 @@ function verVentanaEjerciciosPlanteados() {
         devolucion = ejerciciosEntregados[i].devolucion;
         corregido = ejerciciosEntregados[i].corregido;
 
-        cargarEjerciciosResueltoAPantalla(
-          id,
-          titulo,
-          descripcion,
-          imagen,
-          docente,
-          nivel,
-          audio,
-          usuario,
-          devolucion,
-          corregido
-        );
+        cargarEjerciciosResueltoAPantalla(id,titulo,descripcion,imagen,docente,nivel,audio,usuario,devolucion,corregido);
       }
     }
   }
 }
 
 //Funcion para mostrar en el HTML un ejercicio entregado
-function cargarEjerciciosResueltoAPantalla(
-  id,
-  titulo,
-  descripcion,
-  imagen,
-  docente,
-  nivel,
-  audio,
-  _usuario,
-  devolucion,
-  corregido
-) {
+function cargarEjerciciosResueltoAPantalla(id,titulo,descripcion,imagen,docente,nivel,audio,_usuario,devolucion,corregid) {
   let htmlEjercicio = "<div id=ejercicio" + id + ">";
   htmlEjercicio += '<h5 id="titEjercicio">' + titulo + "</h5>";
   htmlEjercicio += '<p id="ejercicioDescripcion">' + descripcion + "</p>";
@@ -558,18 +533,12 @@ function infromacionEstedisticaAlumno() {
   }
   //regla de 3 para sacar el porcentaje
   if (cantidadEjerciciosPlanteados != 0) {
-    porcentajeResuelto =
-      (cantidadEjerciciosResueltos * 100) / cantidadEjerciciosPlanteados;
+    porcentajeResuelto = (cantidadEjerciciosResueltos * 100) / cantidadEjerciciosPlanteados;
   }
 
   //Agrego resultados a pantalla:
-  document.querySelector("#porcentajeEjResueltos").innerHTML =
-    "El porcentaje de ejercicios resueltos es %" + porcentajeResuelto;
-  document.querySelector("#ejerciciosConSinDevolucion").innerHTML =
-    "De un total de " +
-    cantidadEjerciciosPlanteados +
-    " planteados, " +
-    cantidadConDevolucion +
+  document.querySelector("#porcentajeEjResueltos").innerHTML = "El porcentaje de ejercicios resueltos es %" + porcentajeResuelto;
+  document.querySelector("#ejerciciosConSinDevolucion").innerHTML = "De un total de " + cantidadEjerciciosPlanteados + " planteados, " + cantidadConDevolucion +
     " recibieron devolución.";
 }
 
@@ -668,22 +637,13 @@ function informacionEstadisticaDocente() {
 
   for (let elemento of usuarios) {
     if (elemento.tipo === "A" && elemento.docente === usuarioIngreso.id) {
-      alumnos +=
-        '<option value="' +
-        elemento.id +
-        '">' +
-        elemento.nombre +
-        "(" +
-        elemento.id +
-        ")</option>";
+      alumnos +='<option value="' +  elemento.id +'">' +elemento.nombre +"(" +elemento.id +")</option>";
     }
     document.querySelector("#regAlumnosInformacion").innerHTML = alumnos;
   }
 
   function MostrarTotalEjercicio() {
-    let id_alumno_seleccionado = document.querySelector(
-      "regAlumnosInformacion"
-    ).value;
+    let id_alumno_seleccionado = document.querySelector("regAlumnosInformacion").value;
     let nivel_alumno_seleccionado = "";
     //Obtengo el nivel del alumno seleccionado
     for (elemento of usuario) {
@@ -717,20 +677,8 @@ function datosPreCargados() {
   crearEjercicio("Este es el titulo del Ejercicio 2","Ejercicio 1 esta es la descripción del ejercicio","ej2.png","doc1","1");
   crearEjercicio("Este es el titulo del Ejercicio 3","esta es la descripción del ejercicio","ej3.png","doc1","1");
   crearEjercicio("Este es el titulo del Ejercicio 4","esta es la descripción del ejercicio","ej4.png","doc1","1");
-  crearEjercicio(
-    "Este es el titulo del Ejercicio 5",
-    "esta es la descripción del ejercicio",
-    "ej5.png",
-    "doc1",
-    "2"
-  );
-  crearEjercicio(
-    "Este es el titulo del Ejercicio 6",
-    "esta es la descripción del ejercicio",
-    "ej6.png",
-    "doc1",
-    "1"
-  );
+  crearEjercicio("Este es el titulo del Ejercicio 5","esta es la descripción del ejercicio","ej5.png","doc1","2");
+  crearEjercicio("Este es el titulo del Ejercicio 6","esta es la descripción del ejercicio","ej6.png","doc1", "1");
 }
 
 function crearUsuario(user, nombre, pass, tipo, nivel, docente) {
@@ -741,14 +689,6 @@ function crearEjercicio(titulo, descripcion, imagen, docente, nivel) {
   ejercicios.push(new ejercicio(titulo, descripcion, imagen, docente, nivel));
 }
 
-function crearEntregaDeEjercicio(
-  ejercicio,
-  audio,
-  usuario,
-  devolucion,
-  corregido
-) {
-  ejerciciosEntregados.push(
-    new EjerciciosEntregados(ejercicio, audio, usuario, devolucion, corregido)
-  );
+function crearEntregaDeEjercicio(ejercicio,audio,usuario,devolucion,corregido) {
+  ejerciciosEntregados.push(new EjerciciosEntregados(ejercicio, audio, usuario, devolucion, corregido));
 }
