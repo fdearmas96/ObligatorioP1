@@ -10,7 +10,8 @@ function inicio() {
   datosPreCargados();
 
   document.querySelector("#btnRegistrar").addEventListener("click", registrarUsuario);
-  document.querySelector("#regEsAlumno").addEventListener("click", hacerVisibleDocentes);
+  //document.querySelector("#regEsAlumno").addEventListener("click", hacerVisibleDocentes);
+  document.querySelector("#btnContinuar").addEventListener("click", continuarRegistro);
 
   document.querySelector("#btnIngresar").addEventListener("click", ingresoDeUsuario);
   document.querySelector("#btnVentanaRegistrar").addEventListener("click", verVentanaRegistrar);
@@ -19,19 +20,23 @@ function inicio() {
   document.querySelector("#btnPlantearEjercicio").addEventListener("click", subirEjercicio);
   document.querySelector("#btnEntregarAudio").addEventListener("click", entregarEjercicio);
   document.querySelector("#buscador").addEventListener("keyup", cargarEjercicios);
-
-  document.querySelector("#btnMostrarTotalEjercicios").addEventListener("click", MostrarTotalEjercicio());
+  document.querySelector("#btnMostrarTotalEjercicios").addEventListener("click", MostrarTotalEjercicios());
 }
 
 function ocultarTodo() {
+
+  ocultar("#divRegistro");  
   ocultar("#divEjercicios");
   ocultar("#divPlanteoEjercicio");
   ocultar("#divAsignacionNivel");
   ocultar("#divEntregaTarea");
   ocultar("#divFiltro");
   ocultar("#divInformacionEstadisticaAlumno");
-  ocultar("#EjerciciosResueltos");
+  ocultar("#divEjerciciosEntregados");
+  ocultar("#divInformacionEstadisticaDocente")
+  ocultar("#divEjerciciosResueltos");
   mostrar("#navPrincipal");
+
 }
 
 function vaciarCampos() {
@@ -53,10 +58,20 @@ function mostrar(id) {
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 
-function hacerVisibleDocentes() {
-  let estaTildado = document.querySelector("#regEsAlumno").checked;
+function continuarRegistro(){
+  ocultar("#divSelectTipoUsuario");
+  mostrar("#divDatosDeUsuario")
+  let tipoDeUsuario = document.querySelector("#regTipoUsuario").value;
+  if (tipoDeUsuario === "A"){
+    hacerVisibleDocentes();
+  }
+  
+}
+
+function hacerVisibleDocentes() {  
+  //let estaTildado = document.querySelector("#regEsAlumno").checked;
   let docentes = "";
-  if (estaTildado) {
+  //if (estaTildado) {
     document.querySelector("#labelRegDocente").style.display = "block";
     document.querySelector("#regDocente").style.display = "block";
     /*Agrego docentes a la lista de selección*/
@@ -66,10 +81,10 @@ function hacerVisibleDocentes() {
         }
     }
     document.querySelector("#regDocente").innerHTML = docentes;
-  } else {
-    document.querySelector("#labelRegDocente").style.display = "none";
-    document.querySelector("#regDocente").style.display = "none";
-  }
+  //} else {
+    //document.querySelector("#labelRegDocente").style.display = "none";
+    //document.querySelector("#regDocente").style.display = "none";
+  //}
 }
 function registrarUsuario() {
   let usuarioReg = document.querySelector("#regUsuario").value.toUpperCase();
@@ -102,7 +117,7 @@ function registrarUsuario() {
     document.querySelector("#errorRegistro").innerHTML = "";
     document.querySelector("#errorRegistro").style.display = "none";
 
-    if (document.querySelector("#regEsAlumno").checked) {
+    if (document.querySelector("#regTipoUsuario").value === "A") { //Datos que son solo del alumno
       tipo = "A";
       nivel = "1";
       docente = document.querySelector("#regDocente").value;
@@ -112,6 +127,9 @@ function registrarUsuario() {
     crearUsuario(usuarioReg, nombreReg, contraseñaReg, tipo, nivel, docente);
     mostrar("#divIngreso");
     ocultar("#divRegistro");
+    usuarioReg = document.querySelector("#regUsuario").value = "";
+    contraseñaReg = document.querySelector("#regPass").value = "";
+    nombreReg = document.querySelector("#regNombre").value = "";
   }
 }
 
@@ -207,16 +225,18 @@ function ingresoDeUsuario() {
 
 function verVentanaRegistrar() {
   document.querySelector("#loginUsuario").value = "";
-  document.querySelector("#loginPass").value = "";
-  mostrar("#divRegistro");
+  document.querySelector("#loginPass").value = "";    
   ocultar("#divIngreso");
+  ocultar("#divDatosDeUsuario");  
+  mostrar("#divRegistro");
+  mostrar("#divSelectTipoUsuario")
 }
 
 function salir() {
   ocultarTodo();
-  ocultar("#navPrincipal");
-  ocultar("#EjerciciosResueltos");
-  ocultar("#divInformacionEstadisticaAlumno");
+  /*ocultar("#navPrincipal");
+  ocultar("#divEjerciciosEntregados");
+  ocultar("#divInformacionEstadisticaAlumno");*/
   mostrar("#divIngreso");
   vaciarCampos();
 }
@@ -233,7 +253,7 @@ function cargarMenu(tipoUsuario) {
   } else {
     menuAmostrar ='<li onclick="verVentanaAsignarNivel()"> <a id="btnAsignarNivel">' +"Asignar nivel alumno" +"</a> </li>";
     menuAmostrar +='<li onclick="verVentanaPlanteoEjercicio()"> <a>' +"Plantear ejercicios" +"</a> </li>";
-    menuAmostrar += "<li> <a>" + "Realizar devoluciones" + "</a> </li>";
+    menuAmostrar += "<li onclick=mostrar('#divEjerciciosEntregados')> <a>" + "Realizar devoluciones" + "</a> </li>";
     menuAmostrar +='<li onclick="informacionEstadisticaDocente()"> <a>' +"Informacion estadistica" +"</a> </li>";
   }
   menuAmostrar += '<li onclick="salir()" > <a>' + "Salir." + "</a> </li>";
@@ -331,11 +351,10 @@ function cargarEjercicios() {
   document.querySelector("#divEjercicios").innerHTML = "";
   let nombre_a_buscar = document.getElementById("buscador").value.toUpperCase();
   listaAMostrar = buscarEjercicio(nombre_a_buscar);
+  
   for (let elemento of listaAMostrar) {
-    if (
-      elemento.docente === usuarioIngreso.docente &&
-      elemento.nivel === usuarioIngreso.nivel
-    ) {
+    
+    if (elemento.docente === usuarioIngreso.docente && elemento.nivel === usuarioIngreso.nivel) {
       agregarEjercicioAPantalla(
         elemento.id,
         elemento.titulo,
@@ -351,14 +370,11 @@ function buscarEjercicio(nombre_a_buscar) {
 
   let listaAMostrar = [];
   encontro = false;
+  
   for (let elemento of ejercicios) {
-    if (
-      elemento.docente === usuarioIngreso.docente &&
-      elemento.nivel === usuarioIngreso.nivel &&
-      elemento.titulo.toUpperCase().includes(nombre_a_buscar)
-    ) {
-      encontro = true;
-
+    //alert("elemento.docente " +elemento.docente + "_" + usuarioIngreso.docente + " niv= " + elemento.nivel +" _ = " + usuarioIngreso.nivel);    
+    if (elemento.docente === usuarioIngreso.docente && elemento.nivel === usuarioIngreso.nivel && elemento.titulo.toUpperCase().includes(nombre_a_buscar)) {
+      encontro = true;      
       listaAMostrar.push(elemento);
     }
   }
@@ -378,31 +394,45 @@ function buscarEjercicio(nombre_a_buscar) {
 }
 
 function mostrarSubirEntrega(id) {
-  ocultarTodo();
-  mostrar("#divEntregaTarea");
-
-  let encontre = false;
-  let titulo = "";
-  let docente = "";
-  let descripcion = "";
-  let imagen = "";
-  for (let i = 0; i < ejercicios.length && !encontre; i++) {
-    if (ejercicios[i].id == id) {
-      ejercicioEntregado = ejercicios[i];
-      encontre = true;
-      titulo = ejercicioEntregado.titulo;
-      docente = ejercicioEntregado.docente;
-      descripcion = ejercicioEntregado.descripcion;
-      imagen = ejercicioEntregado.imagen;
-    }
+  //Verifico si el alumno ya hizo una entrega para esa tarea
+  let yaEntrego = false;
+  for(let i = 0; i< ejerciciosEntregados.length && !yaEntrego; i++){
+    if (ejerciciosEntregados[i].usuario == usuarioIngreso && ejerciciosEntregados[i].ejercicio.id == id){
+      yaEntrego = true;
+    }   
   }
 
-  document.querySelector("#tituloEjercicio").innerHTML = titulo;
-  document.querySelector("#descripcionEjercicio").innerHTML = descripcion;
-  let divImagen = '<img src="img/';
-  divImagen += imagen;
-  divImagen += '" alt="imagen"></img>';
-  document.querySelector("#imagenEjercicio").innerHTML = divImagen;
+  if(yaEntrego){
+    alert("Ya realizó una entrega para este ejercicio")
+  }else{
+
+    ocultarTodo();
+    mostrar("#divEntregaTarea");
+  
+    let encontre = false;
+    let titulo = "";
+    let docente = "";
+    let descripcion = "";
+    let imagen = "";
+    for (let i = 0; i < ejercicios.length && !encontre; i++) {
+      if (ejercicios[i].id == id) {
+        ejercicioEntregado = ejercicios[i];
+        encontre = true;
+        titulo = ejercicioEntregado.titulo;
+        docente = ejercicioEntregado.docente;
+        descripcion = ejercicioEntregado.descripcion;
+        imagen = ejercicioEntregado.imagen;
+      }
+    }
+  
+    document.querySelector("#tituloEjercicio").innerHTML = titulo;
+    document.querySelector("#descripcionEjercicio").innerHTML = descripcion;
+    let divImagen = '<img src="img/';
+    divImagen += imagen;
+    divImagen += '" alt="imagen"></img>';
+    document.querySelector("#imagenEjercicio").innerHTML = divImagen;
+  }
+
 }
 
 function agregarEjercicioAPantalla(id, titulo, imagen, descripcion) {
@@ -424,6 +454,9 @@ function agregarEjercicioAPantalla(id, titulo, imagen, descripcion) {
 }
 
 
+
+
+
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------VER EJERCICIOS PLANTEADOS - ALUMNO---------------------------------------------//
@@ -434,7 +467,7 @@ function verVentanaEjerciciosPlanteados() {
     alert("No se entrego ningun ejercicio.");
   } else {
     ocultarTodo();
-    mostrar("#EjerciciosResueltos");
+    mostrar("#divEjerciciosResueltos");
 
     let id = "";
     let titulo = "";
@@ -448,7 +481,7 @@ function verVentanaEjerciciosPlanteados() {
     let corregido = "";
 
     //Recorro el arreglo de Ejercicios Entregados
-    document.querySelector("#EjerciciosResueltos").innerHTML = "";
+    document.querySelector("#divEjerciciosResueltos").innerHTML = "";
     for (let i = 0; i < ejerciciosEntregados.length; i++) {
       //Si el ejercicio entrega es del alumno ingresado, entonces llamo a la funcion que muestra los ejercicios entregados del mismo
       if ((ejerciciosEntregados[i].ejercicio.usuario = usuarioIngreso)) {
@@ -485,7 +518,7 @@ function cargarEjerciciosResueltoAPantalla(id,titulo,descripcion,imagen,docente,
   htmlEjercicio += '<h5 id="ejercicioDevolucion">' + devolucion + "</h5></div>";
   htmlEjercicio += "<hr>";
 
-  document.querySelector("#EjerciciosResueltos").innerHTML += htmlEjercicio;
+  document.querySelector("#divEjerciciosResueltos").innerHTML += htmlEjercicio;
 }
 
 function infromacionEstedisticaAlumno() {
@@ -531,28 +564,35 @@ function infromacionEstedisticaAlumno() {
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 
-function verVentanaPlanteoEjercicio() {
+function verVentanaPlanteoEjercicio() {  
   ocultarTodo();
-  mostrar("#divPlanteoEjercicio");
+  mostrar("#divPlanteoEjercicio");  
 }
 
 function subirEjercicio() {
+  let max=200;
+  let min=20;
   let nivel = document.querySelector("#planteoNivel").value;
   let titulo = document.querySelector("#planteoTitulo").value;
   let descripcion = document.querySelector("#planteoDescripcion").value;
   let imagen = document.querySelector("#planteoImagen").value;
-
   imagen = nombreDeArchivo(imagen); //imagen.replace('C:\\fakepath\\','')
   let id_del_usuario = usuarioIngreso.id;
-
-  //ejercicios.push(new ejercicio(titulo,descripcion,imagen,id_del_usuario,nivel));
-  crearEjercicio(titulo, descripcion, imagen, id_del_usuario, nivel);
-  alert("SUBIO");
+  let cantcaracteres = titulo.length+descripcion.length;
+    if(cantcaracteres<min || cantcaracteres>max){
+      alert("Debe contener entre 20 y 200 caracteres")
+    }
+    if(titulo=="" || descripcion==""){
+      alert("Debe incluir contenido");
+    }
+    else crearEjercicio(titulo, descripcion, imagen, id_del_usuario, nivel);
+    alert("SUBIO")
+    
 }
 
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
-//----------------------------------------------PLANTEO DE EJERCICIOS - DOCENTE-----------------------------------------------------//
+//----------------------------------------------Entrega DE EJERCICIOS - Alumno--------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 
@@ -580,20 +620,18 @@ function nombreDeArchivo(ruta) {
 //----------------------------------------------INFO ESTADISTICA - DOCENTE-----------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
-
 function informacionEstadisticaDocente() {
   ocultarTodo();
-  mostrar("#divInformacionEstadisticaDocente");
-  alert("Funciona");
+  mostrar("#divInformacionEstadisticaDocente");  
   let nombreMayor = "";
   let cantidadEjerciciosMayor = 0;
 
-  //Obtengo cada nombre de usuario de los ejercicios entregados y los comparo con el mismo arreglo para obtener la cantidad de ejercicios resueltos. (similar al método burbuja)
+  //Obtengo cada nombre de usuario de los ejercicios entregados y los comparo con el mismo arreglo para obtener la cantidad de ejercicios resueltos. 
   for (i = 0; i < ejerciciosEntregados.length; i++) {
-    nombreUsuarioActual = ejerciciosEntregados[i].usuario;
+    nombreUsuarioActual = ejerciciosEntregados[i].usuario.nombre;
     let contador = 0;
-    for (y = 0; y < ejerciciosEntregados.length; i++) {
-      if (ejerciciosEntregados[y].usuario == nombreUsuarioActual) {
+    for (y = 0; y < ejerciciosEntregados.length; y++) {
+      if (ejerciciosEntregados[y].usuario.nombre == nombreUsuarioActual) {
         contador++;
       }
 
@@ -606,40 +644,94 @@ function informacionEstadisticaDocente() {
 
   (document.querySelector("#alumnosConMayorEjercicios").innerHTML ="El nombre del usuario con más ejercicios entregados es: " + nombreMayor)," con una cantidad de ejercicios de: " + cantidadEjerciciosMayor;
 
-  cantidadEjerciciosParaDocente = 0;
 
+
+
+  //Obtengo la cantidad de ejercicios entregados para el docente
+  cantidadEjerciciosParaDocente = 0;
   for (elemento of ejerciciosEntregados) {
-    if ((elemento.ejercicio.docente = usuarioIngreso)) {
+    if ((elemento.ejercicio.docente == usuarioIngreso.id)) {
       cantidadEjerciciosParaDocente++;
     }
   }
-    
-  document.querySelector("#cantidadDeEjercicios").innerHeight =
-    "La cantidad de ejercicios entregados para el docente es: " +
-    cantidadEjerciciosParaDocente;
 
-  for (let elemento of usuarios) {
-    if (elemento.tipo === "A" && elemento.docente === usuarioIngreso.id) {
-      alumnos +='<option value="' +  elemento.id +'">' +elemento.nombre +"(" +elemento.id +")</option>";
+  document.querySelector("#cantidadDeEjercicios").innerHTML="La cantidad de ejercicios entregados para el docente es: "+cantidadEjerciciosParaDocente;
+
+  mostrar("#divMostrarAlumnos")
+  let alumnos="";
+  for(let elemento of usuarios){
+    if(elemento.tipo === "A" && elemento.docente === usuarioIngreso.id){
+      alumnos += '<option value="' + elemento.id + '">' + elemento.nombre + '(' + elemento.id + ')</option>';
     }
     document.querySelector("#regAlumnosInformacion").innerHTML = alumnos;
   }
+}
+
+function MostrarTotalEjercicios(){
+  let id_alumno_seleccionado=document.querySelector("#regAlumnosInformacion").value;
+  let nivel_alumno_seleccionado="";
+  //Obtengo el nivel del alumno seleccionado
+  for(elemento of usuarios){
+    if(id_alumno_seleccionado===elemento.id){
+      nivel_alumno_seleccionado=elemento.nivel;
+    }
+  }
+
+  //Muestro la cantidad de ejercicios planteados para el nivel del alumno
+  cantidad_de_ejercicios_planteados=0;
+  for(elemento of ejercicios){
+    if(elemento.nivel==nivel_alumno_seleccionado){
+      cantidad_de_ejercicios_planteados++;
+    }
+  }
+
+  //Muestro cantidad de ejercicios entregados
+  let cantidad_de_ejercicios_entregados=0;
+  for(elemento of ejerciciosEntregados){
+    if(elemento.usuario == id_alumno_seleccionado && elemento.nivel==nivel_alumno_seleccionado){
+      cantidad_de_ejercicios_entregados++;
+    }
+  }
+
+  document.querySelector("#totalEjerciciosDelAlumno").innerHTML="De un total de "+cantidad_de_ejercicios_planteados+" ejercicios planteados para su nivel, el alumno entrego una suma de"+ cantidad_de_ejercicios_entregados;
 
 
 }
-function MostrarTotalEjercicio() {
-  let id_alumno_seleccionado = document.querySelector("#regAlumnosInformacion").value;
-  let nivel_alumno_seleccionado = "";
-  //Obtengo el nivel del alumno seleccionado
-  // for (elemento of usuarios) {
-  //   if (id_alumno_seleccionado === elemento[i].id) {
-  //     nivel_alumno_seleccionado = elemento[i].nivel;
-  //   }
-  // }
 
-  for (elemento of ejercicios) {
+
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------DEVOLUCION DE TAREAS- DOCENTE-----------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------------------------------//
+function cargarEjerciciosEntregados(){
+document.querySelector("#divEjerciciosResueltos").innerHTML="";
+ocultarTodo();
+for(elemento of ejerciciosEntregados){
+  if(elemento.docente === usuarioIngreso.id){
+    agregarEjercicioEntregadoAPantalla(elemento.ejercicio,elemento.audio,elemento.usuario,elemento.devolucion,elemento.corregido); 
   }
 }
+
+
+function corregirEntrega(id){
+  ocultarTodo();
+  mostrar("#correcionEjerciciosEntregados")
+}
+}
+
+function agregarEjercicioEntregadoAPantalla(ejercicio,audio,usuario,devolucion,corregido){
+  let htmlEjercicio = "<div id=ejercicio" + ejercicio.id;
+  htmlEjercicio += ' > <h5 id="audioEjercicioEntregado">' +audio;
+  htmlEjercicio += '</h5><p id="usuarioEjercicio">' +usuario;
+  htmlEjercicio += '</h5><p id="devolucionEjercicio">' +devolucion;
+  htmlEjercicio += '</h5><p id="corregidoEjercicio">' +corregido;
+  htmlEjercicio += '"<br><input type="button" value="Corregir" id="btnCorregirEntrega" onclick="corregirEntrega(' +ejercicio.id;
+  htmlEjercicio +=  ')"></div>';
+  document.querySelector("#divEjerciciosResueltos").innerHTML;
+}
+
+
 
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
@@ -669,7 +761,7 @@ function crearUsuario(user, nombre, pass, tipo, nivel, docente) {
   usuarios.push(new usuario(user, nombre, pass, tipo, nivel, docente));
 }
 
-function crearEjercicio(titulo, descripcion, imagen, docente, nivel) {
+function crearEjercicio(titulo, descripcion, imagen, docente, nivel) {  
   ejercicios.push(new ejercicio(titulo, descripcion, imagen, docente, nivel));
 }
 

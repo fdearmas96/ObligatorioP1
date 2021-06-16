@@ -6,7 +6,7 @@ class usuario{
     this.pass = pass;
     this.tipo = tipo; //D:Docente - A:Alumno
     this.nivel = nivel;
-    this.docente = docente.toUpperCase(); 
+    this.docente = docente.toUpperCase();    
     }
 }
 

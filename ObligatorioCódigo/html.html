@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,70 +10,66 @@
   <script src="js/obligatorio.js"></script>
   <title>Document</title>
 </head>
+
 <body>
-  <div id="contenedor" >
+  <div id="contenedor">
     <div id="cabezal" class="clearfix">
       <img id="logo" src="https://develotion.com/assets/img/logo.jpg" alt="logo">
-      <ul id="navPrincipal">       
-  
+      <ul id="navPrincipal">
+
       </ul>
       <div id="aux">
-        
+
       </div><!-- FIN AUX -->
     </div><!-- FIN CABEZAL -->
-    <div id="contenido">   
-      <!--<h3>Contenido</h3>
-      <label for="txtPrueba">Campo:</label>
-      <input type="text" id="txtPrueba"><br>
-      <label for="txtComentarios">Campo:</label>
-      <textarea></textarea><br>
-      <input type="button" value="Algo"><br>-->
+    <div id="contenido">
       <div id="divIngreso">
         <h5>Ingreso</h5>
-         <form action="#">
-             <label for="loginUsuario">Usuario</label>
-             <input type="text" id="loginUsuario" name="loginUsuario"><br>
-             <label for="loginPass">Contraseña</label>
-             <input type="password" id="loginPass" name="loginPass"><br>
-             <input type="button" value="Ingresar" id="btnIngresar">
-             <input type="button" value="Registrar" id="btnVentanaRegistrar">   
-         </form>
-       </div>   
-       <div id="divRegistro" style="display: none;">
-        <h5>Registro</h5>
         <form action="#">
-            <label for="regNombre">Nombre</label>
-            <input type="text" id="regNombre" name="regNombre"><br>
-            <label for="regUsuario">Usuario</label>
-            <input type="text" id="regUsuario" name="regUsuario"><br>
-            <label for="regPass">Contraseña</label>
-            <input type="password" id="regPass" name="regPass"><br>          
-            <label for="regEsAlumno">Es alumno?</label>
-            <input type="checkbox" name="regEsAlumno" id="regEsAlumno"><br>
-            <label for="regDocente" style="display: none;" id="labelRegDocente">Docente</label>
-            <select name="regDocente" id="regDocente" style="display: none;">
-            </select><br>
-            <p id="errorRegistro" style="display: none;"></p>
-            <input type="button" value="Registrar" id="btnRegistrar">
-            <input type="button" value="Salir" onclick="ocultar('#divRegistro') + mostrar('#divIngreso') ">
-    
+          <label for="loginUsuario">Usuario</label>
+          <input type="text" id="loginUsuario" name="loginUsuario"><br>
+          <label for="loginPass">Contraseña</label>
+          <input type="password" id="loginPass" name="loginPass"><br>
+          <input type="button" value="Ingresar" id="btnIngresar">
+          <input type="button" value="Registrar" id="btnVentanaRegistrar">
         </form>
+      </div>
+      <div id="divRegistro" style="display: none;">
+        <h5>Registro</h5>
+        <div id="divSelectTipoUsuario">
+          <label for="regTipoUsuario">Tipo de usuario</label>
+          <select id="regTipoUsuario">
+            <option value="A">Alumno</option>
+            <option value="D">Docente</option>
+          </select>
+          <input type="button" value="Continuar" id="btnContinuar">
+        </div>
+        <div id="divDatosDeUsuario">
+          <label for="regNombre">Nombre</label>
+          <input type="text" id="regNombre" name="regNombre"><br>
+          <label for="regUsuario">Usuario</label>
+          <input type="text" id="regUsuario" name="regUsuario"><br>
+          <label for="regPass">Contraseña</label>
+          <input type="password" id="regPass" name="regPass"><br>
+          <!--<label for="regEsAlumno">Es alumno?</label>
+            <input type="checkbox" name="regEsAlumno" id="regEsAlumno"><br>-->
+          <label for="regDocente" style="display: none;" id="labelRegDocente">Docente</label>
+          <select name="regDocente" id="regDocente" style="display: none;">
+          </select><br>
+          <p id="errorRegistro" style="display: none;"></p>
+          <input type="button" value="Registrar" id="btnRegistrar">
+        </div>
+        <input type="button" value="Salir" onclick="ocultar('#divRegistro') + mostrar('#divIngreso') ">
       </div>
 
       <hr>
-     
-        
-        <div id="divFiltro">
-          <label for="buscador">Ingrese el titulo o descripción del ejercicio a buscar: </label>
-          <input type="text" id="buscador" name="buscador">
-          <!--<input type="button" value="Buscar" id="btnBuscar">-->
-        </div>
 
 
-
+      <div id="divFiltro">
+        <label for="buscador">Ingrese el titulo o descripción del ejercicio a buscar: </label>
+        <input type="text" id="buscador" name="buscador">        
+      </div>
       <div class="ejercicios" id="divEjercicios">
-
-      
         <!-- <div>
           <h2>Ejercicio 1</h2>
           <img src="img/ej1.png">
@@ -82,97 +79,102 @@
         <hr>
         -->
       </div>
-        <!--FIN EJERCICIOS-->
+      <!--FIN EJERCICIOS-->
 
-        <div id="divEntregaTarea" style="display: none;">
-          <h1 id="tituloEjercicio"></h1>
-          <p id="descripcionEjercicio"></p>
-          <div id="imagenEjercicio"></div>
-          
-           <label for="audio">Ingrese un audio</label>
-          <input type="file" name="audio" id="audio">
-          <br>
-          <input type="button" id="btnEntregarAudio" value="Entregar">
-  
-         </div>
+      <div id="divEntregaTarea" style="display: none;">
+        <h1 id="tituloEjercicio"></h1>
+        <p id="descripcionEjercicio"></p>
+        <div id="imagenEjercicio"></div>
 
-         <!-- VER EJERCICIOS PLANTEADOS -->
-         <div id="EjerciciosResueltos">
-         
-         </div>
+        <label for="audio">Ingrese un audio</label>
+        <input type="file" name="audio" id="audio">
+        <br>
+        <input type="button" id="btnEntregarAudio" value="Entregar">
 
-         <!-- Visualizar información estadística-->
-         <div id="divInformacionEstadisticaAlumno">
-           <p id="porcentajeEjResueltos"></p>
-           <p id="ejerciciosConSinDevolucion"></p>
-         </div>
+      </div>
 
-         <div id="divInformacionEstadisticaDocente">
-          <p id="alumnosConMayorEjercicios"></p>
-          <br>
-          <p id="cantidadDeEjercicios"></p>
-          <br>
-           
+      <!-- VER EJERCICIOS PLANTEADOS -->
+      <div id="divEjerciciosResueltos" style="display: none;">
+
+      </div>
+
+      <!-- Visualizar información estadística-->
+      <div id="divInformacionEstadisticaAlumno">
+        <p id="porcentajeEjResueltos"></p>
+        <p id="ejerciciosConSinDevolucion"></p>
+      </div>
+
+      <div id="divInformacionEstadisticaDocente">
+        <p id="alumnosConMayorEjercicios"></p>
+        <br>
+        <p id="cantidadDeEjercicios"></p>
+        <br>
+
         <div id="divMostrarAlumnos" style="display: none;">
           <label for="regAlumnos">Seleccione el alumno</label>
           <select name="regAlumnosInformacion" id="regAlumnosInformacion" style="display: block;">
           </select><br>
-          <input type="button" name="btnMostrarTotalEjercicios" id="btnMostrarTotalEjercicios" value="Mostrar Total Ejercicios"> 
+          <input type="button" name="btnMostrarTotalEjercicios" id="btnMostrarTotalEjercicios"
+            value="Mostrar Total Ejercicios">
+          <p id="totalEjerciciosDelAlumno"></p>
         </div>
 
-          
-
-      
+        <!-- DEVOLUCIÓN DE TAREAS - DOCENTE -->
+        <div id="divEjerciciosEntregados">
 
         </div>
-        
-         
+        <div id="correcionEjerciciosEntregados">
 
-         <div id="divPlanteoEjercicio" style="display: none;">
+        </div>
+      </div>
+
+
+        <div id="divPlanteoEjercicio" style="display: none;">
           <h5>Planteo de ejercicio</h5>
-       
-            <label for="planteoNivel">Para nivel</label>
-            <select name="planteoNivel" id="planteoNivel">
-                <option value="1">Inicial</option>
-                <option value="2">Intermedio</option>
-                <option value="3">Avanzado</option>
-            </select><br>
-            <label for="planteoTitulo">Título</label>
-            <input type="text" id="planteoTitulo" name="planteoTitulo"><br>
-            <label for="planteoDescripcion">Descripción</label>
-            <input type="text" id="planteoDescripcion" name="planteoDescripcion"><br>
-            <label for="planteoImagen">Cargar Imagen</label>
-            <input type="file" name="planteoImagen" id="planteoImagen"><br>
-    
-            <input type="button" value="Plantear ejercicio" id="btnPlantearEjercicio">      
-         </div>
 
-         
-         <div id="divAsignacionNivel" style="display: none;" >
-          <h5>Asignacion de nivel</h5>       
-            <label for="regAlumnos">Seleccione el alumno</label>
-            <select name="regAlumnos" id="regAlumnos" style="display: block;">
-            </select>
-            <br>
-            <input type="button" id="btnMostrarNiveles" name="btnMostrarNiveles" value="Mostrar Niveles"> 
-            <br>
-            <input type="button" value="Volver" onclick="ocultar('#divAsignacionNivel') + ocultar('#divMostrarNiveles')" >
-         
-         </div>  
-    
+          <label for="planteoNivel">Para nivel</label>
+          <select name="planteoNivel" id="planteoNivel">
+            <option value="1">Inicial</option>
+            <option value="2">Intermedio</option>
+            <option value="3">Avanzado</option>
+          </select><br>
+          <label for="planteoTitulo">Título</label>
+          <input type="text" id="planteoTitulo" name="planteoTitulo"><br>
+          <label for="planteoDescripcion">Descripción</label>
+          <input type="text" id="planteoDescripcion" name="planteoDescripcion"><br>
+          <label for="planteoImagen">Cargar Imagen</label>
+          <input type="file" name="planteoImagen" id="planteoImagen"><br>
+
+          <input type="button" value="Plantear ejercicio" id="btnPlantearEjercicio">
+        </div>
+
+
+        <div id="divAsignacionNivel" style="display: none;">
+          <h5>Asignacion de nivel</h5>
+          <label for="regAlumnos">Seleccione el alumno</label>
+          <select name="regAlumnos" id="regAlumnos" style="display: block;">
+          </select>
+          <br>
+          <input type="button" id="btnMostrarNiveles" name="btnMostrarNiveles" value="Mostrar Niveles">
+          <br>
+          <input type="button" value="Volver" onclick="ocultar('#divAsignacionNivel') + ocultar('#divMostrarNiveles')">
+
+        </div>
+
         <div id="divMostrarNiveles" style="display: none;">
           <label for="regNiveles">Seleccione el nivel</label>
-          <select name="regNiveles" id="regNiveles" style="display: block;">
-           
-          </select><br>
-          <input type="button" name="btnAsignarNivel" id="btnAsignarNivel" value="Asignar Nivel" > 
+          <select name="regNiveles" id="regNiveles" style="display: block;"></select><br>
+          <input type="button" name="btnAsignarNivel" id="btnAsignarNivel" value="Asignar Nivel">
         </div>
 
       </div>
-      <div id="pie">
-        <a href="https://www.ort.edu.uy">Footer</a>
-      </div><!-- FIN PIE -->
-    </div><!-- FIN CONTENEDOR -->  
+    
+    <div id="pie">
+      <a href="https://www.ort.edu.uy">Footer</a>
+    </div><!-- FIN PIE -->
+  </div><!-- FIN CONTENEDOR -->
+
 
 </body>
+
 </html>
