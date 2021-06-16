@@ -20,7 +20,7 @@ function inicio() {
   document.querySelector("#btnPlantearEjercicio").addEventListener("click", subirEjercicio);
   document.querySelector("#btnEntregarAudio").addEventListener("click", entregarEjercicio);
   document.querySelector("#buscador").addEventListener("keyup", cargarEjercicios);
-  document.querySelector("#btnMostrarTotalEjercicios").addEventListener("click", MostrarTotalEjercicios());
+  
 }
 
 function ocultarTodo() {
@@ -629,6 +629,7 @@ function nombreDeArchivo(ruta) {
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 function informacionEstadisticaDocente() {
+  document.querySelector("#totalEjerciciosDelAlumno").innerHTML="";
   ocultarTodo();
   mostrar("#divInformacionEstadisticaDocente");  
   let nombreMayor = "";
@@ -696,12 +697,12 @@ function MostrarTotalEjercicios(){
   //Muestro cantidad de ejercicios entregados
   let cantidad_de_ejercicios_entregados=0;
   for(elemento of ejerciciosEntregados){
-    if(elemento.usuario == id_alumno_seleccionado && elemento.nivel==nivel_alumno_seleccionado){
+    if(elemento.usuario.id == id_alumno_seleccionado && elemento.ejercicio.nivel==nivel_alumno_seleccionado){
       cantidad_de_ejercicios_entregados++;
     }
   }  
 
-  document.querySelector("#totalEjerciciosDelAlumno").innerHTML="De un total de "+cantidad_de_ejercicios_planteados+" ejercicios planteados para su nivel, el alumno entrego una suma de"+ cantidad_de_ejercicios_entregados;
+  document.querySelector("#totalEjerciciosDelAlumno").innerHTML="De un total de "+cantidad_de_ejercicios_planteados+" ejercicios planteados para su nivel, el alumno entrego un total de "+ cantidad_de_ejercicios_entregados;
 
 
 }
