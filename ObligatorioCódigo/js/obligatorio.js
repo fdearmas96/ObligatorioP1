@@ -530,8 +530,9 @@ function infromacionEstedisticaAlumno() {
   let cantidadEjerciciosResueltos = 0;
   let cantidadConDevolucion = 0;
   let porcentajeResuelto = 0;
+  let cantidadSinDevolucion = 0;
   for (let elemento of ejercicios) {
-    if (elemento.nivel === usuarioIngreso.nivel) {
+    if (elemento.nivel === usuarioIngreso.nivel && elemento.docente == usuarioIngreso.docente) {
       cantidadEjerciciosPlanteados += 1;
     }
   }
@@ -544,6 +545,8 @@ function infromacionEstedisticaAlumno() {
       //veo si tiene devolución:
       if (elemento.devolucion != "") {
         cantidadConDevolucion += 1;
+      }else{
+        cantidadSinDevolucion +=1
       }
     }
   }
@@ -554,8 +557,8 @@ function infromacionEstedisticaAlumno() {
 
   //Agrego resultados a pantalla:
   document.querySelector("#porcentajeEjResueltos").innerHTML = "El porcentaje de ejercicios resueltos es %" + porcentajeResuelto;
-  document.querySelector("#ejerciciosConSinDevolucion").innerHTML = "De un total de " + cantidadEjerciciosPlanteados + " planteados, " + cantidadConDevolucion +
-    " recibieron devolución.";
+  document.querySelector("#ejerciciosConSinDevolucion").innerHTML = "De un total de " + cantidadEjerciciosResueltos + " resueltos, " + cantidadConDevolucion +
+    " recibieron devolución y " + cantidadSinDevolucion + " no recibieron devolución" ;
 }
 
 //------------------------------------------------------------------------------------------------------------------------------//
@@ -579,14 +582,19 @@ function subirEjercicio() {
   imagen = nombreDeArchivo(imagen); //imagen.replace('C:\\fakepath\\','')
   let id_del_usuario = usuarioIngreso.id;
   let cantcaracteres = titulo.length+descripcion.length;
-    if(cantcaracteres<min || cantcaracteres>max){
-      alert("Debe contener entre 20 y 200 caracteres")
-    }
-    if(titulo=="" || descripcion==""){
-      alert("Debe incluir contenido");
-    }
-    else crearEjercicio(titulo, descripcion, imagen, id_del_usuario, nivel);
-    alert("SUBIO")
+
+  if(titulo=="" || descripcion=="" || imagen=="" ){//Veo si los campos están vacíos
+    alert("No pueden existir campos vacios");
+  }else if(cantcaracteres<min || cantcaracteres>max){
+      alert("El total de caracteres entre titulo y descripcion debe estar entre 20 y 200");
+  }else{ 
+    crearEjercicio(titulo, descripcion, imagen, id_del_usuario, nivel);
+    alert("Tarea agregada.")
+
+    document.querySelector("#planteoTitulo").value="";
+    document.querySelector("planteoDescripcion").value="";
+    document.querySelector("#planteoImagen").value="";
+  }
     
 }
 
@@ -691,7 +699,7 @@ function MostrarTotalEjercicios(){
     if(elemento.usuario == id_alumno_seleccionado && elemento.nivel==nivel_alumno_seleccionado){
       cantidad_de_ejercicios_entregados++;
     }
-  }
+  }  
 
   document.querySelector("#totalEjerciciosDelAlumno").innerHTML="De un total de "+cantidad_de_ejercicios_planteados+" ejercicios planteados para su nivel, el alumno entrego una suma de"+ cantidad_de_ejercicios_entregados;
 
