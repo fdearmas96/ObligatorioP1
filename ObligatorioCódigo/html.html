@@ -70,6 +70,7 @@
         <input type="text" id="buscador" name="buscador">        
       </div>
       <div class="ejercicios" id="divEjercicios">
+        
         <!-- <div>
           <h2>Ejercicio 1</h2>
           <img src="img/ej1.png">
@@ -93,9 +94,8 @@
 
       </div>
 
-      <!-- VER EJERCICIOS PLANTEADOS -->
-      <div id="divEjerciciosResueltos" style="display: none;">
-
+      <!-- VER EJERCICIOS RESUELTOS -->
+      <div id="divEjerciciosResueltos" style="display: none;">        
       </div>
 
       <!-- Visualizar información estadística-->
@@ -118,16 +118,21 @@
           <p id="totalEjerciciosDelAlumno"></p>
         </div>
 
-        <!-- DEVOLUCIÓN DE TAREAS - DOCENTE -->
-        <div id="divEjerciciosEntregados">
+       
+      </div>
 
-        </div>
-        <div id="correcionEjerciciosEntregados">
+       <!-- DEVOLUCIÓN DE TAREAS - DOCENTE -->
+       <div id="divEjerciciosEntregados" style="display: none;">
 
-        </div>
+      </div>
+
+      <div id="divCorrecionEjerciciosEntregados" style="display: none;">
+      
       </div>
 
 
+
+      
         <div id="divPlanteoEjercicio" style="display: none;">
           <h5>Planteo de ejercicio</h5>
 
@@ -140,7 +145,8 @@
           <label for="planteoTitulo">Título</label>
           <input type="text" id="planteoTitulo" name="planteoTitulo"><br>
           <label for="planteoDescripcion">Descripción</label>
-          <input type="text" id="planteoDescripcion" name="planteoDescripcion"><br>
+          <textarea name="planteoDescripcion" id="planteoDescripcion" cols="30" rows="10"></textarea><br>
+          <!--<input type="text" id="planteoDescripcion" name="planteoDescripcion"><br>-->
           <label for="planteoImagen">Cargar Imagen</label>
           <input type="file" name="planteoImagen" id="planteoImagen"><br>
 
