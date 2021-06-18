@@ -36,6 +36,7 @@ function ocultarTodo() {
   ocultar("#divInformacionEstadisticaDocente")
   ocultar("#divEjerciciosResueltos");
   mostrar("#navPrincipal");
+  ocultar("#divCorrecionEjerciciosEntregados");
 
 }
 
@@ -751,20 +752,21 @@ function corregirEntrega(id) {
   mostrar("#divCorrecionEjerciciosEntregados");
   let htmlCorrecion = "";
   for (elemento of ejerciciosEntregados) {
-    if (elemento.ejercicio.id = id) {
+    if (elemento.ejercicio.id === id) {
       htmlCorrecion = '<div id="ejercicio' + elemento.ejercicio.id;
       htmlCorrecion += '"><audio controls><source src="audio/' + elemento.audio + '" type="audio/mpeg">Su navegador no permite el control de audio</audio>';
       htmlCorrecion += '</h5><p id="usuarioEjercicio">Nombre de Usuario: ' + elemento.usuario.nombre;
       htmlCorrecion += '<hr></div>';
     }
-  
+  }
 
   htmlCorrecion += '<label for="calificacion">Ingrese devolución:</label>';
   htmlCorrecion += '<textarea id="calificacion" name="calificacion"></textarea><br>';
   htmlCorrecion += '<input type="button" value="Calificar" id="btnCalificar" name="btnCalificar" onclick="calificarEntrega(' + id + ')">'
   document.querySelector("#divCorrecionEjerciciosEntregados").innerHTML += htmlCorrecion;
+
 }
-}s
+
 
 function calificarEntrega(id, devolucion) {
   devolucion = document.querySelector("#calificacion").value;
