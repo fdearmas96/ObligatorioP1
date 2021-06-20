@@ -748,9 +748,21 @@ function cargarEjerciciosEntregados() {
     document.querySelector("#noHayEjercicioEntregado").innerHTML = "No hay ejercicios entregados para dar devolución."
   }else{
     document.querySelector("#noHayEjercicioEntregado").innerHTML = "";
+<<<<<<< HEAD
     for (elemento of ejerciciosEntregados) {
       if (elemento.ejercicio.docente === usuarioIngreso.id) {
         agregarEjercicioEntregadoAPantalla(elemento.ejercicio,elemento.ejercicio.titulo, elemento.audio, elemento.usuario, elemento.devolucion, elemento.corregido,elemento.devolucion);
+=======
+<<<<<<< HEAD
+    for (elemento of ejerciciosEntregados) {
+      if (elemento.ejercicio.docente === usuarioIngreso.id) {
+        agregarEjercicioEntregadoAPantalla(elemento.ejercicio,elemento.ejercicio.titulo, elemento.audio, elemento.usuario, elemento.devolucion, elemento.corregido,elemento.devolucion);
+=======
+    for (entrega of ejerciciosEntregados) {
+      if (entrega.ejercicio.docente === usuarioIngreso.id) {
+        agregarEjercicioEntregadoAPantalla(entrega);
+>>>>>>> 98c78fe5d0eae676232d2448e0b54dc6eeefe56b
+>>>>>>> parent of 82765a5 (ass)
       }
     }
   }
@@ -759,6 +771,10 @@ function cargarEjerciciosEntregados() {
 }
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> parent of 82765a5 (ass)
 
 
 
@@ -776,6 +792,31 @@ function agregarEjercicioEntregadoAPantalla(ejercicio, titulo, audio, usuario, d
   }
   htmlEjercicio += '<br><input type="button" value="'+corregir+'" id="btnCorregirEntrega" onclick="corregirEntrega(' + ejercicio.id;
   htmlEjercicio += ')"><hr></div>';
+<<<<<<< HEAD
+=======
+=======
+function agregarEjercicioEntregadoAPantalla(entrega) {
+   //Esta función agrega los ejercicios entregados a la pantalla y verifica si ya recibió o no devoción:
+   //Recibe el objeto "entrega"
+
+  let yaCorregido = entrega.corregido;
+  let botonDisabled = "";
+  let descripcion ="Corregir"
+  if(yaCorregido=="S"){    
+    botonDisabled = "disabled";
+    descripcion ="Devolución ya realizada";
+  }
+
+  let htmlEjercicio = '<div id="ejercicio' + entrega.id + '">'
+  htmlEjercicio += '<h5> <p>' + entrega.ejercicio.titulo + '</p></h5>';
+  htmlEjercicio += '<audio controls><source src="audio/' + entrega.audio + '" type="audio/mpeg">Su navegador no permite el control de audio</audio>';
+  htmlEjercicio += '</h5><p id="usuarioEjercicio">Nombre de Usuario: ' + entrega.usuario.nombre;
+  htmlEjercicio += '</h5><p id="devolucionEjercicio"> Devolucion: ' + entrega.devolucion;
+  htmlEjercicio += '</h5><p id="corregidoEjercicio"> Corregido: ' + entrega.corregido;
+  htmlEjercicio += '<br><input type="button" value="'+descripcion+'" id="btnCorregirEntrega'+ entrega.id +'" onclick="corregirEntrega(' + entrega.id;
+  htmlEjercicio += ')" '+botonDisabled+'><hr></div>';
+>>>>>>> 98c78fe5d0eae676232d2448e0b54dc6eeefe56b
+>>>>>>> parent of 82765a5 (ass)
   document.querySelector("#divEjerciciosEntregados").innerHTML += htmlEjercicio;
 }
 
@@ -785,12 +826,27 @@ function corregirEntrega(id) {
   document.querySelector("#divCorrecionEjerciciosEntregados").innerHTML = "";
   mostrar("#divCorrecionEjerciciosEntregados");
   let htmlCorrecion = "";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> parent of 82765a5 (ass)
   for (elemento of ejerciciosEntregados) {
     if (elemento.ejercicio.id === id) {
       htmlCorrecion = '<div id="ejercicio' + elemento.ejercicio.id+">";
       htmlCorrecion = '<h5 id="ejercicioTitulo">' + elemento.ejercicio.titulo;
       htmlCorrecion += '</h5><audio controls><source src="audio/' + elemento.audio + '" type="audio/mpeg">Su navegador no permite el control de audio</audio>';
       htmlCorrecion += '</h5><p id="usuarioEjercicio">Nombre de Usuario: ' + elemento.usuario.nombre;
+<<<<<<< HEAD
+=======
+=======
+  for (entrega of ejerciciosEntregados) {
+    if (entrega.id == idEntrega) {
+      htmlCorrecion = '<div id="ejercicioAEntregar' + entrega.id +'">';
+      htmlCorrecion += '<h5> <p>' + entrega.ejercicio.titulo + '</p></h5>';
+      htmlCorrecion += '<audio controls><source src="audio/' + entrega.audio + '" type="audio/mpeg">Su navegador no permite el control de audio</audio>';
+      htmlCorrecion += '</h5><p id="usuarioEjercicio">Nombre de Usuario: ' + entrega.usuario.nombre;
+>>>>>>> 98c78fe5d0eae676232d2448e0b54dc6eeefe56b
+>>>>>>> parent of 82765a5 (ass)
       htmlCorrecion += '<hr></div>';
     }
   }
