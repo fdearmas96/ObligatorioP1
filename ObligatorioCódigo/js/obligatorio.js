@@ -524,6 +524,8 @@ function verVentanaEjerciciosResueltos() {
 }
 
 
+
+
 //Funcion para mostrar en el HTML un ejercicio entregado
 function cargarEjerciciosResueltoAPantalla(id, titulo, descripcion, imagen, docente, nivel, audio, _usuario, devolucion, corregid) {
   let htmlEjercicio = "<div id=ejercicio" + id + ">";
@@ -748,7 +750,7 @@ function cargarEjerciciosEntregados() {
     document.querySelector("#noHayEjercicioEntregado").innerHTML = "";
     for (elemento of ejerciciosEntregados) {
       if (elemento.ejercicio.docente === usuarioIngreso.id) {
-        agregarEjercicioEntregadoAPantalla(elemento.ejercicio, elemento.audio, elemento.usuario, elemento.devolucion, elemento.corregido);
+        agregarEjercicioEntregadoAPantalla(elemento.ejercicio,elemento.ejercicio.titulo, elemento.audio, elemento.usuario, elemento.devolucion, elemento.corregido,elemento.devolucion);
       }
     }
   }
@@ -757,14 +759,22 @@ function cargarEjerciciosEntregados() {
 }
 
 
+
+
+
 function agregarEjercicioEntregadoAPantalla(ejercicio, titulo, audio, usuario, devolucion, corregido) {
-  let htmlEjercicio = '<div id="ejercicio' + ejercicio.id;
-  htmlEjercicio = '"< div id="ejercicioTitulo' + ejercicio.titulo;
-  htmlEjercicio += '"><audio controls><source src="audio/' + audio + '" type="audio/mpeg">Su navegador no permite el control de audio</audio>';
+  let corregir="Corregir";
+
+  let htmlEjercicio = "<div id=ejercicio" + ejercicio.id+">";
+  htmlEjercicio = '<h5 id="ejercicioTitulo">' + titulo;
+  htmlEjercicio += '</h5><audio controls><source src="audio/' + audio + '" type="audio/mpeg">Su navegador no permite el control de audio</audio>';
   htmlEjercicio += '</h5><p id="usuarioEjercicio">Nombre de Usuario: ' + usuario.nombre;
   htmlEjercicio += '</h5><p id="devolucionEjercicio"> Devolucion: ' + devolucion;
   htmlEjercicio += '</h5><p id="corregidoEjercicio"> Corregido: ' + corregido;
-  htmlEjercicio += '<br><input type="button" value="Corregir" id="btnCorregirEntrega" onclick="corregirEntrega(' + ejercicio.id;
+  if(corregido==="S"){
+    corregir="Modificar devolución"
+  }
+  htmlEjercicio += '<br><input type="button" value="'+corregir+'" id="btnCorregirEntrega" onclick="corregirEntrega(' + ejercicio.id;
   htmlEjercicio += ')"><hr></div>';
   document.querySelector("#divEjerciciosEntregados").innerHTML += htmlEjercicio;
 }
@@ -777,8 +787,9 @@ function corregirEntrega(id) {
   let htmlCorrecion = "";
   for (elemento of ejerciciosEntregados) {
     if (elemento.ejercicio.id === id) {
-      htmlCorrecion = '<div id="ejercicio' + elemento.ejercicio.id;
-      htmlCorrecion += '"><audio controls><source src="audio/' + elemento.audio + '" type="audio/mpeg">Su navegador no permite el control de audio</audio>';
+      htmlCorrecion = '<div id="ejercicio' + elemento.ejercicio.id+">";
+      htmlCorrecion = '<h5 id="ejercicioTitulo">' + elemento.ejercicio.titulo;
+      htmlCorrecion += '</h5><audio controls><source src="audio/' + elemento.audio + '" type="audio/mpeg">Su navegador no permite el control de audio</audio>';
       htmlCorrecion += '</h5><p id="usuarioEjercicio">Nombre de Usuario: ' + elemento.usuario.nombre;
       htmlCorrecion += '<hr></div>';
     }
