@@ -834,15 +834,9 @@ function cargarEjerciciosEntregados() {
   } else {
     document.querySelector("#noHayEjercicioEntregado").innerHTML = "";
 <<<<<<< HEAD
-<<<<<<< HEAD
     for (elemento of ejerciciosEntregados) {
       if (elemento.ejercicio.docente === usuarioIngreso.id) {
         agregarEjercicioEntregadoAPantalla(elemento.ejercicio,elemento.ejercicio.titulo, elemento.audio, elemento.usuario, elemento.devolucion, elemento.corregido,elemento.devolucion);
-=======
-    for (entrega of ejerciciosEntregados) {
-      if (entrega.ejercicio.docente === usuarioIngreso.id) {
-        agregarEjercicioEntregadoAPantalla(entrega);
->>>>>>> 98c78fe5d0eae676232d2448e0b54dc6eeefe56b
 =======
     for (entrega of ejerciciosEntregados) {
       if (entrega.ejercicio.docente === usuarioIngreso.id) {
@@ -856,7 +850,6 @@ function cargarEjerciciosEntregados() {
 }
 
 
-<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -876,8 +869,6 @@ function agregarEjercicioEntregadoAPantalla(ejercicio, titulo, audio, usuario, d
   htmlEjercicio += '<br><input type="button" value="'+corregir+'" id="btnCorregirEntrega" onclick="corregirEntrega(' + ejercicio.id;
   htmlEjercicio += ')"><hr></div>';
 =======
-=======
->>>>>>> 98c78fe5d0eae676232d2448e0b54dc6eeefe56b
 function agregarEjercicioEntregadoAPantalla(entrega) {
    //Esta función agrega los ejercicios entregados a la pantalla y verifica si ya recibió o no devoción:
    //Recibe el objeto "entrega"
@@ -898,9 +889,6 @@ function agregarEjercicioEntregadoAPantalla(entrega) {
   htmlEjercicio += '</h5><p id="corregidoEjercicio"> Corregido: ' + entrega.corregido;
   htmlEjercicio += '<br><input type="button" value="'+descripcion+'" id="btnCorregirEntrega'+ entrega.id +'" onclick="corregirEntrega(' + entrega.id;
   htmlEjercicio += ')" '+botonDisabled+'><hr></div>';
-<<<<<<< HEAD
->>>>>>> 98c78fe5d0eae676232d2448e0b54dc6eeefe56b
-=======
 >>>>>>> 98c78fe5d0eae676232d2448e0b54dc6eeefe56b
   document.querySelector("#divEjerciciosEntregados").innerHTML += htmlEjercicio;
 }
@@ -913,7 +901,6 @@ function corregirEntrega(idEntrega) {
   mostrar("#divCorrecionEjerciciosEntregados");
   let htmlCorrecion = "";
 <<<<<<< HEAD
-<<<<<<< HEAD
   for (elemento of ejerciciosEntregados) {
     if (elemento.ejercicio.id === id) {
       htmlCorrecion = '<div id="ejercicio' + elemento.ejercicio.id+">";
@@ -921,17 +908,12 @@ function corregirEntrega(idEntrega) {
       htmlCorrecion += '</h5><audio controls><source src="audio/' + elemento.audio + '" type="audio/mpeg">Su navegador no permite el control de audio</audio>';
       htmlCorrecion += '</h5><p id="usuarioEjercicio">Nombre de Usuario: ' + elemento.usuario.nombre;
 =======
-=======
->>>>>>> 98c78fe5d0eae676232d2448e0b54dc6eeefe56b
   for (entrega of ejerciciosEntregados) {
     if (entrega.id == idEntrega) {
       htmlCorrecion = '<div id="ejercicioAEntregar' + entrega.id +'">';
       htmlCorrecion += '<h5> <p>' + entrega.ejercicio.titulo + '</p></h5>';
       htmlCorrecion += '<audio controls><source src="audio/' + entrega.audio + '" type="audio/mpeg">Su navegador no permite el control de audio</audio>';
       htmlCorrecion += '</h5><p id="usuarioEjercicio">Nombre de Usuario: ' + entrega.usuario.nombre;
-<<<<<<< HEAD
->>>>>>> 98c78fe5d0eae676232d2448e0b54dc6eeefe56b
-=======
 >>>>>>> 98c78fe5d0eae676232d2448e0b54dc6eeefe56b
       htmlCorrecion += '<hr></div>';
     }
