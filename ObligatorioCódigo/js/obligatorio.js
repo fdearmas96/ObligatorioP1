@@ -525,8 +525,6 @@ function verVentanaEjerciciosResueltos() {
 }
 
 
-
-
 //Funcion para mostrar en el HTML un ejercicio entregado
 function cargarEjerciciosResueltoAPantalla(id, titulo, descripcion, imagen, docente, nivel, audio, _usuario, devolucion, corregid) {
   let htmlEjercicio = "<div id=ejercicio" + id + ">";
@@ -836,6 +834,7 @@ function cargarEjerciciosEntregados() {
 <<<<<<< HEAD
     for (elemento of ejerciciosEntregados) {
       if (elemento.ejercicio.docente === usuarioIngreso.id) {
+<<<<<<< HEAD
         agregarEjercicioEntregadoAPantalla(elemento.ejercicio,elemento.ejercicio.titulo, elemento.audio, elemento.usuario, elemento.devolucion, elemento.corregido,elemento.devolucion);
 =======
     for (entrega of ejerciciosEntregados) {
@@ -847,6 +846,9 @@ function cargarEjerciciosEntregados() {
       if (entrega.ejercicio.docente === usuarioIngreso.id) {
         agregarEjercicioEntregadoAPantalla(entrega);
 >>>>>>> 98c78fe5d0eae676232d2448e0b54dc6eeefe56b
+=======
+        agregarEjercicioEntregadoAPantalla(elemento.ejercicio, elemento.audio, elemento.usuario, elemento.devolucion, elemento.corregido);
+>>>>>>> parent of b8d3ce4 (Update 19/6)
       }
     }
   }
@@ -857,22 +859,20 @@ function cargarEjerciciosEntregados() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> parent of b8d3ce4 (Update 19/6)
 function agregarEjercicioEntregadoAPantalla(ejercicio, titulo, audio, usuario, devolucion, corregido) {
-  let corregir="Corregir";
-
-  let htmlEjercicio = "<div id=ejercicio" + ejercicio.id+">";
-  htmlEjercicio = '<h5 id="ejercicioTitulo">' + titulo;
-  htmlEjercicio += '</h5><audio controls><source src="audio/' + audio + '" type="audio/mpeg">Su navegador no permite el control de audio</audio>';
+  let htmlEjercicio = '<div id="ejercicio' + ejercicio.id;
+  htmlEjercicio = '"< div id="ejercicioTitulo' + ejercicio.titulo;
+  htmlEjercicio += '"><audio controls><source src="audio/' + audio + '" type="audio/mpeg">Su navegador no permite el control de audio</audio>';
   htmlEjercicio += '</h5><p id="usuarioEjercicio">Nombre de Usuario: ' + usuario.nombre;
   htmlEjercicio += '</h5><p id="devolucionEjercicio"> Devolucion: ' + devolucion;
   htmlEjercicio += '</h5><p id="corregidoEjercicio"> Corregido: ' + corregido;
-  if(corregido==="S"){
-    corregir="Modificar devolución"
-  }
-  htmlEjercicio += '<br><input type="button" value="'+corregir+'" id="btnCorregirEntrega" onclick="corregirEntrega(' + ejercicio.id;
+  htmlEjercicio += '<br><input type="button" value="Corregir" id="btnCorregirEntrega" onclick="corregirEntrega(' + ejercicio.id;
   htmlEjercicio += ')"><hr></div>';
 =======
 =======
@@ -915,9 +915,8 @@ function corregirEntrega(idEntrega) {
 <<<<<<< HEAD
   for (elemento of ejerciciosEntregados) {
     if (elemento.ejercicio.id === id) {
-      htmlCorrecion = '<div id="ejercicio' + elemento.ejercicio.id+">";
-      htmlCorrecion = '<h5 id="ejercicioTitulo">' + elemento.ejercicio.titulo;
-      htmlCorrecion += '</h5><audio controls><source src="audio/' + elemento.audio + '" type="audio/mpeg">Su navegador no permite el control de audio</audio>';
+      htmlCorrecion = '<div id="ejercicio' + elemento.ejercicio.id;
+      htmlCorrecion += '"><audio controls><source src="audio/' + elemento.audio + '" type="audio/mpeg">Su navegador no permite el control de audio</audio>';
       htmlCorrecion += '</h5><p id="usuarioEjercicio">Nombre de Usuario: ' + elemento.usuario.nombre;
 =======
 =======
