@@ -5,9 +5,7 @@ let idEjercicio = 0; //Este es un id que es uníco para cada ejercicio que se pl
 let idEntrega = 0;   //Este es el id unico de cada entrega
 let ejercicioEntregado = ""; //este es el ejercicio que se está entregando
 let ejerciciosEntregados = []; //estos son todos los ejercicios entregados
-
 window.addEventListener("load", inicio);
-
 function inicio() {
   ocultarTodo();
   datosPreCargados();
@@ -83,7 +81,8 @@ function continuarRegistro() {
 
 }
 
-function hacerVisibleDocentes() {  
+function hacerVisibleDocentes() {
+  //let estaTildado = document.querySelector("#regEsAlumno").checked;
   let docentes = "";
   mostrar("#labelRegDocente");
   mostrar("#regDocente");
@@ -103,15 +102,15 @@ function registrarUsuario() {
   let nivel = "";
   let docente = "";
   let error = "";
-
+  let hayError = false;
   if (comprobarSiUsuarioExiste(usuarioReg)) {
     error = "El usuario ya existe<br>";
   }
 
   if (usuarioReg.length === 0) {
-    error += "Debe ingresar un usuario<br>";    
+    error += "Debe ingresar un usuario<br>";
+    //hayError = true;
   }
-
   error += comprobarPass(contraseñaReg);
 
   //Si seleccionó que es alumno debe tener un docente
@@ -151,7 +150,7 @@ function vaciarCamposRegistro() {
 
 
 function comprobarSiUsuarioExiste(user) {
-  /*Acá hay que recorre el vector de usuarios  para ver si ya existe*/
+  /*Acá hay que recorrer los vectores o objetos para ver si el usuario ya existe*/
   let yaExiste = false;
   for (let i = 0; i < usuarios.length && !yaExiste; i++) {
     if (usuarios[i].id === user) {
@@ -199,7 +198,7 @@ function comprobarPass(pass) {
     resultado += "La contraseña debe tener al menos una mayúscula<br>";
   }
   if (tieneNum === "N") {
-    resultado += "La contraseña debe tener al menos un número<br>";
+    resultado += "La contraseña debe tener al menos un número";
   }
   return resultado;
 }
@@ -354,7 +353,7 @@ function asignarNivel() {
 
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
-//----------------------------------------------VISTA- DE EJERCICIOS Planteados ------------------------------------------------//
+//----------------------------------------------VISTA-PLANTEO DE EJERCICIOS-----------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------------------------//
 
