@@ -835,6 +835,7 @@ function cargarEjerciciosEntregados() {
     for (elemento of ejerciciosEntregados) {
       if (elemento.ejercicio.docente === usuarioIngreso.id) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         agregarEjercicioEntregadoAPantalla(elemento.ejercicio,elemento.ejercicio.titulo, elemento.audio, elemento.usuario, elemento.devolucion, elemento.corregido,elemento.devolucion);
 =======
     for (entrega of ejerciciosEntregados) {
@@ -849,6 +850,9 @@ function cargarEjerciciosEntregados() {
 =======
         agregarEjercicioEntregadoAPantalla(elemento.ejercicio, elemento.audio, elemento.usuario, elemento.devolucion, elemento.corregido);
 >>>>>>> parent of b8d3ce4 (Update 19/6)
+=======
+        agregarEjercicioEntregadoAPantalla(elemento.ejercicio, elemento.audio, elemento.usuario, elemento.devolucion, elemento.corregido);
+>>>>>>> parent of b8d3ce4 (Update 19/6)
       }
     }
   }
@@ -860,9 +864,12 @@ function cargarEjerciciosEntregados() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> parent of b8d3ce4 (Update 19/6)
 =======
 >>>>>>> parent of b8d3ce4 (Update 19/6)
 function agregarEjercicioEntregadoAPantalla(ejercicio, titulo, audio, usuario, devolucion, corregido) {
