@@ -51,8 +51,7 @@
           <input type="text" id="regUsuario" name="regUsuario"><br>
           <label for="regPass">Contraseña</label>
           <input type="password" id="regPass" name="regPass"><br>
-          <!--<label for="regEsAlumno">Es alumno?</label>
-            <input type="checkbox" name="regEsAlumno" id="regEsAlumno"><br>-->
+         
           <label for="regDocente" style="display: none;" id="labelRegDocente">Docente</label>
           <select name="regDocente" id="regDocente" style="display: none;">
           </select><br>
@@ -71,14 +70,7 @@
       </div>
       <div class="ejercicios" id="divEjercicios">
         
-        <!-- <div>
-          <h2>Ejercicio 1</h2>
-          <img src="img/ej1.png">
-          <p>Donec dapibus arcu a diam commodo, vel vehicula orci volutpat. Vestibulum convallis tempor mattis. Donec molestie semper leo vel luctus. Curabitur quis nisi maximus, luctus lorem quis, dignissim augue.</p>
-          <input type="button" value="Hacer entrega">
-        </div>
-        <hr>
-        -->
+       
       </div>
       <!--FIN EJERCICIOS-->
 
@@ -88,7 +80,7 @@
         <div id="imagenEjercicio"></div>
 
         <label for="audio">Ingrese un audio</label>
-        <input type="file" name="audio" id="audio">
+        <input accept="audio/*" type="file" name="audio" id="audio">
         <br>
         <input type="button" id="btnEntregarAudio" value="Entregar">
 
@@ -146,9 +138,8 @@
           <input type="text" id="planteoTitulo" name="planteoTitulo"><br>
           <label for="planteoDescripcion">Descripción</label>
           <textarea name="planteoDescripcion" id="planteoDescripcion" cols="30" rows="10"></textarea><br>
-          <!--<input type="text" id="planteoDescripcion" name="planteoDescripcion"><br>-->
           <label for="planteoImagen">Cargar Imagen</label>
-          <input type="file" name="planteoImagen" id="planteoImagen"><br>
+          <input accept="image/*" type="file" name="planteoImagen" id="planteoImagen"><br>
 
           <input type="button" value="Plantear ejercicio" id="btnPlantearEjercicio">
         </div>
@@ -157,13 +148,10 @@
         <div id="divAsignacionNivel" style="display: none;">
           <h5>Asignacion de nivel</h5>
           <label for="regAlumnos">Seleccione el alumno</label>
-          <select name="regAlumnos" id="regAlumnos" style="display: block;">
+          <select onchange="mostrarNiveles()" name="regAlumnos" id="regAlumnos" style="display: block;">
           </select>
-          <br>
-          <input type="button" id="btnMostrarNiveles" name="btnMostrarNiveles" value="Mostrar Niveles">
-          <br>
-          <input type="button" value="Volver" onclick="ocultar('#divAsignacionNivel') + ocultar('#divMostrarNiveles')">
-
+          <br>          
+          <br>       
         </div>
 
         <div id="divMostrarNiveles" style="display: none;">
