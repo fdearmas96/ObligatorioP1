@@ -916,5 +916,5 @@ function datosPreCargados() {
   crearEntregaDeEjercicio(ejercicios[0], "ej1.m4a", usuarios[3], "", "N");
   crearEntregaDeEjercicio(ejercicios[0], "ej2.m4a", usuarios[4], "", "N");
   //Agrego devolución:
-  agregaDevolucionATarea(ejerciciosEntregados[0], "Excelente tarea, cumplio con los requisitos y esta listo para cumplir con el resto de tareas");
+  agregaDevolucionATarea(ejerciciosEntregados[0], "Excelente tarea, cumplio con los requisitos y esta listo para seguir con el resto de tareas");
 }
