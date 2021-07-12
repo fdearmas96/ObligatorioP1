@@ -30,7 +30,6 @@ class EjerciciosEntregados{
         this.id = idEntrega;
         this.ejercicio=ejercicio;
         this.audio=audio;
-        //this.docente=docente; se guarda el ejercicio en si por lo tanto ya se puede tener el docente
         this.usuario=usuario;
         this.devolucion=devolucion;
         this.corregido=corregido;
