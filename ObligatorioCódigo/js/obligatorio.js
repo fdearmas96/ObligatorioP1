@@ -662,6 +662,7 @@ function informacionEstadisticaDocente() {
   let nombreMayor = "";
   let cantidadEjerciciosMayor = 0;
 
+  //Obtego el usuario con mas ejercicios entregados
   //Obtengo cada nombre de usuario de los ejercicios entregados y los comparo con el mismo arreglo para obtener la cantidad de ejercicios resueltos. 
   for (i = 0; i < ejerciciosEntregados.length; i++) {
     nombreUsuarioActual = ejerciciosEntregados[i].usuario.nombre;
